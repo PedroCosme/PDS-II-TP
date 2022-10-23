@@ -1,11 +1,11 @@
 #ifndef LONG_SWORD_H
 #define LONG_SWORD_H
-#include "equipament.hpp"
+#include "equipment.hpp"
 
 /**
- * @brief Subclasse da classe Equipament
+ * @brief Subclasse da classe Equipment
  */
-class LongSword: public Equipament{
+class LongSword: public Equipment{
 
 
 
