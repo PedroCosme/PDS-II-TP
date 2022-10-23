@@ -11,7 +11,6 @@
  * todos as informações relevantes sobre o PC(Playable Character).
  *
  */
-
 class PlayableCharacter{
     public:
     /**
@@ -107,6 +106,6 @@ class PlayableCharacter{
    */
   void drink_potion(std::set<Equipment>& equipments);
 
-  
+
 
 #endif
