@@ -10,7 +10,5 @@ class LongSword: public Equipment{
 
 
 
-
-
 }
 #endif
