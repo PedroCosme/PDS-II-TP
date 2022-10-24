@@ -14,7 +14,7 @@ class Mage : public PlayableCharacter{
      /**
    * @param spells set com os spells disponíveis
    */
-  Mage(std::set<std::string> spells);
+  Mage(std::set<std::string> spells, std::string name, float hp, float mp, int lvl, int xp, Equipment equipment, std::set<Equipment>& equipments);
 
  private:
     std::set<std::string> _spells;
