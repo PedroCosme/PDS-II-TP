@@ -6,9 +6,11 @@
  * @brief Subclasse da classe Equipment
  */
 class BroomHandle: public Equipment{
-
-
-
+public:
+  /**
+ * @brief Construtor padrão para a classe.
+ */
+  BroomHandle();
 
 
 
