@@ -13,6 +13,8 @@ class Necromancer: public Game_events{
         void raise_the_dead();
         float take_damage();
     
+    Necromancer(float hp, int mp, int difficulty);
+    ~Necromancer();
     private:
         float _hp();
         int _mp();
