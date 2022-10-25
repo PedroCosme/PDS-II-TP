@@ -25,7 +25,7 @@ void steal_item();
 float hp_multiplier();
     
 float take_damage();
-};
+
 
 
 private:
@@ -33,5 +33,7 @@ private:
         float _hp();
                     
         int _difficulty();
+    
+ };
 
 #endif 
