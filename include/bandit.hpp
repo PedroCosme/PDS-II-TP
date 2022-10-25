@@ -8,31 +8,31 @@
 class Bandit: public Monster {
 public: 
     
-float get_hp();
+    float get_hp();
     
-void set_hp();
+    void set_hp();
     
-Equipment drop_items();
+    Equipment drop_items();
     
-void attack();
+    void attack();
     
-float hp_multiplier();
+    float hp_multiplier();
     
-float take_damage();
+    float take_damage();
     
-void steal_item();
+    void steal_item();
     
-float hp_multiplier();
+    float hp_multiplier();
     
-float take_damage();
+    float take_damage();
 
 
 
 private:
        
-        float _hp();
+    float _hp();
                     
-        int _difficulty();
+    int _difficulty();
     
  };
 
