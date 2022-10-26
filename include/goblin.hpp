@@ -29,7 +29,7 @@ public:
   void attack();
   
    /**
-   * @brief Retorna o hp do goblin
+   * @return hp atual do goblin
    */
   float hp_multiplier();
   
