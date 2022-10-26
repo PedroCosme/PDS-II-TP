@@ -18,6 +18,10 @@ public:
    */
     
     Bandit(float hp, int difficulty);
+  
+    float get_hp();
+    
+    void set_hp();
     
     Equipment drop_items();
     
