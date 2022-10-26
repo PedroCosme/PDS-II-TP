@@ -16,6 +16,10 @@ public:
    */
   Goblin(float hp, int difficulty);
   
+  float get_hp();
+    
+  void set_hp();
+  
   /**
    * @brief Destrutor padrao.
    */
