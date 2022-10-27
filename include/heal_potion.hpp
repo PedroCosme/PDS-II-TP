@@ -14,8 +14,8 @@ HealPotion();
 /**
  * @brief cura o personagem.
  */
-float heal();
+void heal();
 
 
-}
+};
 #endif
