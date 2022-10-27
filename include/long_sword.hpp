@@ -6,7 +6,7 @@
  * @brief Subclasse da classe Equipment
  */
 class LongSword: public Equipment{
-
+public:
 /**
  * @brief Construtor padrão da classe
  */
