@@ -11,9 +11,8 @@ class AncientStaff: public Equipment{
   /**
  * @brief construtor padrão da classe
  */
-
   public:
-  AncientStaff();
+  AncientStaff(std::string name, std::string allowed_class, int damage, float drop_rate);
   
-}
+};
 #endif
