@@ -22,15 +22,14 @@
    * @brief Calcula o dano sofrido pelo personagem após ser atacado
    * @return float hp após sofrer dano
    */
-
-   virtual float take_damage();
+   virtual void take_damage();
     /**
    * @brief Cura o personagem, fazendo com que ele se recupere do dano sofrido.
    * @return float hp após se recuperar
    */
-    float heal();
+    void heal();
     /**
-   * @brief mantém o jogo rodando a partir da geração de um número aleatório
+   * @brief mantém o jogo rodando a partir da geração de um número aleatório.
    */
     void roll_dice();
      /**
