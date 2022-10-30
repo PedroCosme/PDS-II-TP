@@ -43,7 +43,7 @@ public:
  * @return float com o atual hp do personagem
  */
     
-  float take_damage();
+  void take_damage();
     
   void root();
     

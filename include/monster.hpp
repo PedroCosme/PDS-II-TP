@@ -60,7 +60,7 @@ class Monster: public Game_events{
 * @brief Retorna a quantidade de dano tomado pelo monster
 * @return float com o atual hp do personagem
 */     
-        float take_damage();
+        void take_damage();
 
     private:
        

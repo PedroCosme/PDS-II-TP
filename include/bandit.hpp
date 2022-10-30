@@ -41,7 +41,7 @@ public:
    * @return float com o atual hp do personagem
    */
     
-    float take_damage();
+    void take_damage();
     
   /**
    * @brief um item é retirado do personagem

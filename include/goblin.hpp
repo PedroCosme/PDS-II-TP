@@ -41,7 +41,7 @@ public:
    * @brief Retorna a quantidade de dano tomado pelo goblin
    * @return float com o atual hp do personagem
    */
-  float take_damage();
+  void take_damage();
   
   /**
    * @brief Retorna o dano da habilidade bonus_stats do goblin
