@@ -12,6 +12,6 @@ class Warrior : public PlayableCharacter{
 /**
  * @brief construtor padrão para a classe de personagem warrior.
  */
-    Warrior ();
+    Warrior (std::string name, float hp, float mp, int lvl, int xp, Equipment equipment, std::set<Equipment>& equipments);
 };
 #endif
