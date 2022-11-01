@@ -18,7 +18,7 @@ public:
   
     float get_hp();
     
-    void set_hp(float hp);
+    void set_hp(float _hp);
     
     Equipment drop_items();
   /**
