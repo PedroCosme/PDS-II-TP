@@ -2,7 +2,7 @@
 #ifndef _BANDIT_H
 #define _BANDIT_H
 
-#include "Monster.hpp"
+#include "monster.hpp"
 /**
  * @brief Classe responsavel pelo Monster Bandit.
  */
@@ -13,7 +13,7 @@ public:
   /**
    * @brief Construtor padrao que inicializa todas as variaveis da classe.
    * @param hp float com o hp base do jogador
-   * @param difficulty int que determina um multiplicador de dificuldade do goblin
+   * @param difficulty int que determina um multiplicador de dificuldade do bandit
    * 
    */
     
@@ -26,18 +26,19 @@ public:
     Equipment drop_items();
     
   /**
-   * @brief Retorna o dano do ataque do goblin
+   * @brief Retorna o dano do ataque do bandit
    */
     
     void attack();
         
   /**
-   * @return hp atual do goblin
+   * @return hp atual do bandit
    */
     float hp_multiplier();
     
   /**
-   * @brief retorna a quantidade de dano tomado pelo goblin
+   * @brief retorna a quantidade de dano tomado pelo bandit
+   
    * @return float com o atual hp do personagem
    */
     
