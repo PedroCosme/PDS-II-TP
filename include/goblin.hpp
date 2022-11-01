@@ -1,7 +1,7 @@
 #ifndef _GOBLIN_H
 #define _GOBLIN_H
 
-#include "Monster.hpp"
+#include "monster.hpp"
 /**
  * @brief Classe responsavel pelo Monster Goblin.
  */
