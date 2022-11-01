@@ -2,7 +2,7 @@
 #ifndef _SLIME_H
 #define _SLIME_H
 
-#include "Monster.hpp"
+#include "monster.hpp"
 
 /**
  * @brief Classe responsavel pelo Monster Slime.
