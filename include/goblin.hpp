@@ -17,7 +17,7 @@ public:
   
   float get_hp();
     
-  void set_hp();
+  void set_hp(float _hp);
   /**
    * @brief Destrutor padrao.
    */
