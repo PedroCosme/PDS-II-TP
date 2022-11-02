@@ -20,12 +20,10 @@
    public:
     /**
    * @brief Calcula o dano sofrido pelo personagem após ser atacado
-   * @return float hp após sofrer dano
    */
    virtual void take_damage();
     /**
    * @brief Cura o personagem, fazendo com que ele se recupere do dano sofrido.
-   * @return float hp após se recuperar
    */
     void heal();
     /**
