@@ -10,7 +10,7 @@ public:
 /**
  * @brief construtor padrão da classe
  */
-HealPotion();
+HealPotion(std::string name, std::string allowed_class, int damage, float drop_rate);
 /**
  * @brief cura o personagem.
  */
