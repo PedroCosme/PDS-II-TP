@@ -33,7 +33,7 @@
      /**
    * @brief avalia se o jogo deve continuar, com base no hp do personagem, se o hp for igual a zero, então, o atributo game_on=0, 
    * do contrário, game_on=1, e a função game_end().
-   * return game_on.
+   * @return game_on.
    */
     bool game_end();
     
