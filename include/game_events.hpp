@@ -27,13 +27,15 @@
    */
     void heal();
     /**
-   * @brief mantém o jogo rodando a partir da geração de um número aleatório.
+   * @brief mantém o jogo rodando a partir da geração de um número aleatório, o qual será rodado se game_end( )=1.
    */
     void roll_dice();
      /**
-   * @brief encerra o jogo
+   * @brief avalia se o jogo deve continuar, com base no hp do personagem, se o hp for igual a zero, então, o atributo game_on=0, 
+   * do contrário, game_on=1, e a função game_end().
+   * return game_on.
    */
-    void game_end();
+    bool game_end();
     
 };
 #endif
