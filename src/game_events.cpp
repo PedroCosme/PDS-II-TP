@@ -17,9 +17,11 @@ void Game_events::roll_dice(){
 }
 bool Game_events::game_end(){
   if(get_hp()==0.0){
-    game_on=0;
+    game_on=true;
 }
-  else game_on==1;
-  return(game_on);
+  else{
+    game_on=true;
+  }
+  return(!game_on);
 }
    
