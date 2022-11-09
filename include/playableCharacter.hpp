@@ -24,7 +24,7 @@ class PlayableCharacter{
    * @param equipments set que armazena objetos do tipo equipamento que descreve o inventário do usuário
    * 
    */
-  PlayableCharacter(std::string name, float hp, float mp, int lvl, int xp, Equipment equipment, std::set<Equipment>& equipments);
+    PlayableCharacter(std::string name, float hp, float mp, int lvl, int xp, Equipment equipment, std::set<Equipment>& equipments);
 
     /**
      * @brief Retorna o hp base do personagem
@@ -70,15 +70,14 @@ class PlayableCharacter{
 
     /**
      * @brief Atualiza a xp do personagem
-     * @param xp xp atual do personagem
+     * @param xp  int xp atual do personagem
      */
     void set_xp(int xp);
 
     /**
      * @brief Informa se o personagem está vivo
-     * @param hp hp atual do personagem
      */
-    bool is_alive(float hp);
+    bool is_alive();
 
 
     /**
