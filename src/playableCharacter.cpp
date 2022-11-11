@@ -54,8 +54,8 @@ Equipment PlayableCharacter::get_equipment(){
     return this->_equipment;
 };
 
-void PlayableCharacter::set_equipment(Equipment equip){
-    this->_equipment = equip;
+void PlayableCharacter::set_equipment(Equipment equipment){
+    this->_equipment = equipment;
 }
 
 void PlayableCharacter::print_equipments(std::set<Equipment> &equipments){
@@ -71,6 +71,10 @@ void PlayableCharacter::change_equipment(std::set<Equipment> &equipments){
     std::cout << "Escolha o equipamento";
     this->set_equipment(choosen_equip);
 };
+
+void PlayableCharacter::add_equipment(Equipment equipment){
+    this->_equipments.insert(equipment);
+}
 
 
 

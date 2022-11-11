@@ -89,7 +89,7 @@ class PlayableCharacter{
      * @brief Altera o equipamento atual do personagem
      * @param equip equipamento a ser equipado
      */
-    void set_equipment(Equipment equip);
+    void set_equipment(Equipment equipment);
 
     /**
      * @brief Informa ao jogador os equipamentos disponíveis em seu inventário
@@ -107,7 +107,7 @@ class PlayableCharacter{
      * @brief Adiciona um equipamento novo ao inventário do usuário
      * @param equipments set com os equipamentos do usuário
      */
-    void add_equipment(std::set<Equipment> &equipments);
+    void add_equipment(Equipment equipment);
 
     /**
      * @brief Realiza ação de ataque com o equipamento atualmente equipado
