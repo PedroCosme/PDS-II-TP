@@ -87,27 +87,27 @@ class PlayableCharacter{
 
     /**
      * @brief Altera o equipamento atual do personagem
-     * @param equipment equipamento a ser equipado
+     * @param equip equipamento a ser equipado
      */
-    void set_equipment();
+    void set_equipment(Equipment equip);
 
     /**
      * @brief Informa ao jogador os equipamentos disponíveis em seu inventário
      * @param equipments set com os equipamentos do usuário
      */
-    void print_equipments(std::set<Equipment>& equipments);
+    void print_equipments(std::set<Equipment> &equipments);
 
     /**
      * @brief Informa ao jogador seu invetário de equipamentos e permite-o alterar seu equipamento atual
      * @param equipments set com os equipamentos do usuário
      */
-    void change_equipment(std::set<Equipment>& equipments);
+    void change_equipment(std::set<Equipment> &equipments);
 
     /**
      * @brief Adiciona um equipamento novo ao inventário do usuário
      * @param equipments set com os equipamentos do usuário
      */
-    void add_equipment(std::set<Equipment>& equipments);
+    void add_equipment(std::set<Equipment> &equipments);
 
     /**
      * @brief Realiza ação de ataque com o equipamento atualmente equipado
@@ -119,7 +119,7 @@ class PlayableCharacter{
      * @brief Realiza ação de beber poção de cura caso o usuário tenha alguma. Chama a função heal() de game events.
      * @param equipments set com os equipamentos do usuário
      */
-    void drink_potion(std::set<Equipment>& equipments);
+    void drink_potion(std::set<Equipment> &equipments);
 
     private:
     std::string _name;

@@ -6,7 +6,7 @@
 
 PlayableCharacter::PlayableCharacter(std::string name,
 float hp, float mp, int lvl, int xp, Equipment equipment,
-std::set<Equipment>& equipments)
+std::set<Equipment> &equipments)
 {
  this->_name = name;
  this->_hp = hp;
@@ -50,15 +50,29 @@ bool PlayableCharacter::is_alive(){
     return true;
     }
 };
-void PlayableCharacter::print_equipments(std::set<Equipment>& equipments){
-    for (Equipment i : equipments){
+Equipment PlayableCharacter::get_equipment(){
+    return this->_equipment;
+};
+
+void PlayableCharacter::set_equipment(Equipment equip){
+    this->_equipment = equip;
+}
+
+void PlayableCharacter::print_equipments(std::set<Equipment> &equipments){
+    for (auto &i : this->_equipments){
         std::cout << &i << ' ';
     }
+    std::cout << std::endl;
 };
 
-void PlayableCharacter::change_equipment(std::set<Equipment>& equipments){
-
+void PlayableCharacter::change_equipment(std::set<Equipment> &equipments){
+    Equipment choosen_equip;
+    this->print_equipments(equipments);
+    std::cout << "Escolha o equipamento";
+    this->set_equipment(choosen_equip);
 };
+
+
 
 
 
