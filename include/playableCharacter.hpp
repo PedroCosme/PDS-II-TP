@@ -79,6 +79,17 @@ class PlayableCharacter{
      */
     bool is_alive();
 
+    /**
+     * @brief Retorna o equipamento atual do personagem
+     * @return equipment com equipamento atual do personagem
+     */
+    Equipment get_equipment();
+
+    /**
+     * @brief Altera o equipamento atual do personagem
+     * @param equipment equipamento a ser equipado
+     */
+    void set_equipment();
 
     /**
      * @brief Informa ao jogador os equipamentos disponíveis em seu inventário

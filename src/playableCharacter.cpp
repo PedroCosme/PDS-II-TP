@@ -1,18 +1,20 @@
 #include <iostream>
 #include <string>
+#include <set>
 #include <playableCharacter.hpp>
+#include <equipment.hpp>
 
 PlayableCharacter::PlayableCharacter(std::string name,
 float hp, float mp, int lvl, int xp, Equipment equipment,
 std::set<Equipment>& equipments)
 {
- _name = name;
- _hp = hp;
- _mp = mp;
- _lvl = lvl;
- _xp = xp;
- _equipment = equipment;
- _equipments = equipments;
+ this->_name = name;
+ this->_hp = hp;
+ this->_mp = mp;
+ this->_lvl = lvl;
+ this->_xp = xp;
+ this->_equipment = equipment;
+ this->_equipments = equipments;
 };
 float PlayableCharacter::get_hp(){
     return this->_hp;
@@ -48,3 +50,15 @@ bool PlayableCharacter::is_alive(){
     return true;
     }
 };
+void PlayableCharacter::print_equipments(std::set<Equipment>& equipments){
+    for (Equipment i : equipments){
+        std::cout << &i << ' ';
+    }
+};
+
+void PlayableCharacter::change_equipment(std::set<Equipment>& equipments){
+
+};
+
+
+

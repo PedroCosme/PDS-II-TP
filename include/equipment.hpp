@@ -17,13 +17,13 @@ class Equipment{
    * @param damage dano base do equipamento
    * @param drop_rate chance do equipamento aparecer para o usuário
    */
-      Equipment(std::string name, std::string allowed_class, int damage, float drop_rate);
+      Equipment(std::string name = "", std::string allowed_class= "", int damage = 0, float drop_rate =0.0);
 
     private:
     std::string _name;
     std::string _allowed_class;
     int _damage;
-    float drop_rate;
+    float _drop_rate;
 };
 
 

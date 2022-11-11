@@ -11,5 +11,5 @@ public:
  * @brief Construtor padrão da classe
  */
 GreatSword(std::string name, std::string allowed_class, int damage, float drop_rate);
-}
+};
 #endif
