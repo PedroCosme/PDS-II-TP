@@ -6,19 +6,21 @@ void Game_events::heal(){
   set_hp(hp_inicial*0.25);
   }
 }
-void Game_events::roll_dice(){
-  while(game_end()!=0){
-//aqui deve constar a função que mantém o jogo funcionando, por meio da geração de números aleatórios.//
-    
-    
-    
-    if(game_end()==0) std::cout<<"Game End"<<endl;
-     else if(game_end()==0)  break;
+
+int Game_events::roll_dice(){
+  if(game_end())=false){
+    int outcome;
+    int min=1;
+    int max=6;
+    roll= rand()%(max-min+1)+min;
+    return outcome;
 }
+  
 bool Game_events::game_end(){
   if(get_hp()==0.0){
     game_on=false;
 }
+  
   else{
     game_on=true;
   }
