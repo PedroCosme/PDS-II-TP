@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <set>
-#include "playableCharacter.hpp"
-#include "equipment.hpp"
+#include <playableCharacter.hpp>
+#include <equipment.hpp>
 
 PlayableCharacter::PlayableCharacter(std::string name,
 float hp, float mp, int lvl, int xp, Equipment equipment,

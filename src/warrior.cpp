@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-#include <set>
 #include "warrior.hpp"
 
 Warrior::Warrior(std::string name, float hp, float mp, int lvl, int xp, Equipment equipment, std::set<Equipment>& equipments){
