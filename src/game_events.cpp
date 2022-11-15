@@ -17,13 +17,12 @@ int Game_events::roll_dice(){
 }
   
 bool Game_events::game_end(){
-  if(get_hp()==0.0){
-    game_on=false;
+  //Se o hp do personagem for nulo, o jogo acaba, assim também ocorre quando o hp do necromancer for zero, fato que indica que o personagem venceu o jogo.
+  if((get_hp()==0.0)!&(get_hp_necromancer()==0.0)){
+    return false;
 }
-  
   else{
-    game_on=true;
-  }
-  return(!game_on);
+    return true;
+}
 }
    
