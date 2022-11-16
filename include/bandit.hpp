@@ -1,6 +1,5 @@
-
-#ifndef _BANDIT_H
-#define _BANDIT_H
+#ifndef BANDIT_H_INCLUDED
+#define BANDIT_H_INCLUDED
 
 #include "monster.hpp"
 /**
@@ -24,7 +23,7 @@ public:
   /**
    * @brief Retorna o dano do ataque do bandit
    */
-   void attack();    
+    float attack();    
   /**
    * @return hp atual do bandit
    */
@@ -34,7 +33,7 @@ public:
    
    * @return float com o atual hp do personagem
    */    
-    void take_damage();    
+    float take_damage();    
   /**
    * @brief um item é retirado do personagem
    * 
@@ -50,3 +49,6 @@ private:
  };
 
 #endif 
+
+
+
