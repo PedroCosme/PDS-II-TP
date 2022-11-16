@@ -1,6 +1,6 @@
 
-#ifndef _SLIME_H
-#define _SLIME_H
+#ifndef SLIME_H
+#define SLIME_H
 
 #include "monster.hpp"
 /**
@@ -24,16 +24,15 @@ public:
 /**
  * @brief Retorna o dano do ataque do slime
  */
-  void attack();
+  float attack();
 /**
   * @return hp atual do slime
   */ 
   float hp_multiplier();
 /**
- * @brief Retorna a quantidade de dano tomado pelo slime
- * @return float com o atual hp do personagem
+ * @brief Retorna a quantidade atual de hp após dano
  */    
-  void take_damage();
+  float take_damage();
     
   void root();
     
