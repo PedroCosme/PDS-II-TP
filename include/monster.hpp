@@ -27,12 +27,12 @@ class Monster: public Game_events{
 * @brief Retorna o hp base do personagem
 * @return float com o hp base do personagem
 */
-        float get_hp(float hp);
+        float get_hp();
 /**
 * @brief Atualiza o hp base do personagem
 * @param hp hp do personagem
 */
-        void set_hp();
+        void set_hp(float hp);
 /**
 * @brief Informa ao jogador seu invetÃ¡rio de equipamentos e permite-o soltar seu equipamento atual
 */     
