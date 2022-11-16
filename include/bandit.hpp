@@ -29,7 +29,7 @@ public:
    */
     float hp_multiplier();    
   /**
-   * @brief retorna a quantidade de dano tomado pelo bandit
+   * @brief retorna a quantidade de hp atual após o dano
    
    * @return float com o atual hp do personagem
    */    
