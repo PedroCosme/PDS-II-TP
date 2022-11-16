@@ -33,8 +33,7 @@ public:
    */
   float hp_multiplier();
   /**
-   * @brief Retorna a quantidade de dano tomado pelo goblin
-   * @return float com o atual hp do personagem
+   * @brief Retorna a quantidade de dano tomado 
    */
   float take_damage();
   /**
