@@ -11,20 +11,22 @@
  * todos as informações relevantes sobre o PC(Playable Character).
  *
  */
-class PlayableCharacter{
-    public:
+class PlayableCharacter
+{
+public:
     /**
-   * @brief Construtor padrao que inicializa todas as variaveis da classe.
-   * @param name Nome do personagem dado pelo jogador
-   * @param hp float com o hp base do jogador
-   * @param mp float com o mp base do jogador
-   * @param lvl int que armazena o nível do jogador
-   * @param xp int que armaenza a quantidade de experiência do jogador no nível atual
-   * @param equipment objeto do tipo equipamento que indica o equipamento equipado atualmente
-   * @param equipments set que armazena objetos do tipo equipamento que descreve o inventário do usuário
-   * 
-   */
-    PlayableCharacter(std::string name, float hp, float mp, int lvl, int xp, Equipment equipment, std::set<Equipment>& equipments);
+     * @brief Construtor padrao que inicializa todas as variaveis da classe.
+     * @param name Nome do personagem dado pelo jogador
+     * @param hp float com o hp base do jogador
+     * @param mp float com o mp base do jogador
+     * @param lvl int que armazena o nível do jogador
+     * @param xp int que armaenza a quantidade de experiência do jogador no nível atual
+     * @param equipment objeto do tipo equipamento que indica o equipamento equipado atualmente
+     * @param equipments set que armazena objetos do tipo equipamento que descreve o inventário do usuário
+     *
+     */
+    // PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0, Equipment equipment =, std::set<Equipment> &equipments);
+    PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0);
 
     /**
      * @brief Retorna o hp base do personagem
@@ -121,7 +123,7 @@ class PlayableCharacter{
      */
     void drink_potion(std::set<Equipment> &equipments);
 
-    private:
+private:
     std::string _name;
     float _hp;
     float _mp;
