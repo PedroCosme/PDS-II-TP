@@ -10,13 +10,19 @@ void game_start()
   int choosen_class;
   std::cout << "Primeiramente, escolha uma classe para o seu personagem. Digite 1 para jogar como mago e 2 como guerreiro" << std::endl;
   std::cin >> choosen_class;
-  if (choosen_class == 1)
+  while (1)
   {
-  }
-  else if (choosen_class == 2)
-  {
-  }
-  {
+    if (choosen_class == 1)
+    {
+      break;
+    }
+    else if (choosen_class == 2)
+    {
+      break;
+    }
+    else
+    {
+    }
   }
 }
 // void Game_events::heal(){
