@@ -17,7 +17,7 @@ class Monster: public Game_events{
 * @param difficulty int que determina um multiplicador de dificuldade do monster
 * 
 */
-    Monster(float hp, float mp, int difficulty);
+    Monster(float hp, int difficulty);
 /**
 * @brief Destrutor padrao.
 */
@@ -29,20 +29,10 @@ class Monster: public Game_events{
 */
         float get_hp();
 /**
-* @brief Retorna o mp base do personagem
-* @return int com o mp base do personagem
-*/
-        float get_mp();
-/**
 * @brief Atualiza o hp base do personagem
 * @param hp hp do personagem
 */
         void set_hp(float hp);
-/**
-* @brief Atualiza o mp base do personagem
-* @param mp mp do personagem
-*/
-        void set_mp(float mp);
 /**
 * @brief Informa ao jogador seu invetÃ¡rio de equipamentos e permite-o soltar seu equipamento atual
 */     

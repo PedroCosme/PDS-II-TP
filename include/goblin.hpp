@@ -1,5 +1,5 @@
-#ifndef _GOBLIN_H
-#define _GOBLIN_H
+#ifndef GOBLIN_H
+#define GOBLIN_H
 
 #include "monster.hpp"
 /**
@@ -27,16 +27,15 @@ public:
   /**
    * @brief Retorna o dano do ataque do goblin
    */
-  void attack();
+  float attack();
   /**
    * @return hp atual do goblin
    */
   float hp_multiplier();
   /**
-   * @brief Retorna a quantidade de dano tomado pelo goblin
-   * @return float com o atual hp do personagem
+   * @brief Retorna a quantidade de dano tomado 
    */
-  void take_damage();
+  float take_damage();
   /**
    * @brief Retorna o dano da habilidade bonus_stats do goblin
    */

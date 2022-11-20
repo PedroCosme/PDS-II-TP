@@ -2,6 +2,8 @@
 #define WARRIOR_H
 
 #include <iostream>
+#include <string>
+#include <set>
 #include "playableCharacter.hpp"
 
 /**
