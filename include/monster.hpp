@@ -7,7 +7,7 @@ class Monster
 {
 
 public:
-        Monster(std::string &name, unsigned int baseHp);
+        Monster(std::string &name, unsigned int toughness, unsigned int currentHp);
         Monster(Monster &monster);
         ~Monster();
 
@@ -17,8 +17,6 @@ public:
 
         bool damage(unsigned int damageAmount);
 
-        float hpPPercentage() const;
-
         std::string currentHealth() const;
 
         bool takeDamage(unsigned int damage);
@@ -26,12 +24,9 @@ public:
         virtual std::string ToString() const;
 
 protected:
-        std::string mName;
-        unsigned int mCurrentHp;
-
-        unsigned int getMaximumHp() const;
-
-        unsigned int mToughnessSkill;
+        std::string _name;
+        unsigned int _currentHp;
+        unsigned int _toughnessSkill;
 };
 
 #endif
