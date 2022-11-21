@@ -6,6 +6,7 @@
 #include <set>
 #include "equipment.hpp"
 #include "weapon.hpp"
+#include "utilities.hpp"
 
 /**
  * @brief Classe responsavel pelo personagem do jogador. A classe armazena
@@ -91,6 +92,11 @@ public:
 
     virtual std::string toString() const;
 
+    void hpMultiplier();
+    
+    float getHp();
+
+
     /**
      * @brief Retorna o equipamento atual do personagem
      * @return equipment com equipamento atual do personagem
@@ -131,8 +137,6 @@ public:
     //  * @brief Realiza ação de beber poção de cura caso o usuário tenha alguma. Chama a função heal() de game events.
     //  * @param equipments set com os equipamentos do usuário
     //  */
-    // void drink_potion(std::set<Equipment> &equipments);
-
 protected:
     std::string _playerClass;
     Weapon _weapon;
@@ -141,10 +145,9 @@ protected:
     std::string _name;
     unsigned int _gold;
     unsigned int _currentHp;
-    unsigned int _xp;
     unsigned int _maxHp;
-    // Equipment _equipment;
-    // std::set<Equipment> _equipments;
+    float _hp;
+    float _mp;
 };
 
-#endif;
+#endif

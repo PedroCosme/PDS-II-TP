@@ -24,3 +24,4 @@ private:
     float _droprate;
 };
 #endif
+

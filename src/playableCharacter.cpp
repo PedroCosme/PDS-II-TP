@@ -18,7 +18,10 @@ std::string PlayableCharacter::getClass()
 {
     return this->_playerClass;
 }
-
+float PlayableCharacter::getHp()
+{
+    return this->_hp;
+}
 unsigned int PlayableCharacter::getLvl()
 {
     return this->_lvl;
@@ -115,4 +118,12 @@ float PlayableCharacter::hPPercentage() const
 std::string PlayableCharacter::currentHealth() const
 {
     return std::to_string(_currentHp) + " / " + std::to_string(_maxHp);
+}
+void PlayableCharacter::hpMultiplier(){
+    std::string className = this->getClass();
+    std::string low = toLower(className);
+    if(low == "warrior"){
+        _maxHp *= 2;
+    }
+
 }

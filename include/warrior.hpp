@@ -26,10 +26,5 @@ public:
 
    void set_mp(float mp);
 
-private:
-   float _hp;
-   float _mp;
-   int _lvl;
-   int _xp;
 };
 #endif
