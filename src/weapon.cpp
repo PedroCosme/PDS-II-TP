@@ -1,5 +1,5 @@
 #include "weapon.hpp"
-#include "ultilities.hpp"
+#include "utilities.hpp"
 
 Weapon::Weapon(std::string name)
     : _name(name) {}
