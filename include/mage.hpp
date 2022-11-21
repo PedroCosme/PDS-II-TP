@@ -16,9 +16,19 @@ public:
    * @param spells set com os spells disponíveis
    */
   // Mage(std::set<std::string> spells, std::string name, float hp, float mp, int lvl, int xp, Equipment equipment, std::set<Equipment>& equipments);
-  Mage(std::string name = "", float hp = 100, float mp = 150, int lvl = 1, int xp = 0);
+  Mage(std::string name = "", int lvl = 1, int xp = 0, float hp = 100, float mp = 150);
+
+  float get_hp();
+
+  float get_mp();
+
+  void set_hp(float hp);
+
+  void set_mp(float mp);
 
 private:
-  std::set<std::string> _spells;
+  // std::set<std::string> _spells;
+  float _hp;
+  float _mp;
 };
 #endif

@@ -1,25 +1,29 @@
 #include <iostream>
 #include "bandit.hpp"
 
-Bandit::Bandit (float hp, int difficulty):_hp(hp),_difficulty(difficulty);
+Bandit::Bandit(float hp, int difficulty) : _hp(hp), _difficulty(difficulty){};
 
-
-
-void Bandit::set_hp (int hp){
-    _hp += hp;
-};
-    
-float Bandit::get_hp (){
-    return _hp;
+void Bandit::set_hp(float hp)
+{
+    this->_hp += hp;
 };
 
-void Bandit::attack(){
-    return attack;
+float Bandit::get_hp()
+{
+    return this->_hp;
 };
 
-float Bandit::hp_multiplier(){
-    return hp_multiplier;
+// int Bandit::attack()
+//{
+//     return attack;
+// };
+
+void Bandit::hp_multiplier(int multiplier)
+{
+    this->_hp = get_hp() * multiplier;
 };
-float Bandit::take_damage(){
-    _hp -= 10 //valor não definido
+
+void Bandit::take_damage()
+{
+    _hp -= 10; // valor não definido
 };

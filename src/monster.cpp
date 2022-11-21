@@ -4,18 +4,17 @@
 #include "monster.hpp"
 #include "game_events.hpp"
 
+Monster::Monster() {}
 
-Monster::Monster(float hp, int difficulty){
-    this -> _hp = hp;
-    this -> _difficulty = difficulty;
+/*  this -> _hp = hp;
+  this -> _difficulty = difficulty;
 };
-    float Monster::get_hp(){
-    return this->_hp;
-    
+  float Monster::get_hp(){
+  return this->_hp;
+
 };
-    int Monster::get_difficulty() {
-        retrun this ->_difficulty;
+  int Monster::get_difficulty() {
+      retrun this ->_difficulty;
 };
-    void Monster::set_hp(float hp){
-    this->_hp += hp;
-}
+  void Monster::set_hp(float hp){
+  this->_hp += hp; */

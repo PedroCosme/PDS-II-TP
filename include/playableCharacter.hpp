@@ -26,19 +26,24 @@ public:
      *
      */
     // PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0, Equipment equipment =, std::set<Equipment> &equipments);
-    PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0);
+    PlayableCharacter(std::string name = "", int lvl = 1, int xp = 0);
 
+    /**
+     * @brief Retorna o nome do personagem
+     * @return string com o nome do personagem;
+     */
+    std::string get_name();
     /**
      * @brief Retorna o hp base do personagem
      * @return float com o hp base do personagem
      */
-    float get_hp();
+    // virtual float get_hp() const = 0;
 
-    /**
-     * @brief Retorna o mp base do personagem
-     * @return float com o mp base do personagem
-     */
-    float get_mp();
+    // /**
+    //  * @brief Retorna o mp base do personagem
+    //  * @return float com o mp base do personagem
+    //  */
+    // virtual float get_mp() const = 0;
 
     /**
      * @brief Retorna o level base do personagem
@@ -56,13 +61,13 @@ public:
      * @brief Atualiza o hp base do personagem
      * @param hp hp do personagem
      */
-    void set_hp(float hp);
+    // virtual void set_hp(float hp) const = 0;
 
-    /**
-     * @brief Atualiza o mp base do personagem
-     * @param mp mp do personagem
-     */
-    void set_mp(float mp);
+    // /**
+    //  * @brief Atualiza o mp base do personagem
+    //  * @param mp mp do personagem
+    //  */
+    // virtual void set_mp(float mp) const = 0;
 
     /**
      * @brief Atualiza o level do personagem
@@ -85,52 +90,50 @@ public:
      * @brief Retorna o equipamento atual do personagem
      * @return equipment com equipamento atual do personagem
      */
-    Equipment get_equipment();
+    // Equipment get_equipment();
 
-    /**
-     * @brief Altera o equipamento atual do personagem
-     * @param equip equipamento a ser equipado
-     */
-    void set_equipment(Equipment equipment);
+    // /**
+    //  * @brief Altera o equipamento atual do personagem
+    //  * @param equip equipamento a ser equipado
+    //  */
+    // void set_equipment(Equipment equipment);
 
-    /**
-     * @brief Informa ao jogador os equipamentos disponíveis em seu inventário
-     * @param equipments set com os equipamentos do usuário
-     */
-    void print_equipments(std::set<Equipment> &equipments);
+    // /**
+    //  * @brief Informa ao jogador os equipamentos disponíveis em seu inventário
+    //  * @param equipments set com os equipamentos do usuário
+    //  */
+    // void print_equipments(std::set<Equipment> &equipments);
 
-    /**
-     * @brief Informa ao jogador seu invetário de equipamentos e permite-o alterar seu equipamento atual
-     * @param equipments set com os equipamentos do usuário
-     */
-    void change_equipment(std::set<Equipment> &equipments);
+    // /**
+    //  * @brief Informa ao jogador seu invetário de equipamentos e permite-o alterar seu equipamento atual
+    //  * @param equipments set com os equipamentos do usuário
+    //  */
+    // void change_equipment(std::set<Equipment> &equipments);
 
-    /**
-     * @brief Adiciona um equipamento novo ao inventário do usuário
-     * @param equipments set com os equipamentos do usuário
-     */
-    void add_equipment(Equipment equipment);
+    // /**
+    //  * @brief Adiciona um equipamento novo ao inventário do usuário
+    //  * @param equipments set com os equipamentos do usuário
+    //  */
+    // void add_equipment(Equipment equipment);
 
-    /**
-     * @brief Realiza ação de ataque com o equipamento atualmente equipado
-     * @param equipment objeto do tipo equipamento atualmente equipado
-     */
-    void attack(Equipment equipment);
+    // /**
+    //  * @brief Realiza ação de ataque com o equipamento atualmente equipado
+    //  * @param equipment objeto do tipo equipamento atualmente equipado
+    //  */
+    // void attack(Equipment equipment);
 
-    /**
-     * @brief Realiza ação de beber poção de cura caso o usuário tenha alguma. Chama a função heal() de game events.
-     * @param equipments set com os equipamentos do usuário
-     */
-    void drink_potion(std::set<Equipment> &equipments);
+    // /**
+    //  * @brief Realiza ação de beber poção de cura caso o usuário tenha alguma. Chama a função heal() de game events.
+    //  * @param equipments set com os equipamentos do usuário
+    //  */
+    // void drink_potion(std::set<Equipment> &equipments);
 
 private:
     std::string _name;
-    float _hp;
-    float _mp;
     int _lvl;
     int _xp;
-    Equipment _equipment;
-    std::set<Equipment> _equipments;
+    // Equipment _equipment;
+    // std::set<Equipment> _equipments;
 };
 
 #endif
