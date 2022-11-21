@@ -8,19 +8,15 @@ class Weapon
 {
 
 public:
-    Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage);
+    Weapon(std::string name);
     Weapon(Weapon &Weapon);
     Weapon();
     ~Weapon();
 
-    std::string getName() const;
-    unsigned int damageRange() const;
-    unsigned int getDamage(int damage) const;
+    virtual std::string getName() const;
 
-private:
+protected:
     std::string _name;
-    unsigned int _minDamage;
-    unsigned int _maxDamage;
 };
 
 #endif

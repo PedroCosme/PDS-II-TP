@@ -1,8 +1,19 @@
 #include "great_sword.hpp"
 
-GreatSword::GreatSword(std::string name, std::string allowed_class, int damage, float drop_rate){
-  this->name=name;
-  this->allowed_class=allowed_class;
-  this->damage=damage;
-  this->drop_rate=drop_rate;
- }
+GreatSword::GreatSword(std::string name, unsigned int minDamage, unsigned int maxDamage, float dropRate)
+    : Weapon(name), _minDamage(minDamage), _maxDamage(maxDamage), _droprate(dropRate) {}
+
+std::string Weapon::getName() const
+{
+  return _name;
+}
+
+unsigned int GreatSword::damageRange()
+{
+  return _maxDamage - _minDamage;
+}
+
+unsigned int GreatSword::getDamage(int damage)
+{
+  return 0;
+}
