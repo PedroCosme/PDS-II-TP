@@ -5,6 +5,8 @@
 #include <string>
 #include <set>
 #include "equipment.hpp"
+#include "equipInventory.hpp"
+#include "weapon.hpp"
 
 /**
  * @brief Classe responsavel pelo personagem do jogador. A classe armazena
@@ -26,37 +28,26 @@ public:
      *
      */
     // PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0, Equipment equipment =, std::set<Equipment> &equipments);
-    PlayableCharacter(std::string name = "", int lvl = 1, int xp = 0);
+    PlayableCharacter(std::string &name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int gold);
+    PlayableCharacter(PlayableCharacter &playableCharacter);
+    ~PlayableCharacter();
 
     /**
      * @brief Retorna o nome do personagem
      * @return string com o nome do personagem;
      */
-    std::string get_name();
-    /**
-     * @brief Retorna o hp base do personagem
-     * @return float com o hp base do personagem
-     */
-    // virtual float get_hp() const = 0;
-
-    // /**
-    //  * @brief Retorna o mp base do personagem
-    //  * @return float com o mp base do personagem
-    //  */
-    // virtual float get_mp() const = 0;
-
+    std::string getName() const;
     /**
      * @brief Retorna o level base do personagem
      * @return int com o lvl atual do personagem
      */
-    int get_lvl();
+    unsigned int getLvl();
 
     /**
      * @brief Retorna o xp base do personagem
      * @return int com o xp atual do personagem
      */
-    int get_xp();
-
+    unsigned int getXp();
     /**
      * @brief Atualiza o hp base do personagem
      * @param hp hp do personagem
@@ -73,18 +64,30 @@ public:
      * @brief Atualiza o level do personagem
      * @param lvl lv atual do personagem
      */
-    void set_lvl(int lvl);
+    void setLvl(int lvl);
 
     /**
      * @brief Atualiza a xp do personagem
      * @param xp  int xp atual do personagem
      */
-    void set_xp(int xp);
+    void setXp(int xp);
 
     /**
      * @brief Informa se o personagem está vivo
      */
-    bool is_alive();
+    bool isAlive() const;
+
+    bool dealDamage(unsigned int damageAmount);
+
+    bool takeDamage(unsigned int damage) noexcept;
+
+    float hPPercentage() const;
+
+    void heal(unsigned int healAmount);
+
+    std::string currentHealth() const;
+
+    virtual std::string toString() const;
 
     /**
      * @brief Retorna o equipamento atual do personagem
@@ -128,12 +131,18 @@ public:
     //  */
     // void drink_potion(std::set<Equipment> &equipments);
 
-private:
+protected:
+    Weapon _weapon;
+    unsigned int _lvl;
+    unsigned int _xp;
+    EquipInventory _equipInventory;
     std::string _name;
-    int _lvl;
-    int _xp;
+    unsigned int _gold;
+    unsigned int _currentHp;
+    unsigned int _xp;
+    unsigned int _maxHp;
     // Equipment _equipment;
     // std::set<Equipment> _equipments;
 };
 
-#endif
+#endif;

@@ -4,76 +4,46 @@
 #include <playableCharacter.hpp>
 #include <equipment.hpp>
 
-// PlayableCharacter::PlayableCharacter(std::string name,
-// float hp, float mp, int lvl, int xp, Equipment equipment,
-// std::set<Equipment> &equipments)
-// {
-//  this->_name = name;
-//  this->_hp = hp;
-//  this->_mp = mp;
-//  this->_lvl = lvl;
-//  this->_xp = xp;
-//  this->_equipment = equipment;
-//  this->_equipments = equipments;
-// };
+PlayableCharacter::PlayableCharacter(std::string &name,
+                                     unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int gold)
+    : _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _gold(gold) {}
 
-// PlayableCharacter::PlayableCharacter(std::string name,
-//                                      int lvl, int xp)
-// {
-//     this->_name = name;
-//     this->_lvl = lvl;
-//     this->_xp = xp;
-// };
+PlayableCharacter::PlayableCharacter(PlayableCharacter &playableCharacter)
+    : _name(playableCharacter._name), _currentHp(_maxHp) {}
 
-PlayableCharacter::PlayableCharacter(std::string name,
-                                     int lvl, int xp) : _name(name), _lvl(lvl), _xp(xp) {}
+PlayableCharacter::~PlayableCharacter()
+{
+}
 
-std::string PlayableCharacter::get_name()
+std::string PlayableCharacter::getName() const
 {
     return this->_name;
 }
 
-int PlayableCharacter::get_lvl()
+unsigned int PlayableCharacter::getLvl()
 {
     return this->_lvl;
 };
-int PlayableCharacter::get_xp()
+unsigned int PlayableCharacter::getXp()
 {
     return this->_xp;
 };
-// void PlayableCharacter::set_hp(float hp)
-// {
-//     this->_hp += hp;
-// };
-// void PlayableCharacter::set_mp(float mp)
-// {
-//     this->_mp += mp;
-// };
-void PlayableCharacter::set_lvl(int lvl)
+
+void PlayableCharacter::setLvl(int lvl)
 {
     if (this->_xp == 500)
     {
         this->_lvl += 1;
     };
 };
-void PlayableCharacter::set_xp(int xp)
+void PlayableCharacter::setXp(int xp)
 {
     this->_xp += xp;
 };
-// bool PlayableCharacter::is_alive()
-// {
-//     if (this->get_hp() <= 0)
-//     {
-//         return false;
-//     }
-//     else
-//     {
-//         return true;
-//     }
 
-// Equipment PlayableCharacter::get_equipment()
+// Weapon PlayableCharacter::getWeapon()
 // {
-//     return this->_equipment;
+//     return this->_weapon;
 // };
 
 // void PlayableCharacter::set_equipment(Equipment equipment)
@@ -102,3 +72,48 @@ void PlayableCharacter::set_xp(int xp)
 // {
 //     this->_equipments.insert(equipment);
 // }
+
+bool PlayableCharacter::isAlive() const
+{
+    return _currentHp > 0;
+}
+
+bool PlayableCharacter::dealDamage(unsigned int damageAmount)
+{
+    if (_currentHp > damageAmount)
+    {
+        _currentHp -= damageAmount;
+        return true;
+    }
+    _currentHp = 0;
+    return false;
+}
+bool PlayableCharacter::takeDamage(unsigned int damage)
+{
+    if (damage >= _currentHp)
+    {
+        _currentHp = 0;
+        return false;
+    }
+    _currentHp -= damage;
+    return true;
+}
+
+void PlayableCharacter::heal(unsigned int healAmount)
+{
+    _currentHp += healAmount;
+    if (_currentHp > _maxHp)
+    {
+        _currentHp = _maxHp;
+    }
+}
+
+float PlayableCharacter::hPPercentage() const
+{
+    return (float)_currentHp / (float)_maxHp;
+}
+
+std::string PlayableCharacter::currentHealth() const
+{
+    return std::to_string(_currentHp) + " / " + std::to_string(_maxHp);
+}

@@ -21,7 +21,7 @@ public:
 
         std::string currentHealth() const;
 
-        bool takeDamage(unsigned int damage) noexcept;
+        bool takeDamage(unsigned int damage);
 
         virtual std::string ToString() const;
 

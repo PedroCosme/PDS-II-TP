@@ -60,7 +60,7 @@ std::string Monster::ToString() const
   return mName + " - Health: " + currentHealth() + " TUF:" + std::to_string(mToughnessSkill);
 }
 
-bool Monster::takeDamage(unsigned int damage) noexcept
+bool Monster::takeDamage(unsigned int damage)
 {
   if (damage >= mCurrentHp)
   {
