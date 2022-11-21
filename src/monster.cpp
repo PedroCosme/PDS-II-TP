@@ -1,15 +1,14 @@
 #include "monster.hpp"
 #include <cmath>
 
-Monster::Monster(std::string &name, unsigned int toughness, unsigned int currentHp)
+Monster::Monster(std::string &name, unsigned int currentHp)
     : _name(name),
-      _toughnessSkill(toughness), _currentHp(currentHp)
+      _currentHp(currentHp)
 {
 }
 
 Monster::Monster(Monster &monster)
-    : _name(monster._name),
-      _toughnessSkill(monster._toughnessSkill) {}
+    : _name(monster._name) {}
 
 Monster::~Monster(){};
 
@@ -41,7 +40,7 @@ std::string Monster::currentHealth() const
 
 std::string Monster::ToString() const
 {
-  return _name + " - Health: " + currentHealth() + " TUF:" + std::to_string(_toughnessSkill);
+  return _name + " - Health: " + currentHealth();
 }
 
 bool Monster::takeDamage(unsigned int damage)
@@ -52,6 +51,5 @@ bool Monster::takeDamage(unsigned int damage)
     return false;
   }
   _currentHp -= damage;
-  _toughnessSkill++;
   return true;
 }

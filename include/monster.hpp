@@ -7,7 +7,7 @@ class Monster
 {
 
 public:
-        Monster(std::string &name, unsigned int toughness, unsigned int currentHp);
+        Monster(std::string &name, unsigned int currentHp);
         Monster(Monster &monster);
         ~Monster();
 
@@ -26,7 +26,6 @@ public:
 protected:
         std::string _name;
         unsigned int _currentHp;
-        unsigned int _toughnessSkill;
 };
 
 #endif
