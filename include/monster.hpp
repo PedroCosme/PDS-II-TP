@@ -1,35 +1,37 @@
-#ifndef MONSTER_H
-#define MONSTER_H
+#ifndef _MONSTER_HPP_
+#define _MONSTER_HPP_
 
-#include <iostream>
-#include "game_events.hpp"
-/**
- * @brief Classe responsavel pelo personagem monster. A classe armazena
- * todos as informações relevantes sobre o Monster.
- *
- */
+#include <string>
 
-class Monster : public Game_events
+class Monster
 {
+
 public:
-        /**
-         * @brief Construtor padrao que inicializa todas as variaveis da classe.         *
-         */
-        Monster();
-        /**
+        Monster(std::string &name, unsigned int baseHp);
+        Monster(Monster &monster);
+        ~Monster();
 
+        std::string getName() const;
 
-        * @brief Informa ao jogador seu invetÃ¡rio de equipamentos e permite-o soltar seu equipamento atual
-        */
-        // virtual void drop_itens() const = 0;
-        /**
-         * @brief  Define dano do ataque do monster
-         */
-        // virtual void attack() const = 0;
+        bool isAlive() const;
 
-        /**
-         * @brief Retorna a quantidade de dano tomado pelo monster
-         * @return float com o atual hp do personagem
-         */
+        bool damage(unsigned int damageAmount);
+
+        float hpPPercentage() const;
+
+        std::string currentHealth() const;
+
+        bool takeDamage(unsigned int damage) noexcept;
+
+        virtual std::string ToString() const;
+
+protected:
+        std::string mName;
+        unsigned int mCurrentHp;
+
+        unsigned int getMaximumHp() const;
+
+        unsigned int mToughnessSkill;
 };
+
 #endif

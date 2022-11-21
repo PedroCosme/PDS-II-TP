@@ -14,32 +14,15 @@ int main()
     std::cin >> playerName;
     std::cout << "Bem-vindo(a) ao nosso simulador de Batalha RPG, " << playerName << "!" << std::endl;
     int choosen_class;
-    Mage mage;
-    Warrior warrior;
+    std::cout << "Agora, escolha uma classe para o seu personagem. Digite 1 para jogar como mago e 2 como guerreiro" << std::endl;
+    std::cin >> choosen_class;
+    if (choosen_class == 1)
     {
-        try
-        {
-            std::cout << "Agora, escolha uma classe para o seu personagem. Digite 1 para jogar como mago e 2 como guerreiro" << std::endl;
-            std::cin >> choosen_class;
-            if (choosen_class == 1)
-            {
-                Mage *mage = new Mage(playerName);
-            }
-            else if (choosen_class == 2)
-            {
-                Warrior *warrior = new Warrior(playerName);
-            }
-
-            if (choosen_class != 1 || choosen_class != 2)
-            {
-                throw error;
-            }
-        }
-        catch (...)
-        {
-            std::cout << error << std::endl;
-        }
+        Mage player(playerName);
     }
-
+    else if (choosen_class == 2)
+    {
+        Warrior player(playerName);
+    }
     return 0;
 }

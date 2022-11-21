@@ -1,20 +1,73 @@
-#include <iostream>
-#include <string>
-#include <set>
 #include "monster.hpp"
-#include "game_events.hpp"
+#include <cmath>
 
-Monster::Monster() {}
+Monster::Monster(std::string &name, unsigned int toughness)
+    : mName(name),
+      mToughnessSkill(toughness)
+{
+  mCurrentHp = getMaximumHp();
+}
 
-/*  this -> _hp = hp;
-  this -> _difficulty = difficulty;
-};
-  float Monster::get_hp(){
-  return this->_hp;
+Monster::Monster(Monster &monster)
+    : mName(monster.mName),
+      mToughnessSkill(monster.mToughnessSkill)
+{
+  mCurrentHp = getMaximumHp();
+}
 
-};
-  int Monster::get_difficulty() {
-      retrun this ->_difficulty;
-};
-  void Monster::set_hp(float hp){
-  this->_hp += hp; */
+Monster::~Monster()
+{
+}
+
+unsigned int Monster::getMaximumHp() const
+{
+  return mToughnessSkill / 10U;
+}
+
+std::string Monster::getName() const
+{
+  return mName;
+}
+
+bool Monster::isAlive() const
+{
+  return mCurrentHp > 0;
+}
+
+bool Monster::damage(unsigned int damageAmount)
+{
+  if (mCurrentHp > damageAmount)
+  {
+    mCurrentHp -= damageAmount;
+    return true;
+  }
+  mCurrentHp = 0;
+  return false;
+}
+
+float Monster::hpPPercentage() const
+{
+  return (float)mCurrentHp / (float)getMaximumHp();
+}
+
+std::string Monster::currentHealth() const
+{
+  return std::to_string(mCurrentHp) + " / " + std::to_string(getMaximumHp());
+}
+
+std::string Monster::ToString() const
+{
+  return mName + " - Health: " + currentHealth() + " TUF:" + std::to_string(mToughnessSkill);
+}
+
+bool Monster::takeDamage(unsigned int damage) noexcept
+{
+  if (damage >= mCurrentHp)
+  {
+    mCurrentHp = 0;
+    return false;
+  }
+  mCurrentHp -= damage;
+  mToughnessSkill++;
+  return true;
+}
