@@ -1,8 +1,8 @@
 #include <playableCharacter.hpp>
 
-PlayableCharacter::PlayableCharacter(std::string &name, std::string playerClass,
-                                     unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int gold)
-    : _name(name), _playerClass(playerClass), _lvl(lvl), _xp(xp), _maxHp(maxHp), _gold(gold){};
+PlayableCharacter::PlayableCharacter(std::string name, std::string playerClass,
+                                     unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int maxMp, unsigned int gold)
+    : _name(name), _playerClass(playerClass), _lvl(lvl), _xp(xp), _maxHp(maxHp), _maxMp(maxMp), _gold(gold){};
 
 PlayableCharacter::PlayableCharacter(PlayableCharacter &playableCharacter)
     : _name(playableCharacter._name), _currentHp(_maxHp){};
@@ -119,11 +119,12 @@ std::string PlayableCharacter::currentHealth() const
 {
     return std::to_string(_currentHp) + " / " + std::to_string(_maxHp);
 }
-void PlayableCharacter::hpMultiplier(){
+void PlayableCharacter::hpMultiplier()
+{
     std::string className = this->getClass();
     std::string low = toLower(className);
-    if(low == "warrior"){
-        _maxHp *= 2;
+    if (low == "warrior")
+    {
+        this->_maxHp *= 2;
     }
-
 }

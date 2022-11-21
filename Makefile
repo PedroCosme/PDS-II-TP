@@ -15,6 +15,12 @@ warrior:
 playableCharacter:
 	$(CC) $(CFLAGS) -c src/playableCharacter.cpp -o build/playableCharacter.o
 
+weapon:
+	$(CC) $(CFLAGS) -c src/weapon.cpp -o build/weapon.o
+
+great_sword:
+	$(CC) $(CFLAGS) -c src/great_sword.cpp -o build/great_sword.o
+
 main: mage warrior playableCharacter
 	$(CC) $(CFLAGS) build/mage.o build/playableCharacter.o build/warrior.o src/main.cpp -o $(TARGET)
 

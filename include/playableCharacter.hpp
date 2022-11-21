@@ -28,7 +28,8 @@ public:
      *
      */
     // PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0, Equipment equipment =, std::set<Equipment> &equipments);
-    PlayableCharacter(std::string &name, std::string playerClass, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int gold);
+    PlayableCharacter(std::string name = "", std::string playerClass = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100,
+                      unsigned int maxMp = 50, unsigned int gold = 10);
     PlayableCharacter(PlayableCharacter &playableCharacter);
     ~PlayableCharacter();
 
@@ -93,9 +94,8 @@ public:
     virtual std::string toString() const;
 
     void hpMultiplier();
-    
-    float getHp();
 
+    float getHp();
 
     /**
      * @brief Retorna o equipamento atual do personagem
@@ -146,6 +146,7 @@ protected:
     unsigned int _gold;
     unsigned int _currentHp;
     unsigned int _maxHp;
+    unsigned int _maxMp;
     float _hp;
     float _mp;
 };
