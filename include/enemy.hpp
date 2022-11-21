@@ -12,7 +12,7 @@ public:
     Enemy(std::string &name, int gold, uint hitPoints);
     ~Enemy();
 
-    unsigned int GoldWorth() const;
+    unsigned int goldWorth() const;
 };
 
 #endif

@@ -7,7 +7,7 @@ Enemy::~Enemy()
 {
 }
 
-unsigned int Enemy::GoldWorth() const
+unsigned int Enemy::goldWorth() const
 {
     return mGold;
 }
