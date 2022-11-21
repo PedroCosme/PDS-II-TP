@@ -11,7 +11,7 @@ Monster::Monster(Monster &monster)
     : _name(monster._name),
       _toughnessSkill(monster._toughnessSkill) {}
 
-Monster::~Monster();
+Monster::~Monster(){};
 
 std::string Monster::getName() const
 {
@@ -36,6 +36,7 @@ bool Monster::damage(unsigned int damageAmount)
 std::string Monster::currentHealth() const
 {
   // return std::to_string(_currentHp) + " / " + std::to_string(getMaximumHp());
+  return 0;
 }
 
 std::string Monster::ToString() const
