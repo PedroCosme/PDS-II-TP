@@ -1,23 +1,22 @@
-#include <iostream>
-#include <string>
-#include <set>
 #include <playableCharacter.hpp>
-#include <equipment.hpp>
 
-PlayableCharacter::PlayableCharacter(std::string &name,
+PlayableCharacter::PlayableCharacter(std::string &name, std::string playerClass,
                                      unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int gold)
-    : _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _gold(gold) {}
+    : _name(name), _playerClass(playerClass), _lvl(lvl), _xp(xp), _maxHp(maxHp), _gold(gold){};
 
 PlayableCharacter::PlayableCharacter(PlayableCharacter &playableCharacter)
-    : _name(playableCharacter._name), _currentHp(_maxHp) {}
+    : _name(playableCharacter._name), _currentHp(_maxHp){};
 
-PlayableCharacter::~PlayableCharacter()
-{
-}
+PlayableCharacter::~PlayableCharacter(){};
 
 std::string PlayableCharacter::getName() const
 {
     return this->_name;
+}
+
+std::string PlayableCharacter::getClass()
+{
+    return this->_playerClass;
 }
 
 unsigned int PlayableCharacter::getLvl()

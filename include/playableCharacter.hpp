@@ -5,7 +5,6 @@
 #include <string>
 #include <set>
 #include "equipment.hpp"
-#include "equipInventory.hpp"
 #include "weapon.hpp"
 
 /**
@@ -28,7 +27,7 @@ public:
      *
      */
     // PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0, Equipment equipment =, std::set<Equipment> &equipments);
-    PlayableCharacter(std::string &name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int gold);
+    PlayableCharacter(std::string &name, std::string playerClass, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int gold);
     PlayableCharacter(PlayableCharacter &playableCharacter);
     ~PlayableCharacter();
 
@@ -41,6 +40,9 @@ public:
      * @brief Retorna o level base do personagem
      * @return int com o lvl atual do personagem
      */
+
+    std::string getClass();
+
     unsigned int getLvl();
 
     /**
@@ -132,10 +134,10 @@ public:
     // void drink_potion(std::set<Equipment> &equipments);
 
 protected:
+    std::string _playerClass;
     Weapon _weapon;
     unsigned int _lvl;
     unsigned int _xp;
-    EquipInventory _equipInventory;
     std::string _name;
     unsigned int _gold;
     unsigned int _currentHp;

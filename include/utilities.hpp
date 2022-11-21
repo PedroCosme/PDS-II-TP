@@ -1,5 +1,5 @@
-#ifndef _ULTILITIES_HPP_
-#define _ULTILITIES_HPP_
+#ifndef _UTILITIES_HPP_
+#define _UTILITIES_HPP_
 
 #include <string>
 
