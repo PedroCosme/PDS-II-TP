@@ -21,8 +21,8 @@ weapon:
 great_sword:
 	$(CC) $(CFLAGS) -c src/great_sword.cpp -o build/great_sword.o
 
-main: mage warrior playableCharacter
-	$(CC) $(CFLAGS) build/mage.o build/playableCharacter.o build/warrior.o src/main.cpp -o $(TARGET)
+main: mage warrior weapon great_sword playableCharacter
+	$(CC) $(CFLAGS) build/mage.o build/playableCharacter.o build/warrior.o build/weapon.o build/great_sword.o src/main.cpp -o $(TARGET)
 
 clean:
 	$(RM) -r $(BUILDDIR)/* $(TARGET)
