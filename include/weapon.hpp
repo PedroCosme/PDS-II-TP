@@ -3,19 +3,33 @@
 
 #include <string>
 #include <map>
+#include <iostream>
+#include <iterator>
 
+enum class WEAPONS
+{
+    UNARMED,
+    GREATSWORD,
+    LONGSWORD,
+    DAGGER,
+    BATTLEAXE
+};
 class Weapon
 {
 
 public:
-    Weapon(std::string name = "");
-    // Weapon(Weapon &Weapon);
-    ~Weapon();
+    Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage);
 
-    std::string getWeaponName();
+    std::string getName();
+    unsigned int damageRange();
+    unsigned int getDamage(int damage);
 
-protected:
+private:
     std::string _name;
+    unsigned int _minimumDamage;
+    unsigned int _maximumDamage;
 };
+
+extern std::map<WEAPONS, Weapon> AvailableWeapons;
 
 #endif
