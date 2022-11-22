@@ -7,8 +7,8 @@ class Monster
 {
 
 public:
-        Monster(std::string &name, unsigned int currentHp);
-        Monster(Monster &monster);
+        Monster(std::string name, unsigned int currentHp);
+        //Monster(Monster &monster);
         ~Monster();
 
         std::string getName() const;
@@ -17,9 +17,11 @@ public:
 
         bool damage(unsigned int damageAmount);
 
-        std::string currentHealth() const;
+        unsigned int currentHealth() const;
 
         bool takeDamage(unsigned int damage);
+
+        bool monsterDamage(unsigned int damageAmount);
 
         virtual std::string ToString() const;
 

@@ -1,15 +1,15 @@
 #include "monster.hpp"
 #include <cmath>
 
-Monster::Monster(std::string &name, unsigned int currentHp)
+Monster::Monster(std::string name, unsigned int currentHp)
     : _name(name),
       _currentHp(currentHp)
 {
 }
 
-Monster::Monster(Monster &monster)
+/*Monster::Monster(Monster &monster)
     : _name(monster._name) {}
-
+*/
 Monster::~Monster(){};
 
 std::string Monster::getName() const
@@ -32,10 +32,10 @@ bool Monster::damage(unsigned int damageAmount)
   _currentHp = 0;
   return false;
 }
-std::string Monster::currentHealth() const
+unsigned int Monster::currentHealth() const
 {
   // return std::to_string(_currentHp) + " / " + std::to_string(getMaximumHp());
-  return 0;
+  return _currentHp;
 }
 
 std::string Monster::ToString() const
