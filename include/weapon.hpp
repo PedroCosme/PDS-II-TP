@@ -8,12 +8,11 @@ class Weapon
 {
 
 public:
-    Weapon(std::string name);
-    Weapon(Weapon &Weapon);
-    Weapon();
+    Weapon(std::string name = "");
+    // Weapon(Weapon &Weapon);
     ~Weapon();
 
-    virtual std::string getName() const;
+    std::string getWeaponName();
 
 protected:
     std::string _name;

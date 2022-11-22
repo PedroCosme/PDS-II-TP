@@ -3,10 +3,10 @@
 GreatSword::GreatSword(std::string name, unsigned int minDamage, unsigned int maxDamage, float dropRate)
     : Weapon(name), _minDamage(minDamage), _maxDamage(maxDamage), _droprate(dropRate) {}
 
-std::string Weapon::getName() const
-{
-  return _name;
-}
+// std::string Weapon::getWeaponName()
+// {
+//   return _name;
+// }
 
 unsigned int GreatSword::damageRange()
 {
@@ -15,5 +15,5 @@ unsigned int GreatSword::damageRange()
 
 unsigned int GreatSword::getDamage(int damage)
 {
-  return 0;
+  return 100;
 }

@@ -1,22 +1,31 @@
 #include <playableCharacter.hpp>
 
-PlayableCharacter::PlayableCharacter(std::string name, std::string playerClass,
-                                     unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int maxMp, unsigned int gold)
-    : _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _maxMp(maxMp), _gold(gold){};
+PlayableCharacter::PlayableCharacter(Weapon weapon, std::list<Weapon> inventory, std::string name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int currentHp,
+                                     unsigned int maxMp, unsigned int gold)
+    : _weapon(weapon), _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _currentHp(currentHp), _maxMp(maxMp), _gold(gold)
+{
 
-PlayableCharacter::PlayableCharacter(PlayableCharacter &playableCharacter)
-    : _name(playableCharacter._name), _currentHp(_maxHp){};
+    _inventory = inventory;
+};
+
+// PlayableCharacter::PlayableCharacter(PlayableCharacter &playableCharacter)
+//     : _name(playableCharacter._name), _currentHp(_maxHp){};
 
 PlayableCharacter::~PlayableCharacter(){};
 
-std::string PlayableCharacter::getName() const
+std::string PlayableCharacter::getName()
 {
     return this->_name;
 }
 
-float PlayableCharacter::getHp()
+void PlayableCharacter::addItem(Weapon weapon)
 {
-    return this->_hp;
+    this->_inventory.push_back(weapon);
+}
+
+unsigned int PlayableCharacter::getCurrentHp()
+{
+    return this->_currentHp;
 }
 unsigned int PlayableCharacter::getLvl()
 {
@@ -49,14 +58,14 @@ void PlayableCharacter::setXp(int xp)
 //     this->_equipment = equipment;
 // }
 
-// void PlayableCharacter::print_equipments(std::set<Equipment> &equipments)
-// {
-//     for (auto &i : this->_equipments)
-//     {
-//         std::cout << &i << ' ';
-//     }
-//     std::cout << std::endl;
-// };
+void PlayableCharacter::showWeapons()
+{
+    for (auto &i : _inventory)
+    {
+        std::cout << i.getWeaponName() << ' ';
+    }
+    std::cout << std::endl;
+};
 
 // void PlayableCharacter::change_equipment(std::set<Equipment> &equipments)
 // {
@@ -71,7 +80,7 @@ void PlayableCharacter::setXp(int xp)
 //     this->_equipments.insert(equipment);
 // }
 
-bool PlayableCharacter::isAlive() const
+bool PlayableCharacter::isAlive()
 {
     return _currentHp > 0;
 }
@@ -106,21 +115,12 @@ void PlayableCharacter::heal(unsigned int healAmount)
     }
 }
 
-float PlayableCharacter::hPPercentage() const
+float PlayableCharacter::hPPercentage()
 {
     return (float)_currentHp / (float)_maxHp;
 }
 
-std::string PlayableCharacter::currentHealth() const
+std::string PlayableCharacter::currentHealth()
 {
     return std::to_string(_currentHp) + " / " + std::to_string(_maxHp);
-}
-void PlayableCharacter::hpMultiplier()
-{
-    std::string className = this->getClass();
-    std::string low = toLower(className);
-    if (low == "warrior")
-    {
-        this->_maxHp *= 2;
-    }
 }

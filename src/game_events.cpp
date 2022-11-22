@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 #include "game_events.hpp"
-#include "mage.hpp"
-#include "warrior.hpp"
 
 // void Game_events::heal(){
 

@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include <string>
-#include <set>
+#include <list>
 #include "equipment.hpp"
 #include "weapon.hpp"
 #include "utilities.hpp"
+#include "great_sword.hpp"
 
 /**
  * @brief Classe responsavel pelo personagem do jogador. A classe armazena
@@ -28,22 +29,22 @@ public:
      *
      */
     // PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0, Equipment equipment =, std::set<Equipment> &equipments);
-    PlayableCharacter(std::string name = "", std::string playerClass = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100,
+    PlayableCharacter(Weapon weapon, std::list<Weapon> inventory, std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, unsigned int currentHp = 100,
                       unsigned int maxMp = 50, unsigned int gold = 10);
-    PlayableCharacter(PlayableCharacter &playableCharacter);
+    // PlayableCharacter(PlayableCharacter &playableCharacter);
     ~PlayableCharacter();
 
-    /**
-     * @brief Retorna o nome do personagem
-     * @return string com o nome do personagem;
-     */
-    std::string getName() const;
+    std::string getName();
     /**
      * @brief Retorna o level base do personagem
      * @return int com o lvl atual do personagem
      */
 
     unsigned int getLvl();
+
+    unsigned int getCurrentHp();
+
+    void addItem(Weapon weapon);
 
     /**
      * @brief Retorna o xp base do personagem
@@ -77,23 +78,25 @@ public:
     /**
      * @brief Informa se o personagem está vivo
      */
-    bool isAlive() const;
+    bool isAlive();
 
     bool dealDamage(unsigned int damageAmount);
 
-    bool takeDamage(unsigned int damage) noexcept;
+    bool takeDamage(unsigned int damage);
 
-    float hPPercentage() const;
+    float hPPercentage();
 
     void heal(unsigned int healAmount);
 
-    std::string currentHealth() const;
+    std::string currentHealth();
 
-    virtual std::string toString() const;
+    std::string toString();
 
     void hpMultiplier();
 
     float getHp();
+
+    void showWeapons();
 
     /**
      * @brief Retorna o equipamento atual do personagem
@@ -146,5 +149,6 @@ private:
     unsigned int _maxMp;
     float _hp;
     float _mp;
+    std::list<Weapon> _inventory;
 };
 #endif

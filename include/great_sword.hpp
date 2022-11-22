@@ -11,12 +11,11 @@ public:
     /**
      * @brief Construtor padrão da classe
      */
-    GreatSword(std::string name, unsigned int minDamage, unsigned int maxDamage, float dropRate);
-    GreatSword();
-
+    GreatSword(std::string name = "Great Sword", unsigned int minDamage = 4, unsigned int maxDamage = 16, float dropRate = 0.2);
+    // ~GreatSword();
     unsigned int damageRange();
     unsigned int getDamage(int damage);
-    std::string getName() const override;
+    // std::string getWeaponName();
 
 private:
     unsigned int _minDamage;
@@ -24,4 +23,3 @@ private:
     float _droprate;
 };
 #endif
-
