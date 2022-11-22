@@ -12,14 +12,14 @@ playableCharacter:
 monster:
 	$(CC) $(CFLAGS) -c src/monster.cpp -o build/monster.o
 
+equipment:
+	$(CC) $(CFLAGS) -c src/equipment.cpp -o build/equipment.o
+
 weapon:
 	$(CC) $(CFLAGS) -c src/weapon.cpp -o build/weapon.o
 
-great_sword:
-	$(CC) $(CFLAGS) -c src/great_sword.cpp -o build/great_sword.o
-
-main: weapon great_sword playableCharacter monster
-	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/great_sword.o src/main.cpp -o $(TARGET)
+main: weapon  playableCharacter monster equipment
+	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/equipment.o  src/main.cpp -o $(TARGET)
 
 clean:
 	$(RM) -r $(BUILDDIR)/* $(TARGET)

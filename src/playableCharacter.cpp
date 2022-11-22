@@ -1,26 +1,14 @@
 #include <playableCharacter.hpp>
 
-PlayableCharacter::PlayableCharacter(std::list<Weapon> inventory, std::string name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int currentHp,
+PlayableCharacter::PlayableCharacter(std::string name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int currentHp,
                                      unsigned int maxMp, unsigned int gold)
-    : _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _currentHp(currentHp), _maxMp(maxMp), _gold(gold), _weapon(AvailableWeapons.at(WEAPONS::UNARMED))
-{
-
-    _inventory = inventory;
-};
-
-// PlayableCharacter::PlayableCharacter(PlayableCharacter &playableCharacter)
-//     : _name(playableCharacter._name), _currentHp(_maxHp){};
-
+    : _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _currentHp(currentHp),
+      _maxMp(maxMp), _gold(gold), _weapon(AvailableWeapons.at(WEAPONS::UNARMED)){};
 PlayableCharacter::~PlayableCharacter(){};
 
 std::string PlayableCharacter::getName()
 {
     return this->_name;
-}
-
-void PlayableCharacter::addItem(Weapon weapon)
-{
-    this->_inventory.push_back(weapon);
 }
 
 unsigned int PlayableCharacter::getCurrentHp()
@@ -47,38 +35,6 @@ void PlayableCharacter::setXp(int xp)
 {
     this->_xp += xp;
 };
-
-// Weapon PlayableCharacter::getWeapon()
-// {
-//     return this->_weapon;
-// };
-
-// void PlayableCharacter::set_equipment(Equipment equipment)
-// {
-//     this->_equipment = equipment;
-// }
-
-// void PlayableCharacter::showWeapons()
-// {
-//     for (auto &i : _inventory)
-//     {
-//         std::cout << i.getWeaponName() << ' ';
-//     }
-//     std::cout << std::endl;
-// };
-
-// void PlayableCharacter::change_equipment(std::set<Equipment> &equipments)
-// {
-//     Equipment choosen_equip;
-//     this->print_equipments(equipments);
-//     std::cout << "Escolha o equipamento";
-//     this->set_equipment(choosen_equip);
-// };
-
-// void PlayableCharacter::add_equipment(Equipment equipment)
-// {
-//     this->_equipments.insert(equipment);
-// }
 
 bool PlayableCharacter::isAlive()
 {
@@ -119,6 +75,39 @@ std::string PlayableCharacter::currentHealth()
     return std::to_string(_currentHp) + " / " + std::to_string(_maxHp);
 }
 
-// Weapon PlayableCharacter::returnWeapon(){
-//     return this -> _weapon;
+Weapon PlayableCharacter::returnWeapon()
+{
+    return this->_weapon;
+}
+
+// Weapon PlayableCharacter::getWeapon()
+// {
+//     return this->_weapon;
+// };
+
+// void PlayableCharacter::set_equipment(Equipment equipment)
+// {
+//     this->_equipment = equipment;
+// }
+
+// void PlayableCharacter::showWeapons()
+// {
+//     for (auto &i : _inventory)
+//     {
+//         std::cout << i.getWeaponName() << ' ';
+//     }
+//     std::cout << std::endl;
+// };
+
+// void PlayableCharacter::change_equipment(std::set<Equipment> &equipments)
+// {
+//     Equipment choosen_equip;
+//     this->print_equipments(equipments);
+//     std::cout << "Escolha o equipamento";
+//     this->set_equipment(choosen_equip);
+// };
+
+// void PlayableCharacter::add_equipment(Equipment equipment)
+// {
+//     this->_equipments.insert(equipment);
 // }

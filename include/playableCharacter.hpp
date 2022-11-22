@@ -7,7 +7,6 @@
 #include "equipment.hpp"
 #include "weapon.hpp"
 #include "utilities.hpp"
-#include "great_sword.hpp"
 
 /**
  * @brief Classe responsavel pelo personagem do jogador. A classe armazena
@@ -29,7 +28,7 @@ public:
      *
      */
     // PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0, Equipment equipment =, std::set<Equipment> &equipments);
-    PlayableCharacter(std::list<Weapon> inventory, std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, unsigned int currentHp = 100,
+    PlayableCharacter(std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, unsigned int currentHp = 100,
                       unsigned int maxMp = 50, unsigned int gold = 10);
     // PlayableCharacter(PlayableCharacter &playableCharacter);
     ~PlayableCharacter();
@@ -44,7 +43,9 @@ public:
 
     unsigned int getCurrentHp();
 
-    void addItem(Weapon weapon);
+    // void addItem(Weapon weapon);
+
+    const Equipment &getEquipment(void);
 
     /**
      * @brief Retorna o xp base do personagem
@@ -142,6 +143,7 @@ public:
     //  */
 private:
     Weapon _weapon;
+    Equipment _equipment;
     unsigned int _lvl;
     unsigned int _xp;
     std::string _name;
@@ -151,6 +153,5 @@ private:
     unsigned int _maxMp;
     float _hp;
     float _mp;
-    std::list<Weapon> _inventory;
 };
 #endif

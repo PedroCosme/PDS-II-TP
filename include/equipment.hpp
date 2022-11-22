@@ -1,30 +1,36 @@
 #ifndef EQUIPMENT_H
 #define EQUIPMENT_H
 
-#include <iostream>
+#include <map>
 #include <string>
-#include <set>
-
+#include "weapon.hpp"
 /**
  * @brief Classe responsavel pelos equipamentos disponíveis no jogo.
  */
-class Equipment{
-    public:
-      /**
+class Equipment
+{
+public:
+  /**
    * @brief Construtor padrao que inicializa todas as variaveis da classe.
    * @param name nome do equipamento
    * @param allowed_class classe que pode usar o equipamento
    * @param damage dano base do equipamento
    * @param drop_rate chance do equipamento aparecer para o usuário
    */
-      Equipment(std::string name = "", std::string allowed_class= "", int damage = 0, float drop_rate =0.0);
+  Equipment(void);
+  ~Equipment(void);
 
-    private:
-    std::string _name;
-    std::string _allowed_class;
-    int _damage;
-    float _drop_rate;
+  bool addItem(WEAPONS itemId, unsigned int quantity = 1);
+
+  bool removeItem(WEAPONS itemId, unsigned int quantity = 1);
+
+  void clear(void);
+
+  const std::map<WEAPONS, unsigned int> &getItems(void);
+
+private:
+  std::map<WEAPONS, unsigned int> _items;
+  unsigned int _capacity;
 };
-
 
 #endif

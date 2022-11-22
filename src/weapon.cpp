@@ -6,7 +6,7 @@ Weapon::Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage)
 {
 }
 // Weapon::Weapon(Weapon &weapon) : _name(weapon._name){};
-Weapon::~Weapon(){};
+// Weapon::~Weapon(){};
 
 std::string Weapon::getName()
 {
