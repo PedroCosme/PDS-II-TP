@@ -101,6 +101,8 @@ public:
 
     Weapon returnWeapon();
 
+    void changeWeapon(Weapon weapon);
+
     /**
      * @brief Retorna o equipamento atual do personagem
      * @return equipment com equipamento atual do personagem

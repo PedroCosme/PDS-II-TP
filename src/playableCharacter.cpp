@@ -3,7 +3,7 @@
 PlayableCharacter::PlayableCharacter(std::string name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int currentHp,
                                      unsigned int maxMp, unsigned int gold)
     : _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _currentHp(currentHp),
-      _maxMp(maxMp), _gold(gold), _weapon(AvailableWeapons.at(WEAPONS::UNARMED)){};
+      _maxMp(maxMp), _gold(gold), _weapon(availableWeapons.at(WEAPONS::UNARMED)){};
 PlayableCharacter::~PlayableCharacter(){};
 
 std::string PlayableCharacter::getName()
@@ -78,6 +78,15 @@ std::string PlayableCharacter::currentHealth()
 Weapon PlayableCharacter::returnWeapon()
 {
     return this->_weapon;
+}
+
+// void PlayableCharacter::changeWeapon(std::map<WEAPONS, Weapon> weapons)
+// {
+// }
+
+void PlayableCharacter::changeWeapon(Weapon weapon)
+{
+    this->_weapon = weapon;
 }
 
 // Weapon PlayableCharacter::getWeapon()

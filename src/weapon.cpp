@@ -23,7 +23,7 @@ unsigned int Weapon::getDamage(int damage)
     return 0;
 }
 
-std::map<WEAPONS, Weapon> AvailableWeapons = std::map<WEAPONS, Weapon>{
+std::map<WEAPONS, Weapon> availableWeapons = std::map<WEAPONS, Weapon>{
     {WEAPONS::UNARMED, Weapon("Unarmed", 1, 2)},
     {WEAPONS::DAGGER, Weapon("Dagger", 1, 4)},
     {WEAPONS::LONGSWORD, Weapon("Longsword", 1, 8)},

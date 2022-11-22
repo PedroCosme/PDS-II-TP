@@ -30,6 +30,6 @@ private:
     unsigned int _maximumDamage;
 };
 
-extern std::map<WEAPONS, Weapon> AvailableWeapons;
+extern std::map<WEAPONS, Weapon> availableWeapons;
 
 #endif

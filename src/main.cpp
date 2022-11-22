@@ -16,7 +16,9 @@ int main()
     std::cout << player.getName() << " " << player.getLvl() << " " << player.getCurrentHp() << std::endl;
     std::cout << monster.getName() << " "
               << " " << monster.currentHealth() << std::endl;
-    std::cout << player.returnWeapon().getName();
+    // std::cout << player.returnWeapon().getName();
+    player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
+    std::cout << player.returnWeapon().getName() << std::endl;
 
     // batalha
     // while (player.isAlive() && monster.isAlive())
