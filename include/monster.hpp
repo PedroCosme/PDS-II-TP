@@ -8,7 +8,7 @@ class Monster
 
 public:
         Monster(std::string name, unsigned int currentHp);
-        //Monster(Monster &monster);
+        // Monster(Monster &monster);
         ~Monster();
 
         std::string getName() const;
@@ -17,7 +17,7 @@ public:
 
         bool damage(unsigned int damageAmount);
 
-        unsigned int currentHealth() const;
+        std::string currentHealth() const;
 
         bool takeDamage(unsigned int damage);
 

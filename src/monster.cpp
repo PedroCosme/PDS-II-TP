@@ -32,10 +32,11 @@ bool Monster::damage(unsigned int damageAmount)
   _currentHp = 0;
   return false;
 }
-unsigned int Monster::currentHealth() const
+std::string Monster::currentHealth() const
 {
-  // return std::to_string(_currentHp) + " / " + std::to_string(getMaximumHp());
-  return _currentHp;
+  return std::to_string(_currentHp) + " / ";
+  //+ std::to_string(getMaximumHp());
+  // return _currentHp;
 }
 
 std::string Monster::ToString() const
