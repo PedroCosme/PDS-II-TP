@@ -95,15 +95,9 @@ bool PlayableCharacter::dealDamage(unsigned int damageAmount)
     _currentHp = 0;
     return false;
 }
-bool PlayableCharacter::takeDamage(unsigned int damage)
+void PlayableCharacter::takeDamage(unsigned int damage)
 {
-    if (damage >= _currentHp)
-    {
-        _currentHp = 0;
-        return false;
-    }
     _currentHp -= damage;
-    return true;
 }
 
 void PlayableCharacter::heal(unsigned int healAmount)
@@ -123,4 +117,8 @@ float PlayableCharacter::hPPercentage()
 std::string PlayableCharacter::currentHealth()
 {
     return std::to_string(_currentHp) + " / " + std::to_string(_maxHp);
+}
+
+Weapon PlayableCharacter::returnWeapon(){
+    return this -> _weapon;
 }

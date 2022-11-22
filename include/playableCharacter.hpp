@@ -82,7 +82,7 @@ public:
 
     bool dealDamage(unsigned int damageAmount);
 
-    bool takeDamage(unsigned int damage);
+    void takeDamage(unsigned int damage);
 
     float hPPercentage();
 
@@ -97,6 +97,8 @@ public:
     float getHp();
 
     void showWeapons();
+
+    Weapon returnWeapon();
 
     /**
      * @brief Retorna o equipamento atual do personagem

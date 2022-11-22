@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include "game_events.hpp"
 #include <exception>
 #include "playableCharacter.hpp"
 #include "weapon.hpp"
@@ -9,7 +8,7 @@
 int main()
 {
     GreatSword g;
-    Monster monster("monster", 100);
+    Monster monster("Goblin", 100);
     std::cout << "Bem vindo ao jogo, começaremos criando um personagem" << std::endl;
     std::cout << "Escolha um nome para o seu personagem:" << std::endl;
     std::string playerName;
@@ -22,5 +21,25 @@ int main()
     player.addItem(g);
     player.showWeapons();
 
+//batalha
+    while(player.isAlive() && monster.isAlive()){
+        
+        Weapon currentweapon = player.returnWeapon();
+
+        std::cout << "Player: " << player.getName() << " | Monster: " << monster.getName() << std::endl;
+        std::cout << "Hp: " << player.getCurrentHp() << " | Hp: " << monster.getCurrentHp() << std::endl;
+        int pchoice;
+        std::cout << "O que deseja fazer? \n (1) Atacar \n (2) Tomar poção \n (3) Trocar de arma" << std::endl;
+        switch(pchoice){
+            case 1:{
+                player.dealDamage(playerdamage);
+                break;
+            }
+            case 2:{
+                player
+            }
+        }
+        
+        }
     return 0;
 }

@@ -1,5 +1,6 @@
 #include "monster.hpp"
 #include <cmath>
+#include <string>
 
 Monster::Monster(std::string name, unsigned int currentHp)
     : _name(name),
@@ -22,15 +23,11 @@ bool Monster::isAlive() const
   return _currentHp > 0;
 }
 
-bool Monster::damage(unsigned int damageAmount)
+std::string Monster::monsterDamage(unsigned int damageAmount)
 {
-  if (_currentHp > damageAmount)
-  {
-    _currentHp -= damageAmount;
-    return true;
-  }
-  _currentHp = 0;
-  return false;
+  std::string attacklog = "The monster attacked you and dealt " + std::to_string(damageAmount) + " damage!";
+  
+  return attacklog;
 }
 std::string Monster::currentHealth() const
 {
@@ -53,4 +50,8 @@ bool Monster::takeDamage(unsigned int damage)
   }
   _currentHp -= damage;
   return true;
+}
+unsigned int Monster::getCurrentHp()
+{
+    return this->_currentHp;
 }
