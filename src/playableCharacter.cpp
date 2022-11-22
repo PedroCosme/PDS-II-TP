@@ -1,8 +1,8 @@
 #include <playableCharacter.hpp>
 
-PlayableCharacter::PlayableCharacter(Weapon weapon, std::list<Weapon> inventory, std::string name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int currentHp,
+PlayableCharacter::PlayableCharacter(std::list<Weapon> inventory, std::string name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int currentHp,
                                      unsigned int maxMp, unsigned int gold)
-    : _weapon(weapon), _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _currentHp(currentHp), _maxMp(maxMp), _gold(gold)
+    : _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _currentHp(currentHp), _maxMp(maxMp), _gold(gold), _weapon(AvailableWeapons.at(WEAPONS::UNARMED))
 {
 
     _inventory = inventory;
@@ -58,14 +58,14 @@ void PlayableCharacter::setXp(int xp)
 //     this->_equipment = equipment;
 // }
 
-void PlayableCharacter::showWeapons()
-{
-    for (auto &i : _inventory)
-    {
-        std::cout << i.getWeaponName() << ' ';
-    }
-    std::cout << std::endl;
-};
+// void PlayableCharacter::showWeapons()
+// {
+//     for (auto &i : _inventory)
+//     {
+//         std::cout << i.getWeaponName() << ' ';
+//     }
+//     std::cout << std::endl;
+// };
 
 // void PlayableCharacter::change_equipment(std::set<Equipment> &equipments)
 // {
@@ -119,6 +119,6 @@ std::string PlayableCharacter::currentHealth()
     return std::to_string(_currentHp) + " / " + std::to_string(_maxHp);
 }
 
-Weapon PlayableCharacter::returnWeapon(){
-    return this -> _weapon;
-}
+// Weapon PlayableCharacter::returnWeapon(){
+//     return this -> _weapon;
+// }

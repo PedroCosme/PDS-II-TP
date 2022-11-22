@@ -29,7 +29,7 @@ public:
      *
      */
     // PlayableCharacter(std::string name = "", float hp = 100, float mp = 50, int lvl = 1, int xp = 0, Equipment equipment =, std::set<Equipment> &equipments);
-    PlayableCharacter(Weapon weapon, std::list<Weapon> inventory, std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, unsigned int currentHp = 100,
+    PlayableCharacter(std::list<Weapon> inventory, std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, unsigned int currentHp = 100,
                       unsigned int maxMp = 50, unsigned int gold = 10);
     // PlayableCharacter(PlayableCharacter &playableCharacter);
     ~PlayableCharacter();
