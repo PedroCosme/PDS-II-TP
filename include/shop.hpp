@@ -15,9 +15,9 @@ public:
     Shop(void);
     ~Shop(void);
 
-    void setEquipmentAndPrices(const std::map<ITEMS, unsigned int> &itemsAndPrices) noexcept;
-    const Equipment &getEquipment(void) const noexcept;
-    const unsigned int getCostOf(ITEMS item) const noexcept;
+    void setEquipmentAndPrices(const std::map<ITEMS, unsigned int> &itemsAndPrices);
+    const Equipment &getEquipment(void) const;
+    const unsigned int getCostOf(ITEMS item) const;
 };
 
 #endif

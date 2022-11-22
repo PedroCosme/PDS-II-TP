@@ -9,7 +9,7 @@ Shop::~Shop(void)
 {
 }
 
-void Shop::setEquipmentAndPrices(const std::map<ITEMS, uint> &itemsAndPrices) noexcept
+void Shop::setEquipmentAndPrices(const std::map<ITEMS, uint> &itemsAndPrices)
 {
     _equipment.clear();
     for (auto itemAndPrice : itemsAndPrices)
@@ -18,12 +18,12 @@ void Shop::setEquipmentAndPrices(const std::map<ITEMS, uint> &itemsAndPrices) no
     }
 }
 
-const Equipment &Shop::getEquipment(void) const noexcept
+const Equipment &Shop::getEquipment(void) const
 {
     return _equipment;
 }
 
-const uint Shop::getCostOf(ITEMS item) const noexcept
+const uint Shop::getCostOf(ITEMS item) const
 {
     auto items = _equipment.getItems();
     if (items.count(item) == 1)

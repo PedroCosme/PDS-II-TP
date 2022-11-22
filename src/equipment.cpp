@@ -49,7 +49,7 @@ void Equipment::clear(void)
     _items.clear();
 }
 
-const std::map<ITEMS, unsigned int> &Equipment::getItems(void)
+const std::map<ITEMS, unsigned int> &Equipment::getItems(void) const
 {
     return _items;
 }

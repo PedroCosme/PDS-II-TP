@@ -17,7 +17,7 @@ public:
 
   void clear(void);
 
-  const std::map<ITEMS, unsigned int> &getItems(void) const noexcept;
+  const std::map<ITEMS, unsigned int> &getItems(void) const;
 
 private:
   std::map<ITEMS, unsigned int> _items;
