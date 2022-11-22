@@ -43,8 +43,6 @@ public:
      * @return int com o lvl atual do personagem
      */
 
-    std::string getClass();
-
     unsigned int getLvl();
 
     /**
@@ -137,8 +135,7 @@ public:
     //  * @brief Realiza ação de beber poção de cura caso o usuário tenha alguma. Chama a função heal() de game events.
     //  * @param equipments set com os equipamentos do usuário
     //  */
-protected:
-    std::string _playerClass;
+private:
     Weapon _weapon;
     unsigned int _lvl;
     unsigned int _xp;
@@ -150,5 +147,4 @@ protected:
     float _hp;
     float _mp;
 };
-
 #endif
