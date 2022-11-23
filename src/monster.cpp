@@ -23,11 +23,11 @@ bool Monster::isAlive() const
   return _currentHp > 0;
 }
 
-std::string Monster::monsterDamage(unsigned int damageAmount)
+unsigned int Monster::monsterDamage(unsigned int damageAmount)
 {
-  std::string attacklog = "The monster attacked you and dealt " + std::to_string(damageAmount) + " damage!";
+  unsigned int damage = damageAmount;
 
-  return attacklog;
+  return damage;
 }
 std::string Monster::currentHealth() const
 {

@@ -4,6 +4,37 @@
 #include "playableCharacter.hpp"
 #include "weapon.hpp"
 #include "monster.hpp"
+
+ void startbattle(PlayableCharacter player, Monster monster)
+    {
+        while(player.isAlive() && monster.isAlive()){
+            std::cout 
+            << player.getName() << " vs " << monster.getName() << "\n" 
+            <<"HP: " << player.currentHealth() << " HP:" << monster.getCurrentHp() << "\n"
+            << "Choose: (a) attack \n";
+            char playerChoice = '0';
+            while(playerChoice != 'a')
+            {
+                playerChoice = getchar();
+            }
+            monster.takeDamage(player.returnWeapon().damageRange());
+
+            if (monster.isAlive()) 
+            {
+                player.takeDamage(monster.monsterDamage(20));
+            }
+        }
+    if (player.isAlive()) 
+    {
+        std::cout << "You defeated the " << monster.getName() << "!\n";
+    //IMPLEMENTAR AQUI COMO GANHAR OURO E EXPERIENCIA ATRAVES DE DERROTA DE MONSTROS
+    } else {
+        std::cout << "You were defeated by the "<< monster.getName() << "!\n";
+    } 
+        
+}
+
+
 int main()
 {
     Monster monster("Goblin", 100);
@@ -13,36 +44,17 @@ int main()
     std::cin >> playerName;
     std::cout << "Bem-vindo(a) ao nosso simulador de Batalha RPG, " << playerName << "!" << std::endl;
     PlayableCharacter player(playerName);
-    std::cout << player.getName() << " " << player.getLvl() << " " << player.getCurrentHp() << std::endl;
-    std::cout << monster.getName() << " "
-              << " " << monster.currentHealth() << std::endl;
+    // std::cout << player.getName() << " " << player.getLvl() << " " << player.getCurrentHp() << std::endl;
+    // std::cout << monster.getName() << " "
+    //           << " " << monster.currentHealth() << std::endl;
     // std::cout << player.returnWeapon().getName();
     player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
-    std::cout << player.returnWeapon().getName() << std::endl;
+    //std::cout << player.returnWeapon().getName() << std::endl;
 
     // batalha
-    // while (player.isAlive() && monster.isAlive())
-    // {
 
-    //     Weapon currentweapon = player.returnWeapon();
-
-    //     std::cout << "Player: " << player.getName() << " | Monster: " << monster.getName() << std::endl;
-    //     std::cout << "Hp: " << player.getCurrentHp() << " | Hp: " << monster.getCurrentHp() << std::endl;
-    //     int pchoice;
-    //     std::cout << "O que deseja fazer? \n (1) Atacar \n (2) Tomar poção \n (3) Trocar de arma" << std::endl;
-    //     player.returnWeapon();
-    //     switch (pchoice)
-    //     {
-    //     case 1:
-    //     {
-    //         player.dealDamage(playerdamage);
-    //         break;
-    //     }
-    //     case 2:
-    //     {
-    //         player
-    //     }
-    //     }
-    // }
+    startbattle(player, monster);
+    
     return 0;
 }
+   

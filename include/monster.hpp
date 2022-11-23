@@ -21,9 +21,10 @@ public:
 
         bool takeDamage(unsigned int damage);
 
-        std::string monsterDamage(unsigned int damageAmount);
+        unsigned int monsterDamage(unsigned int damageAmount);
 
         virtual std::string ToString() const;
+  
 
         unsigned int getCurrentHp();
 protected:
