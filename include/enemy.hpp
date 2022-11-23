@@ -6,7 +6,7 @@
 class Enemy : public Monster
 {
 private:
-    unsigned int mGold;
+    unsigned int _gold;
 
 public:
     Enemy(std::string &name, int gold, uint hitPoints);

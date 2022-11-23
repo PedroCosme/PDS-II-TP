@@ -17,4 +17,4 @@ namespace Item
     std::string getName(ITEMS item);
 };
 
-#endif;
+#endif
