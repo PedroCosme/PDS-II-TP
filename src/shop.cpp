@@ -9,7 +9,7 @@ Shop::~Shop(void)
 {
 }
 
-void Shop::setEquipmentAndPrices(const std::map<ITEMS, uint> &itemsAndPrices)
+void Shop::setEquipmentAndPrices(const std::map<ITEMS, unsigned int> &itemsAndPrices)
 {
     _equipment.clear();
     for (auto itemAndPrice : itemsAndPrices)
@@ -23,7 +23,7 @@ const Equipment &Shop::getEquipment(void) const
     return _equipment;
 }
 
-const uint Shop::getCostOf(ITEMS item) const
+const unsigned int Shop::getCostOf(ITEMS item) const
 {
     auto items = _equipment.getItems();
     if (items.count(item) == 1)

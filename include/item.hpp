@@ -3,12 +3,18 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
+
 
 enum class ITEMS
 {
     NULL_ITEM,
-    HEALTHPOTION,
-    GRANADE
+    HEALTH_POTION,
+    GRENADE,
+    GREAT_SWORD,
+    LONG_SWORD,
+    DAGGER,
+    BATTLE_AXE
 };
 
 namespace Item
