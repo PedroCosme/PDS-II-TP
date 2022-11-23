@@ -2,76 +2,72 @@
 
 namespace Item
 {
-    ITEMS getByName(std::string name){
+    ITEMS getByName(std::string name)
+    {
         ITEMS item = ITEMS::NULL_ITEM;
-        std::string itemname 
-        switch (item)
+        if (toLower(name) == "health potion")
         {
-        case "health potion":{
-            item == ITEMS::HEALTH_POTION;
-            break;
+            item = ITEMS::HEALTH_POTION;
         }
-
-        case "grenade":{
-            item == ITEMS::GRENADE;
-            break;
+        else if (toLower(name) == "grenade")
+        {
+            item = ITEMS::GRENADE;
         }
-
-        case "great sword":{
-            item == ITEMS::GREAT_SWORD;
-            break;
+        else if (toLower(name) == "great sword")
+        {
+            item = ITEMS::GREAT_SWORD;
         }
-
-        case "long sword":{
+        else if (toLower(name) == "long sword")
+        {
             item == ITEMS::LONG_SWORD;
-            break;
         }
-
-        case "dagger":{
-            item == ITEMS::DAGGER;
-            break;
+        else if (toLower(name) == "dagger")
+        {
+            item = ITEMS::DAGGER;
         }
-
-        case "battle axe":{
-            item == ITEMS::BATTLE_AXE;
-            break;
+        else if (toLower(name) == "battle axe")
+        {
+            item = ITEMS::BATTLE_AXE;
         }
-        default:
-            break;
-        }
-        
         return item;
     }
-    std::string getName(ITEMS item){
+    std::string getName(ITEMS item)
+    {
         std::string itemName = "null";
         switch (item)
         {
-        case ITEMS::HEALTH_POTION:{
+        case ITEMS::HEALTH_POTION:
+        {
             itemName == "Health Potion";
             break;
         }
 
-        case ITEMS::GRENADE:{
+        case ITEMS::GRENADE:
+        {
             itemName == "Grenade";
             break;
         }
 
-        case ITEMS::GREAT_SWORD:{
+        case ITEMS::GREAT_SWORD:
+        {
             itemName == "Great Sword";
             break;
         }
 
-        case ITEMS::LONG_SWORD:{
+        case ITEMS::LONG_SWORD:
+        {
             itemName == "Long Sword";
             break;
         }
 
-     case ITEMS::DAGGER:{
+        case ITEMS::DAGGER:
+        {
             itemName == "Dagger";
             break;
         }
 
-        case ITEMS::BATTLE_AXE:{
+        case ITEMS::BATTLE_AXE:
+        {
             itemName == "Battle Axe";
             break;
         }
