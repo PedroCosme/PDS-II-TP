@@ -1,6 +1,12 @@
 #include "gameEvents.hpp"
 
-void battle(PlayableCharacter player, Monster monster)
+GameEvents::GameEvents(){
+
+};
+GameEvents::~GameEvents(){
+
+};
+void GameEvents::battle(PlayableCharacter player, Monster monster)
     {
         while(player.isAlive() && monster.isAlive()){
             std::cout 
@@ -29,10 +35,10 @@ void battle(PlayableCharacter player, Monster monster)
         
 }
 
-std::string calcDamage(unsigned int damageRange){
+unsigned int GameEvents::calcDamage(unsigned int damageRange){
 
 }
-unsigned int hitormiss(){
+unsigned int GameEvents::hitormiss(){
     
     unsigned int chance = rand() % 100;
     if(chance < 24){

@@ -12,6 +12,8 @@
 
 class GameEvents{
   public:
+  GameEvents();
+  ~GameEvents();
   void battle(PlayableCharacter player, Monster monster);
   unsigned int calcDamage(unsigned int damageRange);
   unsigned int hitormiss();

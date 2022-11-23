@@ -24,8 +24,9 @@ int main()
     //std::cout << player.returnWeapon().getName() << std::endl;
 
     // batalha
+    GameEvents game;
 
-    GameEvents::battle(player, monster);
+    game.battle(player, monster);
     
     return 0;
 }
