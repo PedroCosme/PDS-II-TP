@@ -4,6 +4,7 @@ namespace Item
 {
     ITEMS getByName(std::string name){
         ITEMS item = ITEMS::NULL_ITEM;
+        std::string itemname 
         switch (item)
         {
         case "health potion":{
