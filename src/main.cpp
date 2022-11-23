@@ -4,35 +4,7 @@
 #include "playableCharacter.hpp"
 #include "weapon.hpp"
 #include "monster.hpp"
-
- void startbattle(PlayableCharacter player, Monster monster)
-    {
-        while(player.isAlive() && monster.isAlive()){
-            std::cout 
-            << player.getName() << " vs " << monster.getName() << "\n" 
-            <<"HP: " << player.currentHealth() << " HP:" << monster.getCurrentHp() << "\n"
-            << "Choose: (a) attack \n";
-            char playerChoice = '0';
-            while(playerChoice != 'a')
-            {
-                playerChoice = getchar();
-            }
-            monster.takeDamage(player.returnWeapon().damageRange());
-
-            if (monster.isAlive()) 
-            {
-                player.takeDamage(monster.monsterDamage(20));
-            }
-        }
-    if (player.isAlive()) 
-    {
-        std::cout << "You defeated the " << monster.getName() << "!\n";
-    //IMPLEMENTAR AQUI COMO GANHAR OURO E EXPERIENCIA ATRAVES DE DERROTA DE MONSTROS
-    } else {
-        std::cout << "You were defeated by the "<< monster.getName() << "!\n";
-    } 
-        
-}
+#include "gameEvents.hpp"
 
 
 int main()
@@ -53,7 +25,7 @@ int main()
 
     // batalha
 
-    startbattle(player, monster);
+    GameEvents::battle(player, monster);
     
     return 0;
 }
