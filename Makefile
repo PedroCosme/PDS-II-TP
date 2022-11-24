@@ -24,6 +24,9 @@ weapon:
 enemy:
 	$(CC) $(CFLAGS) -c src/enemy.cpp -o build/enemy.o
 
+pcg-cpp-0.98:
+	$(CC) /include/pcg-cpp-0.98/include
+
 main: weapon playableCharacter monster equipment gameEvents enemy 
 	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/equipment.o build/gameEvents.o build/enemy.o src/main.cpp -o $(TARGET)
 

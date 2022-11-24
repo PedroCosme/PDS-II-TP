@@ -57,19 +57,19 @@ unsigned int GameEvents::calcDamage(unsigned int damageRange)
 {
 }
 int GameEvents::hitOrMissMonster()
-
+    int chanceMonster = rand() % 100;
 {
 
-    pcg_extras::seed_seq_from<std::random_device> seed_source;
+    //pcg_extras::seed_seq_from<std::random_device> seed_source;
 
     // Make a random number engine
-    pcg32 rng(seed_source);
+    //pcg32 rng(seed_source);
 
-    std::uniform_int_distribution<int> uniform_dist(1, 100);
-    int chanceMonster = uniform_dist(rng);
+    //std::uniform_int_distribution<int> uniform_dist(1, 100);
+    //int chanceMonster = uniform_dist(rng);
     std::cout << "Randomly-chosen number: " << chanceMonster << '\n';
 
-    int chanceMonster = rand() % 100;
+    int chanceMonster = rand() % 10;
 
     std::cout << chanceMonster << std::endl;
 
@@ -88,13 +88,13 @@ int GameEvents::hitOrMissMonster()
 }
 int GameEvents::hitOrMissPlayer()
 {
-    pcg_extras::seed_seq_from<std::random_device> seed_source;
+    //pcg_extras::seed_seq_from<std::random_device> seed_source;
 
     // Make a random number engine
-    pcg32 rng(seed_source);
+    //pcg32 rng(seed_source);
 
-    std::uniform_int_distribution<int> uniform_dist(1, 100);
-    int chancePlayer = uniform_dist(rng);
+    //std::uniform_int_distribution<int> uniform_dist(1, 100);
+    //int chancePlayer = uniform_dist(rng);
     std::cout << "Randomly-chosen number: " << chancePlayer << '\n';
 
     int chancePlayer = rand() % 100;
