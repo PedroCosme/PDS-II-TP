@@ -20,7 +20,8 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
         std::cout << hitOrMiss << std::endl;
         if (hitOrMiss > 24 && hitOrMiss < 90)
         {
-            monster.takeDamage(player.returnWeapon().damageRange()); // a ideia aqui é chamar a função que calcula o dano da arma que o player está usando (ainda a ser feita)
+            uint damageDealt = player.returnWeapon().getDamage();
+            monster.takeDamage(damageDealt); // a ideia aqui é chamar a função que calcula o dano da arma que o player está usando (ainda a ser feita)
             std::cout << "The monster has taken X damage" << std::endl;
         }
         else if (hitOrMiss >= 90)

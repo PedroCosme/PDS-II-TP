@@ -1,5 +1,4 @@
 #include "weapon.hpp"
-#include "utilities.hpp"
 
 Weapon::Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage)
     : _name(name), _minimumDamage(minDamage), _maximumDamage(maxDamage)
@@ -18,9 +17,10 @@ unsigned int Weapon::damageRange()
     return _maximumDamage - _minimumDamage;
 }
 
-unsigned int Weapon::getDamage(int damage)
+unsigned int Weapon::getDamage()
 {
-    return 0;
+    uint weaponDamage = genNum(this->_minimumDamage, this->_maximumDamage);
+    return weaponDamage;
 }
 
 std::map<WEAPONS, Weapon> availableWeapons = std::map<WEAPONS, Weapon>{

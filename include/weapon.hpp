@@ -5,6 +5,7 @@
 #include <map>
 #include <iostream>
 #include <iterator>
+#include "utilities.hpp"
 
 enum class WEAPONS
 {
@@ -22,7 +23,7 @@ public:
 
     std::string getName();
     unsigned int damageRange();
-    unsigned int getDamage(int damage);
+    unsigned int getDamage();
 
 private:
     std::string _name;
