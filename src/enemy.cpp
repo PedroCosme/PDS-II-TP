@@ -1,8 +1,7 @@
 #include "enemy.hpp"
 
-Enemy::Enemy(std::string name, int gold, uint hitPoints)
-    : Monster(name, hitPoints * 10U),
-      _gold(gold) {}
+Enemy::Enemy(uint gold, uint xpWorth, std::string name, uint hitPoints) : _gold(gold), _xpWorth(xpWorth), Monster(name, hitPoints){};
+
 Enemy::~Enemy()
 {
 }
@@ -10,4 +9,9 @@ Enemy::~Enemy()
 unsigned int Enemy::goldWorth() const
 {
     return _gold;
+}
+
+unsigned int Enemy::xpWorth()
+{
+    return _xpWorth;
 }
