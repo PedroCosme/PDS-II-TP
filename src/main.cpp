@@ -5,6 +5,7 @@
 #include "weapon.hpp"
 #include "monster.hpp"
 #include "gameEvents.hpp"
+#include <time.h>
 
 int main()
 {
@@ -15,18 +16,14 @@ int main()
     std::cin >> playerName;
     std::cout << "Bem-vindo(a) ao nosso simulador de Batalha RPG, " << playerName << "!" << std::endl;
     PlayableCharacter player(playerName);
-    // std::cout << player.getName() << " " << player.getLvl() << " " << player.getCurrentHp() << std::endl;
-    // std::cout << monster.getName() << " "
-    //           << " " << monster.currentHealth() << std::endl;
-    // std::cout << player.returnWeapon().getName();
+    
     player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
-    // std::cout << player.returnWeapon().getName() << std::endl;
 
     // batalha
     GameEvents game;
 
-    // game.battle(player, monster);
-    game.hitOrMiss();
-
+   // game.battle(player, monster);
+    game.hitOrMissMonster();
+    game.hitOrMissPlayer();
     return 0;
 }

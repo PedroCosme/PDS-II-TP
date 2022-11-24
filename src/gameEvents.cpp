@@ -3,6 +3,7 @@
 GameEvents::GameEvents(){};
 GameEvents::~GameEvents(){};
 
+
 void GameEvents::battle(PlayableCharacter player, Enemy monster)
 {
     while (player.PlayableCharacter::isAlive() && monster.Monster::isAlive())
@@ -16,7 +17,7 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
         {
             playerChoice = getchar();
         }
-        int hitOrMiss = GameEvents::hitOrMiss(); // // hit or miss do monstro, implementar o miss
+        int hitOrMiss = GameEvents::hitOrMissPlayer(); // // hit or miss do monstro, implementar o miss
         std::cout << hitOrMiss << std::endl;
         if (hitOrMiss > 24 && hitOrMiss < 90)
         {
@@ -31,7 +32,7 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
         if (monster.isAlive())
 
         {
-            int hitOrMissM = GameEvents::hitOrMiss(); // hit or miss do monstro, implementar o miss
+            int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
 
             std::cout << hitOrMissM << std::endl;
 
@@ -42,8 +43,8 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
     {
         std::cout << "You defeated the " << monster.getName() << "and found" << monster.goldWorth() << "in it's corpse !\n"; // retorna quanto de ouro o monstro vale
         std::cout << "X xp added" << std::endl;                                                                              // implementar o quanto de xp o monstro fornece
-        unsigned int xp = monster.giveXp();                                                                                  // FUNÇÃO FANTASMA QUE DEVE SER ADICIONADA A CLASSE ENEMY. TENHO UMA IDEIA BOA
-        player.setXp(xp);
+       // unsigned int xp = monster.giveXp();                                                                                  // FUNÇÃO FANTASMA QUE DEVE SER ADICIONADA A CLASSE ENEMY. TENHO UMA IDEIA BOA
+       // player.setXp(xp);
 
         // IMPLEMENTAR AQUI COMO ADICIONAR OURO E EXPERIENCIA ATRAVES DE DERROTA DE MONSTROS
     }
@@ -56,23 +57,46 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
 unsigned int GameEvents::calcDamage(unsigned int damageRange)
 {
 }
-int GameEvents::hitOrMiss()
+int GameEvents::hitOrMissMonster()
+
 {
 
-    std::cout << "Entrei!" << std::endl;
+    srand(time(NULL));
 
-    int chance = rand() % 100;
-    std::cout << chance << std::endl;
+    int chanceMonster = rand() % 100;
+   
+    std::cout << chanceMonster << std::endl;
 
-    if (chance < 24)
+    if (chanceMonster < 24)
     {
-        std::cout << chance << std::endl;
+        std::cout << chanceMonster << std::endl;
         std::cout << "The enemy swang his weapon at you but missed for an inch!" << std::endl;
     }
-    else if (chance >= 90)
+    else if (chanceMonster >= 90)
     {
-        std::cout << chance << std::endl;
+        std::cout << chanceMonster << std::endl;
         std::cout << "The enemy's attack was so strong you slipped and fell on your arse" << std::endl;
     }
-    return chance;
+    std::cout << "Chance Monster: "<< chanceMonster << std::endl;
+    return chanceMonster;
 }
+int GameEvents::hitOrMissPlayer(){   
+    
+    srand(time(NULL));
+
+    int chancePlayer = rand() % 100;
+    if (chancePlayer < 24)
+    {
+        std::cout << chancePlayer << std::endl;
+        std::cout << "You swing your weapon at the terrible monster but missed by an inch!" << std::endl;
+    }
+    else if (chancePlayer >= 90)
+    {
+        std::cout << chancePlayer << std::endl;
+        std::cout << "Your attack was so strong you completely smashed the monster's leg" << std::endl;
+    }
+std::cout << "Chance Player: "<< chancePlayer << std::endl;
+
+    return chancePlayer;
+}
+

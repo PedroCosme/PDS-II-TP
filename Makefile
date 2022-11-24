@@ -21,8 +21,11 @@ equipment:
 weapon:
 	$(CC) $(CFLAGS) -c src/weapon.cpp -o build/weapon.o
 
-main: weapon playableCharacter monster equipment gameEvents 
-	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/equipment.o build/gameEvents.o  src/main.cpp -o $(TARGET)
+enemy:
+	$(CC) $(CFLAGS) -c src/enemy.cpp -o build/enemy.o
+
+main: weapon playableCharacter monster equipment gameEvents enemy 
+	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/equipment.o build/gameEvents.o build/enemy.o src/main.cpp -o $(TARGET)
 
 clean:
 	$(RM) -r $(BUILDDIR)/* $(TARGET)

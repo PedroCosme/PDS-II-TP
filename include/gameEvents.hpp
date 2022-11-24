@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <time.h>
 #include "playableCharacter.hpp"
 #include "monster.hpp"
 #include "enemy.hpp"
@@ -17,7 +18,8 @@ public:
   ~GameEvents();
   void battle(PlayableCharacter player, Enemy monster);
   unsigned int calcDamage(unsigned int damageRange);
-  int hitOrMiss();
+  int hitOrMissMonster();
+  int hitOrMissPlayer();
 };
 
 #endif
