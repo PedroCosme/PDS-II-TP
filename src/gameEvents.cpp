@@ -57,9 +57,8 @@ unsigned int GameEvents::calcDamage(unsigned int damageRange)
 {
 }
 int GameEvents::hitOrMissMonster()
-    int chanceMonster = rand() % 100;
 {
-
+    int chanceMonster = rand() % 100;
     //pcg_extras::seed_seq_from<std::random_device> seed_source;
 
     // Make a random number engine
