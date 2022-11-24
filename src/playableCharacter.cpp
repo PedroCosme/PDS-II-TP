@@ -24,16 +24,18 @@ unsigned int PlayableCharacter::getXp()
     return this->_xp;
 };
 
-void PlayableCharacter::setLvl(int lvl)
+void PlayableCharacter::lvlUp()
 {
-    if (this->_xp == 500)
-    {
-        this->_lvl += 1;
-    };
+    this->_lvl += 1;
 };
 void PlayableCharacter::setXp(int xp)
 {
     this->_xp += xp;
+    if (this->_xp == 500)
+    {
+        lvlUp();
+        this->_xp = 0;
+    }
 };
 
 bool PlayableCharacter::isAlive()

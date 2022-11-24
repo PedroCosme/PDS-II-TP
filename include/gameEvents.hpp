@@ -10,14 +10,14 @@
 #include "item.hpp"
 #include "shop.hpp"
 
-class GameEvents{
-  public:
+class GameEvents
+{
+public:
   GameEvents();
   ~GameEvents();
-  void battle(PlayableCharacter player, Monster monster);
+  void battle(PlayableCharacter player, Enemy monster);
   unsigned int calcDamage(unsigned int damageRange);
-  unsigned int hitormiss();
+  int hitOrMiss();
 };
-
 
 #endif

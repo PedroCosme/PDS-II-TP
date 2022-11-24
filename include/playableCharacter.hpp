@@ -68,7 +68,7 @@ public:
      * @brief Atualiza o level do personagem
      * @param lvl lv atual do personagem
      */
-    void setLvl(int lvl);
+    void lvlUp();
 
     /**
      * @brief Atualiza a xp do personagem

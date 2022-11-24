@@ -6,10 +6,9 @@
 #include "monster.hpp"
 #include "gameEvents.hpp"
 
-
 int main()
 {
-    Monster monster("Goblin", 100);
+    Enemy monster("Goblin", 20, 100);
     std::cout << "Bem vindo ao jogo, começaremos criando um personagem" << std::endl;
     std::cout << "Escolha um nome para o seu personagem:" << std::endl;
     std::string playerName;
@@ -21,13 +20,13 @@ int main()
     //           << " " << monster.currentHealth() << std::endl;
     // std::cout << player.returnWeapon().getName();
     player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
-    //std::cout << player.returnWeapon().getName() << std::endl;
+    // std::cout << player.returnWeapon().getName() << std::endl;
 
     // batalha
     GameEvents game;
 
-    game.battle(player, monster);
-    
+    // game.battle(player, monster);
+    game.hitOrMiss();
+
     return 0;
 }
-   

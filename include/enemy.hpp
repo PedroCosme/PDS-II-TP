@@ -9,7 +9,7 @@ private:
     unsigned int _gold;
 
 public:
-    Enemy(std::string &name, int gold, uint hitPoints);
+    Enemy(std::string name, int gold, uint hitPoints);
     ~Enemy();
 
     unsigned int goldWorth() const;
