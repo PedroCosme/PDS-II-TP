@@ -41,15 +41,9 @@ std::string Monster::ToString() const
   return _name + " - Health: " + currentHealth();
 }
 
-bool Monster::takeDamage(unsigned int damage)
+void Monster::mtakeDamage(unsigned int damage)
 {
-  if (damage >= _currentHp)
-  {
-    _currentHp = 0;
-    return false;
-  }
   _currentHp -= damage;
-  return true;
 }
 unsigned int Monster::getCurrentHp()
 {

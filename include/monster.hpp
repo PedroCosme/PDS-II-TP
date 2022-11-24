@@ -19,14 +19,14 @@ public:
 
         std::string currentHealth() const;
 
-        bool takeDamage(unsigned int damage);
+        void mtakeDamage(unsigned int damage);
 
         unsigned int monsterDamage(unsigned int damageAmount);
 
         virtual std::string ToString() const;
-  
 
         unsigned int getCurrentHp();
+
 protected:
         std::string _name;
         unsigned int _currentHp;
