@@ -58,28 +58,23 @@ unsigned int GameEvents::calcDamage(unsigned int damageRange)
 }
 int GameEvents::hitOrMissMonster()
 {
-    int chanceMonster = rand() % 100;
-    //pcg_extras::seed_seq_from<std::random_device> seed_source;
+    srand(time(0));
+
+    int chanceMonster = genNum(1, 25);
+    // pcg_extras::seed_seq_from<std::random_device> seed_source;
 
     // Make a random number engine
-    //pcg32 rng(seed_source);
+    // pcg32 rng(seed_source);
 
-    //std::uniform_int_distribution<int> uniform_dist(1, 100);
-    //int chanceMonster = uniform_dist(rng);
-    std::cout << "Randomly-chosen number: " << chanceMonster << '\n';
-
-    int chanceMonster = rand() % 10;
-
-    std::cout << chanceMonster << std::endl;
+    // std::uniform_int_distribution<int> uniform_dist(1, 100);
+    // int chanceMonster = uniform_dist(rng);
 
     if (chanceMonster < 24)
     {
-        std::cout << chanceMonster << std::endl;
         std::cout << "The enemy swang his weapon at you but missed for an inch!" << std::endl;
     }
     else if (chanceMonster >= 90)
     {
-        std::cout << chanceMonster << std::endl;
         std::cout << "The enemy's attack was so strong you slipped and fell on your arse" << std::endl;
     }
     std::cout << "Chance Monster: " << chanceMonster << std::endl;
@@ -87,16 +82,16 @@ int GameEvents::hitOrMissMonster()
 }
 int GameEvents::hitOrMissPlayer()
 {
-    //pcg_extras::seed_seq_from<std::random_device> seed_source;
+    srand(time(0));
+    int chancePlayer = genNum(1, 20);
+    // pcg_extras::seed_seq_from<std::random_device> seed_source;
 
     // Make a random number engine
-    //pcg32 rng(seed_source);
+    // pcg32 rng(seed_source);
 
-    //std::uniform_int_distribution<int> uniform_dist(1, 100);
-    //int chancePlayer = uniform_dist(rng);
-    std::cout << "Randomly-chosen number: " << chancePlayer << '\n';
+    // std::uniform_int_distribution<int> uniform_dist(1, 100);
+    // int chancePlayer = uniform_dist(rng);
 
-    int chancePlayer = rand() % 100;
     if (chancePlayer < 24)
     {
         std::cout << "You swing your weapon at the terrible monster but missed by an inch!" << std::endl;

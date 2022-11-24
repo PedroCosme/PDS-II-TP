@@ -27,8 +27,12 @@ enemy:
 pcg-cpp-0.98:
 	$(CC) /include/pcg-cpp-0.98/include
 
-main: weapon playableCharacter monster equipment gameEvents enemy 
-	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/equipment.o build/gameEvents.o build/enemy.o src/main.cpp -o $(TARGET)
+utilities:
+	$(CC) $(CFLAGS) -c src/utilities.cpp -o build/utilities.o
+
+
+main: weapon playableCharacter monster equipment gameEvents enemy utilities
+	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/equipment.o build/gameEvents.o build/enemy.o build/utilities.o src/main.cpp -o $(TARGET)
 
 clean:
 	$(RM) -r $(BUILDDIR)/* $(TARGET)

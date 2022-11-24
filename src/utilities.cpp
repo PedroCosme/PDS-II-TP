@@ -41,3 +41,14 @@ std::string toUpper(std::string in)
 
     return result;
 }
+
+unsigned int genNum(uint minRange, uint maxRange)
+{
+    int roll;
+    int min = minRange;
+    int max = maxRange;
+
+    roll = rand() % (max - min + 1) + min;
+
+    return roll;
+}
