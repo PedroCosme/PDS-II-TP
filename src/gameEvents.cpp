@@ -3,7 +3,6 @@
 GameEvents::GameEvents(){};
 GameEvents::~GameEvents(){};
 
-
 void GameEvents::battle(PlayableCharacter player, Enemy monster)
 {
     while (player.PlayableCharacter::isAlive() && monster.Monster::isAlive())
@@ -43,8 +42,8 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
     {
         std::cout << "You defeated the " << monster.getName() << "and found" << monster.goldWorth() << "in it's corpse !\n"; // retorna quanto de ouro o monstro vale
         std::cout << "X xp added" << std::endl;                                                                              // implementar o quanto de xp o monstro fornece
-       // unsigned int xp = monster.giveXp();                                                                                  // FUNÇÃO FANTASMA QUE DEVE SER ADICIONADA A CLASSE ENEMY. TENHO UMA IDEIA BOA
-       // player.setXp(xp);
+                                                                                                                             // unsigned int xp = monster.giveXp();                                                                                  // FUNÇÃO FANTASMA QUE DEVE SER ADICIONADA A CLASSE ENEMY. TENHO UMA IDEIA BOA
+                                                                                                                             // player.setXp(xp);
 
         // IMPLEMENTAR AQUI COMO ADICIONAR OURO E EXPERIENCIA ATRAVES DE DERROTA DE MONSTROS
     }
@@ -61,10 +60,17 @@ int GameEvents::hitOrMissMonster()
 
 {
 
-    srand(time(NULL));
+    pcg_extras::seed_seq_from<std::random_device> seed_source;
+
+    // Make a random number engine
+    pcg32 rng(seed_source);
+
+    std::uniform_int_distribution<int> uniform_dist(1, 100);
+    int chanceMonster = uniform_dist(rng);
+    std::cout << "Randomly-chosen number: " << chanceMonster << '\n';
 
     int chanceMonster = rand() % 100;
-   
+
     std::cout << chanceMonster << std::endl;
 
     if (chanceMonster < 24)
@@ -77,26 +83,30 @@ int GameEvents::hitOrMissMonster()
         std::cout << chanceMonster << std::endl;
         std::cout << "The enemy's attack was so strong you slipped and fell on your arse" << std::endl;
     }
-    std::cout << "Chance Monster: "<< chanceMonster << std::endl;
+    std::cout << "Chance Monster: " << chanceMonster << std::endl;
     return chanceMonster;
 }
-int GameEvents::hitOrMissPlayer(){   
-    
-    srand(time(NULL));
+int GameEvents::hitOrMissPlayer()
+{
+    pcg_extras::seed_seq_from<std::random_device> seed_source;
+
+    // Make a random number engine
+    pcg32 rng(seed_source);
+
+    std::uniform_int_distribution<int> uniform_dist(1, 100);
+    int chancePlayer = uniform_dist(rng);
+    std::cout << "Randomly-chosen number: " << chancePlayer << '\n';
 
     int chancePlayer = rand() % 100;
     if (chancePlayer < 24)
     {
-        std::cout << chancePlayer << std::endl;
         std::cout << "You swing your weapon at the terrible monster but missed by an inch!" << std::endl;
     }
     else if (chancePlayer >= 90)
     {
-        std::cout << chancePlayer << std::endl;
         std::cout << "Your attack was so strong you completely smashed the monster's leg" << std::endl;
     }
-std::cout << "Chance Player: "<< chancePlayer << std::endl;
+    std::cout << "Chance Player: " << chancePlayer << std::endl;
 
     return chancePlayer;
 }
-
