@@ -60,7 +60,7 @@ int GameEvents::hitOrMissMonster()
 {
     srand(time(0));
 
-    int chanceMonster = genNum(1, 25);
+    int chanceMonster = genNum(1, 100);
     // pcg_extras::seed_seq_from<std::random_device> seed_source;
 
     // Make a random number engine
@@ -77,13 +77,13 @@ int GameEvents::hitOrMissMonster()
     {
         std::cout << "The enemy's attack was so strong you slipped and fell on your arse" << std::endl;
     }
-    std::cout << "Chance Monster: " << chanceMonster << std::endl;
+
     return chanceMonster;
 }
 int GameEvents::hitOrMissPlayer()
 {
     srand(time(0));
-    int chancePlayer = genNum(1, 20);
+    int chancePlayer = genNum(100, 200);
     // pcg_extras::seed_seq_from<std::random_device> seed_source;
 
     // Make a random number engine
@@ -92,15 +92,15 @@ int GameEvents::hitOrMissPlayer()
     // std::uniform_int_distribution<int> uniform_dist(1, 100);
     // int chancePlayer = uniform_dist(rng);
 
-    if (chancePlayer < 24)
+    if (chancePlayer < 124)
     {
         std::cout << "You swing your weapon at the terrible monster but missed by an inch!" << std::endl;
     }
-    else if (chancePlayer >= 90)
+    else if (chancePlayer >= 190)
     {
         std::cout << "Your attack was so strong you completely smashed the monster's leg" << std::endl;
     }
-    std::cout << "Chance Player: " << chancePlayer << std::endl;
 
     return chancePlayer;
 }
+
