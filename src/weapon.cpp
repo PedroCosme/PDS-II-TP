@@ -4,8 +4,31 @@ Weapon::Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage)
     : _name(name), _minimumDamage(minDamage), _maximumDamage(maxDamage)
 {
 }
-// Weapon::Weapon(Weapon &weapon) : _name(weapon._name){};
-// Weapon::~Weapon(){};
+
+WEAPONS Weapon::getFromName(std::string weaponName)
+{
+    WEAPONS result = WEAPONS::UNARMED;
+
+    std::string low = toLower(weaponName);
+    if (low == "dagger")
+    {
+        result = WEAPONS::DAGGER;
+    }
+    else if (low == "longsword")
+    {
+        result = WEAPONS::LONGSWORD;
+    }
+    else if (low == "great sword")
+    {
+        result = WEAPONS::GREATSWORD;
+    }
+    else if (low == "battle axe")
+    {
+        result = WEAPONS::BATTLEAXE;
+    }
+
+    return result;
+}
 
 std::string Weapon::getName()
 {

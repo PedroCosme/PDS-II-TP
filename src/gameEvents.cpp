@@ -88,13 +88,6 @@ int GameEvents::hitOrMissPlayer()
 {
     srand(time(0));
     int chancePlayer = genNum(100, 200);
-    // pcg_extras::seed_seq_from<std::random_device> seed_source;
-
-    // Make a random number engine
-    // pcg32 rng(seed_source);
-
-    // std::uniform_int_distribution<int> uniform_dist(1, 100);
-    // int chancePlayer = uniform_dist(rng);
 
     if (chancePlayer < 124)
     {

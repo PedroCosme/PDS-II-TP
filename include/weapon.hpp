@@ -21,6 +21,7 @@ class Weapon
 public:
     Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage);
 
+    WEAPONS Weapon::getFromName(std::string weaponName);
     std::string getName();
     unsigned int damageRange();
     unsigned int getDamage();
