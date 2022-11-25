@@ -24,9 +24,9 @@ enum class ITEMS
 class Item
 {
 public:
-    Item(std::string name, int price);
+    Item(std::string name = "null", int price = 0);
     ITEMS getByName(std::string name);
-    std::string getName(ITEMS item);
+    std::string getName();
 
 private:
     std::string _name;

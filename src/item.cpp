@@ -32,50 +32,9 @@ ITEMS getByName(std::string name)
     }
     return item;
 }
-std::string getName(ITEMS item)
+std::string Item::getName()
 {
-    std::string itemName = "null";
-    switch (item)
-    {
-    case ITEMS::HEALTH_POTION:
-    {
-        itemName == "Health Potion";
-        break;
-    }
-
-    case ITEMS::GRENADE:
-    {
-        itemName == "Grenade";
-        break;
-    }
-
-    case ITEMS::GREAT_SWORD:
-    {
-        itemName == "Great Sword";
-        break;
-    }
-
-    case ITEMS::LONG_SWORD:
-    {
-        itemName == "Long Sword";
-        break;
-    }
-
-    case ITEMS::DAGGER:
-    {
-        itemName == "Dagger";
-        break;
-    }
-
-    case ITEMS::BATTLE_AXE:
-    {
-        itemName == "Battle Axe";
-        break;
-    }
-    default:
-        break;
-    }
-    return itemName;
+    return _name;
 }
 std::map<ITEMS, Item> itemList = std::map<ITEMS, Item>{
     {ITEMS::NULL_ITEM, Item("NULL", 0)},

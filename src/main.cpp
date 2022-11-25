@@ -13,7 +13,14 @@
 int main()
 {
     Shop shop;
-    std::cout << shop.getCostOf(ITEMS::GREAT_SWORD) << std::endl;
+    Item healthPotion("Health Potion", 50);
+    Item grenade("Grenade", 80);
+    Item greatSword("Great Sword", 180);
+    Item battleAxe("Battle Axe", 220);
+    Item dagger("Dagger", 50);
+    Item longSword("Long sword", 120);
+
+    std::cout << healthPotion.getName() << std::endl;
     Enemy monster(20, 50, "Goblin", 100);
     std::cout << "Bem vindo ao jogo, começaremos criando um personagem" << std::endl;
     std::cout << "Escolha um nome para o seu personagem:" << std::endl;
