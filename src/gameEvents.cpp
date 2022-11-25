@@ -5,7 +5,7 @@ GameEvents::~GameEvents(){};
 
 void GameEvents::battle(PlayableCharacter player, Enemy monster)
 {
-    while (monster.Monster::isAlive())
+    while (monster.isAlive())
     {
         std::cout
             << player.PlayableCharacter::getName() << " vs " << monster.Monster::getName() << "\n"
@@ -32,6 +32,11 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
             monster.Monster::isAlive();
         }
 
+        else if (hitOrMiss < 124)
+        {
+            monster.Monster::mtakeDamage(0);
+        }
+
         if (monster.isAlive())
 
         {
@@ -43,11 +48,11 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
         else
         {
             std::cout << "You defeated the " << monster.getName() << " and found " << monster.goldWorth() << " in it's corpse !\n"; // retorna quanto de ouro o monstro vale
-            std::cout << monster.xpWorth() << " xp added" << std::endl;
+            player.addGold(monster.goldWorth());
+            std::cout << monster.xpWorth() << " xp gained" << std::endl;
             player.setXp(monster.xpWorth());
             std::cout << player.getXp() << std::endl;
-
-            // IMPLEMENTAR AQUI COMO ADICIONAR OURO ATRAVES DE DERROTA DE MONSTROS
+            monster.~Enemy();
         }
     }
 }

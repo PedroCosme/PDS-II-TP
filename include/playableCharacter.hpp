@@ -103,46 +103,10 @@ public:
 
     void changeWeapon(Weapon weapon);
 
-    /**
-     * @brief Retorna o equipamento atual do personagem
-     * @return equipment com equipamento atual do personagem
-     */
-    // Equipment get_equipment();
+    void addGold(uint goldAmount);
 
-    // /**
-    //  * @brief Altera o equipamento atual do personagem
-    //  * @param equip equipamento a ser equipado
-    //  */
-    // void set_equipment(Equipment equipment);
+    void subtractGold(uint goldAmount);
 
-    // /**
-    //  * @brief Informa ao jogador os equipamentos disponíveis em seu inventário
-    //  * @param equipments set com os equipamentos do usuário
-    //  */
-    // void print_equipments(std::set<Equipment> &equipments);
-
-    // /**
-    //  * @brief Informa ao jogador seu invetário de equipamentos e permite-o alterar seu equipamento atual
-    //  * @param equipments set com os equipamentos do usuário
-    //  */
-    // void change_equipment(std::set<Equipment> &equipments);
-
-    // /**
-    //  * @brief Adiciona um equipamento novo ao inventário do usuário
-    //  * @param equipments set com os equipamentos do usuário
-    //  */
-    // void add_equipment(Equipment equipment);
-
-    // /**
-    //  * @brief Realiza ação de ataque com o equipamento atualmente equipado
-    //  * @param equipment objeto do tipo equipamento atualmente equipado
-    //  */
-    // void attack(Equipment equipment);
-
-    // /**
-    //  * @brief Realiza ação de beber poção de cura caso o usuário tenha alguma. Chama a função heal() de game events.
-    //  * @param equipments set com os equipamentos do usuário
-    //  */
 private:
     Weapon _weapon;
     Equipment _equipment;

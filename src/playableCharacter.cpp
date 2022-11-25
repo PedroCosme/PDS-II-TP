@@ -82,24 +82,20 @@ Weapon PlayableCharacter::returnWeapon()
     return this->_weapon;
 }
 
-// void PlayableCharacter::changeWeapon(std::map<WEAPONS, Weapon> weapons)
-// {
-// }
-
 void PlayableCharacter::changeWeapon(Weapon weapon)
 {
     this->_weapon = weapon;
 }
 
-// Weapon PlayableCharacter::getWeapon()
-// {
-//     return this->_weapon;
-// };
+void PlayableCharacter::addGold(uint goldAmount)
+{
+    this->_gold += goldAmount;
+}
 
-// void PlayableCharacter::set_equipment(Equipment equipment)
-// {
-//     this->_equipment = equipment;
-// }
+void PlayableCharacter::subtractGold(uint goldAmount)
+{
+    this->_gold -= goldAmount;
+}
 
 // void PlayableCharacter::showWeapons()
 // {
