@@ -33,9 +33,11 @@ utilities:
 shop:
 	$(CC) $(CFLAGS) -c src/shop.cpp -o build/shop.o
 
+item:
+	$(CC) $(CFLAGS) -c src/item.cpp -o build/item.o
 
-main: weapon playableCharacter monster equipment gameEvents enemy utilities shop
-	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/equipment.o build/gameEvents.o build/enemy.o build/shop.o build/utilities.o src/main.cpp -o $(TARGET)
+main: weapon playableCharacter monster equipment gameEvents enemy utilities shop item
+	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/equipment.o build/item.o build/gameEvents.o build/enemy.o build/shop.o build/utilities.o src/main.cpp -o $(TARGET)
 
 clean:
 	$(RM) -r $(BUILDDIR)/* $(TARGET)
