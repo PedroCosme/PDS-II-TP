@@ -2,7 +2,7 @@
 #include <cmath>
 #include <string>
 
-Monster::Monster(std::string name, unsigned int currentHp)
+Monster::Monster(std::string name, int currentHp)
     : _name(name),
       _currentHp(currentHp)
 {
@@ -20,7 +20,12 @@ std::string Monster::getName() const
 
 bool Monster::isAlive() const
 {
-  return _currentHp > 0;
+  if (_currentHp > 0)
+  {
+    return true;
+  }
+  else
+    return false;
 }
 
 unsigned int Monster::monsterDamage(unsigned int damageAmount)
@@ -44,8 +49,12 @@ std::string Monster::ToString() const
 void Monster::mtakeDamage(unsigned int damage)
 {
   _currentHp -= damage;
+  if (this->getCurrentHp() < 0)
+  {
+    this->isAlive();
+  }
 }
-unsigned int Monster::getCurrentHp()
+int Monster::getCurrentHp()
 {
   return this->_currentHp;
 }

@@ -7,11 +7,13 @@ class Monster
 {
 
 public:
-        Monster(std::string name, unsigned int currentHp);
+        Monster(std::string name, int currentHp);
         // Monster(Monster &monster);
         ~Monster();
 
         std::string getName() const;
+
+        int getCurrentHp();
 
         bool isAlive() const;
 
@@ -25,11 +27,9 @@ public:
 
         virtual std::string ToString() const;
 
-        unsigned int getCurrentHp();
-
 protected:
         std::string _name;
-        unsigned int _currentHp;
+        int _currentHp;
 };
 
 #endif

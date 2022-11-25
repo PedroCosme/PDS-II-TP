@@ -5,7 +5,7 @@ GameEvents::~GameEvents(){};
 
 void GameEvents::battle(PlayableCharacter player, Enemy monster)
 {
-    while (player.PlayableCharacter::isAlive() && monster.Monster::isAlive())
+    while (monster.Monster::isAlive())
     {
         std::cout
             << player.PlayableCharacter::getName() << " vs " << monster.Monster::getName() << "\n"
@@ -17,16 +17,19 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
             playerChoice = getchar();
         }
         int hitOrMiss = GameEvents::hitOrMissPlayer(); // // hit or miss do monstro, implementar o miss
-        std::cout << hitOrMiss << std::endl;
         if (hitOrMiss > 124 && hitOrMiss < 190)
         {
             uint damageDealt = player.returnWeapon().getDamage();
-            monster.Monster::mtakeDamage(damageDealt); // a ideia aqui é chamar a função que calcula o dano da arma que o player está usando (ainda a ser feita)
-            std::cout << "The monster has taken " << damageDealt << " damage" << std::endl;
+            monster.Monster::mtakeDamage(damageDealt);
+            std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
+            monster.Monster::isAlive();
         }
         else if (hitOrMiss >= 90)
         {
-            /* mesma coisa acima, só pegar e dobrar o dano */
+            uint damageDealt = player.returnWeapon().getDamage() * 2;
+            monster.Monster::mtakeDamage(damageDealt);
+            std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
+            monster.Monster::isAlive();
         }
 
         if (monster.isAlive())
@@ -34,23 +37,18 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster)
         {
             int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
 
-            std::cout << hitOrMissM << std::endl;
-
-            player.takeDamage(monster.monsterDamage(20)); // discutir com o Bruno como vamos calcular o dano do monstro
+            player.takeDamage(monster.monsterDamage(1)); // discutir com o Bruno como vamos calcular o dano do monstro
+            player.PlayableCharacter::isAlive();
         }
-    }
-    if (player.isAlive())
-    {
-        std::cout << "You defeated the " << monster.getName() << "and found" << monster.goldWorth() << "in it's corpse !\n"; // retorna quanto de ouro o monstro vale
-        std::cout << "X xp added" << std::endl;                                                                              // implementar o quanto de xp o monstro fornece
-                                                                                                                             // unsigned int xp = monster.giveXp();                                                                                  // FUNÇÃO FANTASMA QUE DEVE SER ADICIONADA A CLASSE ENEMY. TENHO UMA IDEIA BOA
-                                                                                                                             // player.setXp(xp);
+        else
+        {
+            std::cout << "You defeated the " << monster.getName() << " and found " << monster.goldWorth() << " in it's corpse !\n"; // retorna quanto de ouro o monstro vale
+            std::cout << monster.xpWorth() << " xp added" << std::endl;
+            player.setXp(monster.xpWorth());
+            std::cout << player.getXp() << std::endl;
 
-        // IMPLEMENTAR AQUI COMO ADICIONAR OURO E EXPERIENCIA ATRAVES DE DERROTA DE MONSTROS
-    }
-    else
-    {
-        std::cout << "You were defeated by the " << monster.getName() << "!\n";
+            // IMPLEMENTAR AQUI COMO ADICIONAR OURO ATRAVES DE DERROTA DE MONSTROS
+        }
     }
 }
 

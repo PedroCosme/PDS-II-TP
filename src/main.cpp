@@ -19,25 +19,24 @@ int main()
 
     char getEnter = 'a';
 
-    while(getEnter != 10){
-        std::cout << "Pressione (Enter) para continuar" << std::endl;  
-        
+    while (getEnter != 10)
+    {
+        std::cout << "Pressione (Enter) para continuar" << std::endl;
+
         std::cin >> getEnter;
         break;
     }
 
     std::cout << "For three long days your have adventured in the dark forest, finally you see a tower in the distance and rush towards it" << std::endl;
-    sleep(5);
     std::cout << "When you get close enough to the tower you see a bridge guarded by a giant Troll!" << std::endl;
-   
 
     player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
-    //narracao inicial
+    // narracao inicial
 
     // batalha
     GameEvents game;
     game.battle(player, monster);
-   // game.hitOrMissMonster();
-    //game.hitOrMissPlayer();
+    // game.hitOrMissMonster();
+    // game.hitOrMissPlayer();
     return 0;
 }
