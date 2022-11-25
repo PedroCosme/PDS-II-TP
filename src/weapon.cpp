@@ -5,7 +5,7 @@ Weapon::Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage)
 {
 }
 
-WEAPONS Weapon::getFromName(std::string weaponName)
+WEAPONS getFromName(std::string weaponName)
 {
     WEAPONS result = WEAPONS::UNARMED;
 

@@ -6,9 +6,14 @@
 #include "monster.hpp"
 #include "gameEvents.hpp"
 #include <unistd.h>
+#include "shop.hpp"
+#include "item.hpp"
+#include "weapon.hpp"
 
 int main()
 {
+    Shop shop;
+    std::cout << shop.getCostOf(ITEMS::GREAT_SWORD) << std::endl;
     Enemy monster(20, 50, "Goblin", 100);
     std::cout << "Bem vindo ao jogo, começaremos criando um personagem" << std::endl;
     std::cout << "Escolha um nome para o seu personagem:" << std::endl;
