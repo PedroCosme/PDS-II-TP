@@ -25,21 +25,87 @@ int main()
     std::cout << "Choose a name for your character:" << std::endl;
     std::string playerName;
     std::cin >> playerName;
-    std::cout << " Welcome to our RPG Battle Simulator " << playerName << "!" << std::endl;
+    std::cout << "Welcome to our RPG Battle Simulator, " << playerName << "!" << std::endl;
     PlayableCharacter player(playerName);
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     //narracao inicial
-    std::cout << "For three long days your have adventured in the Dark Woods, searching for the hidden treasure. "
-    << "Finally, you see a tower in the distance and praise your gods, as the supplies were barely enough for another day in the Dark Woods." << std::endl
-    << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl
-    << "Suddenly, a Goblin rushes towards you and attacks you!";
+    std::cout << "For three long days your have adventured in the Dark Woods, as you were summoned by the king of the realm to find and slay the Necromancer. " 
+    << "Finally, you see a tower in the distance and praise the gods, as your supplies were barely enough for another day in the Dark Woods." << std::endl;
+    sleep(5); 
+    std::cout << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl;
+    sleep(6);
+    std::cout << "Suddenly, a Goblin rushes towards you and attacks you!" << std::endl;
+    
+   //batalha com goblin 
     player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
-
-    // batalha
     GameEvents game;
     game.battle(player, monster);
-    // game.hitOrMissMonster();
-    // game.hitOrMissPlayer();
+
+    std::cout << "You continue walking through the dense vegetation of the Dark Woods, trying to reach your objetive. "
+    <<"You can't see much but continue moving." << std::endl;
+    sleep(3);
+    std::cout << "When you get close enough to see the tower clearly you almost fall into a river! "
+    << "Fortunately, you see a bridge. The only bad part is: it is guarded by a huge troll" << std::endl;
+    sleep(4);
+
+    std::cout << "The troll says you cannot pass unless you spare him some coins." << std::endl;
+    sleep(3);
+    std::cout << "Would you like to (g) give him the coins or (b) battle the troll?" << std::endl;
+    char trollChoice = 'x';
+    while (trollChoice  != 'g' && trollChoice != 'b'){
+        std::cin >> trollChoice;
+    }
+
+    switch(trollChoice){
+        case 'g' : {
+            std::cout << "You reluctantly give the troll some of your coins" << std::endl;
+            std::cout << "Thank you, stupid traveller. You may now proceed but be warned: you cannot defeat the Necromancer. You are weak" << std::endl;
+            std::cout << "You ignore the troll and keep moving" << std::endl;
+            //IMPLEMENTAR LOGICA DE DAR MOEDAS
+            break;
+        }
+        case 'b' :{
+            std::cout << "You decide your coins are too precious to give away and proceed to battle the Troll." << std::endl;
+            //IMPLEMENTAR LOGICA DE BATALHA
+        }
+        default:{
+            break;
+        }
+    }
+
+    //continua narracao
+
+    std::cout << "After the two encounters you realize your journey will not be as easy as you thought it would be. " 
+    << "Nevertheless, you continue your journey as your mission is everything that matters to you." << std::endl;
+    sleep(6);
+    std::cout << "You finally get to the gate of the tower and try to open it. Unfortunately it is locked." << std::endl;
+    std::cout << "You start to get desperate and when you start to think of giving up a misterious mand approaches you." << std::endl;
+    sleep(6);
+    std::cout << "Hello there, traveler! Would you like this? The man shows you a rusty old key." << std::endl;
+    std::cout << "Would you like to (t) take the key by force or (b) try buying the key?" << std::endl;
+    char banditChoice = 'x';
+    while (banditChoice  != 'g' && banditChoice != 'b'){
+        std::cin >> banditChoice;
+    }
+
+    switch(banditChoice){
+        case 'b' : {
+            std::cout << "You offer the bandit some of your coins in exchange for the key." << std::endl;
+            std::cout << "The misterious man says that is not enough for the key and persuades you into giving him two more coins." << std::endl;
+            std::cout << "Humiliated, you get the key and enter the tower" << std::endl;
+            //IMPLEMENTAR LOGICA DE DAR MOEDAS
+            break;
+        }
+        case 't' :{
+            std::cout << "You get very angry with the man and decide to battle the man." << std::endl;
+            //IMPLEMENTAR LOGICA DE BATALHA
+        }
+        default:{
+            break;
+        }
+    }
+
+
     return 0;
 }
