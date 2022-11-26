@@ -22,28 +22,19 @@ int main()
 
     std::cout << healthPotion.getName() << std::endl;
     Enemy monster(20, 50, "Goblin", 100);
-    std::cout << "Bem vindo ao jogo, começaremos criando um personagem" << std::endl;
-    std::cout << "Escolha um nome para o seu personagem:" << std::endl;
+    std::cout << "Choose a name for your character:" << std::endl;
     std::string playerName;
     std::cin >> playerName;
-    std::cout << "Bem-vindo(a) ao nosso simulador de Batalha RPG, " << playerName << "!" << std::endl;
+    std::cout << " Welcome to our RPG Battle Simulator " << playerName << "!" << std::endl;
     PlayableCharacter player(playerName);
-
-    char getEnter = 'a';
-
-    while (getEnter != 10)
-    {
-        std::cout << "Pressione (Enter) para continuar" << std::endl;
-
-        std::cin >> getEnter;
-        break;
-    }
-
-    std::cout << "For three long days your have adventured in the dark forest, finally you see a tower in the distance and rush towards it" << std::endl;
-    std::cout << "When you get close enough to the tower you see a bridge guarded by a giant Troll!" << std::endl;
-
+    std::cout << "Press (Enter) to continue" << std::endl;
+    system("read");
+    //narracao inicial
+    std::cout << "For three long days your have adventured in the Dark Woods, searching for the hidden treasure. "
+    << "Finally, you see a tower in the distance and praise your gods, as the supplies were barely enough for another day in the Dark Woods." << std::endl
+    << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl
+    << "Suddenly, a Goblin rushes towards you and attacks you!";
     player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
-    // narracao inicial
 
     // batalha
     GameEvents game;
