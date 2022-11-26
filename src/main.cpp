@@ -30,7 +30,7 @@ int main()
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     //narracao inicial
-    std::cout << "For three long days your have adventured in the Dark Woods, as you were summoned by the king of the realm to find and slay the Necromancer. " 
+    std::cout << "For three long days your have adventured in the Dark Woods, as you were summoned by the king of the realm to find and slay the Vampire that is haunting the kingdom. " 
     << "Finally, you see a tower in the distance and praise the gods, as your supplies were barely enough for another day in the Dark Woods." << std::endl;
     sleep(5); 
     std::cout << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl;
@@ -98,14 +98,48 @@ int main()
             break;
         }
         case 't' :{
-            std::cout << "You get very angry with the man and decide to battle the man." << std::endl;
+            std::cout << "You get very angry and decide to battle the man." << std::endl;
             //IMPLEMENTAR LOGICA DE BATALHA
         }
         default:{
             break;
         }
     }
+    std::cout << "Finally, you enter the tower. Congratulations!" << std::endl;
+    sleep (5);
 
+    std::cout << "You start climbing the stairs and feel a dark atmosphere surronding you. Everything seems to be rotten inside the tower."
+    << " You get to a room with a black coffin and decide to open it." << std::endl;
+    sleep(6);
+    std::cout << "The vampire is resting inside and it seems it doesn't wake up when you open the coffin." << std::endl;
+    sleep(6);
+    std::cout << "As soon as you try to get a wooden stake inside its chest the vampire opens it's eyes and start floating towards you." << std::endl;
+    std::cout << "Would you like to (r) run away or (a) attack the vampire?" << std::endl;
+    char vampireChoice = 'x';
+    while (vampireChoice  != 'r' && vampireChoice != 'a'){
+        std::cin >> vampireChoice;
+    }
 
+    switch(banditChoice){
+        case 'r' : {
+            std::cout << "Unfortunately, you got so scare you couldn't bring yourself to do it. Everyday people die cause you couldn't do it." << std::endl;
+            sleep (6);
+            std::cout << "Over the years you get so depressed thinking about it you decide to abandon everything you lived for and become a gypsy." << std::endl;
+            std::cout << "No one ever heard of " << playerName << " again." << std::endl;
+            std::cout << "GAME OVER" << std::endl;
+            break;
+        }
+        case 't' :{
+            std::cout << "You are so scared with the atmosphere and the situation you can barely getter enough strengh together to grab your weapon."
+            << "Your rememeber your people and proudly engages in battle with the monster." << std::endl;
+            //IMPLEMENTAR LOGICA DE BATALHA
+        }
+        default:{
+            break;
+        }
+    }
+    std::cout << "You return to the king and tell him everything that happened in your journey. He is so satisfied he promotes you to royal knight"
+    << " and organizes a huge celebration to you. The people praise you as their savior and are forever grateful to you. Congratulations!" << std::endl;
+    
     return 0;
 }
