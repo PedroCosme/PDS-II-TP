@@ -1,6 +1,7 @@
 #include "inventory.hpp"
 
-Inventory::Inventory(std::map<Item, int> inventory) : _inventory(inventory){};
+// Inventory::Inventory(std::map<Item, int> inventory) : _inventory(inventory){};
+Inventory::Inventory(){};
 
 Inventory::~Inventory(){};
 
@@ -13,26 +14,33 @@ std::map<Item, int> Inventory::createInventory()
     Item dagger("Dagger", 50);
     Item longSword("Long sword", 120);
 
-    _inventory.insert({healthPotion, 2});
-    _inventory.insert({grenade, 0});
-    _inventory.insert({greatSword, 0});
-    _inventory.insert({dagger, 1});
-    _inventory.insert({longSword, 0});
+    // _inventory.insert({healthPotion, 2});
+    // _inventory.insert({grenade, 0});
+    // _inventory.insert({greatSword, 0});
+    // _inventory.insert({dagger, 1});
+    // _inventory.insert({longSword, 0});
+
+    _inventory[healthPotion] = 2;
+    _inventory[grenade];
+    _inventory[greatSword];
+    _inventory[dagger]++;
+    _inventory[longSword];
 
     return _inventory;
 }
 
-bool Inventory::operator<(const Item &item) const
+bool Inventory::operator<(const Item &rhs) const
 {
-    return (_name < item._name);
+    return (_name < rhs._name);
 }
 
-std::map<Item, int> subtractItem(std::map<Item, int> inventory, Item item)
+std::map<Item, int> Inventory::subtractItem(Item item)
 {
-    if (inventory.at(item) > 0)
+    std::cout << _inventory.at(item) << std::endl;
+    if (_inventory[item] > 0)
     {
-        inventory.at(item) - 1;
-        return inventory;
+        _inventory[item]--;
+        return _inventory;
     }
     else
     {
@@ -40,17 +48,18 @@ std::map<Item, int> subtractItem(std::map<Item, int> inventory, Item item)
     }
 }
 
-std::map<Item, int> addItem(std::map<Item, int> inventory, Item item)
+std::map<Item, int> Inventory::addItem(Item item)
 {
 
-    inventory.at(item) + 1;
+    _inventory[item]++;
     std::cout << "You bought one" << item.getName() << std::endl;
-    return inventory;
+    return _inventory;
 }
 
-void displayInventory(std::map<Item, int> inventory)
+void Inventory::displayInventory()
 {
-    for (auto const &pair : inventory)
+
+    for (auto const &pair : _inventory)
     {
         std::cout << "{" << pair.first.getName() << ": " << pair.second << "}\n";
     }

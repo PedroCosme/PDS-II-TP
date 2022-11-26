@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include "equipment.hpp"
 #include "weapon.hpp"
 #include "utilities.hpp"
 #include "item.hpp"
@@ -13,20 +12,21 @@
 class Inventory : public Item
 {
 public:
-    Inventory(std::map<Item, int> _inventory);
+    // Inventory(std::map<Item, int> _inventory);
+    Inventory();
     ~Inventory();
-
-    bool operator<(const Item &rhs) const;
-
-    std::map<Item, int> addItem(std::string itemName);
 
     std::map<Item, int> createInventory();
 
     void useItem(Item item);
 
-    std::map<Item, int> subtractItem(std::map<Item, int> inventory);
+    std::map<Item, int> subtractItem(Item item);
 
-    void displayInventory(std::map<Item, int> inventory);
+    void displayInventory();
+
+    bool operator<(const Item &rhs) const;
+
+    std::map<Item, int> addItem(Item item);
 
 public:
     std::map<Item, int> _inventory;

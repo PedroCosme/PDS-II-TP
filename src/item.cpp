@@ -46,3 +46,8 @@ std::map<ITEMS, Item> itemList = std::map<ITEMS, Item>{
     {ITEMS::LONG_SWORD, Item("Long sword", 120)},
 
 };
+
+bool Item::operator<(const Item &rhs) const
+{
+    return (_name < rhs._name);
+}

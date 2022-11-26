@@ -2,8 +2,6 @@
 #define _SHOP_HPP_
 
 #include <map>
-
-#include "equipment.hpp"
 #include "weapon.hpp"
 #include "item.hpp"
 #include "playableCharacter.hpp"

@@ -24,9 +24,10 @@ enum class ITEMS
 class Item
 {
 public:
-    Item(std::string name = "null", int price = 0);
+    Item(std::string name = "item nulo", int price = 0);
     ITEMS getByName(std::string name);
     std::string getName() const;
+    bool operator<(const Item &rhs) const;
 
 public:
     std::string _name;

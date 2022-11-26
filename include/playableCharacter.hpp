@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include "equipment.hpp"
 #include "weapon.hpp"
 #include "utilities.hpp"
 
@@ -25,8 +24,6 @@ public:
     unsigned int getLvl();
 
     unsigned int getCurrentHp();
-
-    const Equipment &getEquipment(void);
 
     unsigned int getXp();
 

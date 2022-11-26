@@ -9,7 +9,6 @@
 #include "enemy.hpp"
 #include "weapon.hpp"
 #include "item.hpp"
-#include "shop.hpp"
 #include "utilities.hpp"
 //#include "pcg_random.hpp"
 #include <iostream>
