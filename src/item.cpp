@@ -32,7 +32,7 @@ ITEMS getByName(std::string name)
     }
     return item;
 }
-std::string Item::getName()
+std::string Item::getName() const
 {
     return _name;
 }

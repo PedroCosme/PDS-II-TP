@@ -26,7 +26,7 @@ class Item
 public:
     Item(std::string name = "null", int price = 0);
     ITEMS getByName(std::string name);
-    std::string getName();
+    std::string getName() const;
 
 public:
     std::string _name;

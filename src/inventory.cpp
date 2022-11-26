@@ -52,6 +52,6 @@ void displayInventory(std::map<Item, int> inventory)
 {
     for (auto const &pair : inventory)
     {
-        std::cout << "{" << pair.first << ": " << pair.second << "}\n";
+        std::cout << "{" << pair.first.getName() << ": " << pair.second << "}\n";
     }
 }
