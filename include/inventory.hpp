@@ -8,6 +8,7 @@
 #include "utilities.hpp"
 #include "item.hpp"
 #include <map>
+#include "playableCharacter.hpp"
 
 class Inventory : public Item
 {
@@ -20,13 +21,13 @@ public:
 
     void useItem(Item item);
 
-    std::map<Item, int> subtractItem(Item item);
+    void subtractItem(Item item);
 
     void displayInventory();
 
     bool operator<(const Item &rhs) const;
 
-    std::map<Item, int> addItem(Item item);
+    void addItem(Item item);
 
 public:
     std::map<Item, int> _inventory;

@@ -16,7 +16,7 @@ class PlayableCharacter
 {
 public:
     PlayableCharacter(std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, unsigned int currentHp = 100,
-                      unsigned int maxMp = 50, unsigned int gold = 10);
+                      unsigned int maxMp = 50, unsigned int gold = 1000);
     ~PlayableCharacter();
 
     std::string getName();
@@ -57,9 +57,11 @@ public:
 
     void addGold(uint goldAmount);
 
-    void subtractGold(uint goldAmount);
+    void subtractGold(int goldAmount);
 
     void buyItem(std::string itemName);
+
+    int getGold();
 
 private:
     Weapon _weapon;

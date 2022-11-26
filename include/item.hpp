@@ -27,6 +27,7 @@ public:
     Item(std::string name = "item nulo", int price = 0);
     ITEMS getByName(std::string name);
     std::string getName() const;
+    int getPrice();
     bool operator<(const Item &rhs) const;
 
 public:

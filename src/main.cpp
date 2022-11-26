@@ -13,6 +13,12 @@
 
 int main()
 {
+    std::cout << "Choose a name for your character:" << std::endl;
+    std::string playerName;
+    std::cin >> playerName;
+    std::cout << "Welcome to our RPG Battle Simulator, " << playerName << "!" << std::endl;
+    PlayableCharacter player(playerName);
+
     Item healthPotion("Health Potion", 50);
     Item grenade("Grenade", 80);
     Item greatSword("Great Sword", 180);
@@ -20,20 +26,46 @@ int main()
     Item dagger("Dagger", 50);
     Item longSword("Long sword", 120);
 
-    // std::cout << healthPotion.getName() << std::endl;
-
     Inventory inventory;
     inventory.createInventory();
     inventory.displayInventory();
-    inventory.subtractItem(healthPotion);
+
+    // abaixo fica exemplificado como funciona o ato de comprar um item.;
+
+    std::cout << "Digite qual item gostaria de comprar" << std::endl;
+    std::string desiredItem;
+    std::getline(std::cin >> std::ws, desiredItem);
+    int itemPrice = buyItem(desiredItem);
+    player.subtractGold(itemPrice);
+    inventory.addItem(desiredItem);
     inventory.displayInventory();
+    // if (toLower(desiredItem) == "health potion")
+    // {
+    //     int itemPrice = healthPotion.getPrice();
+    // }
+    // else if (toLower(desiredItem) == "grenade")
+    // {
+    //     int itemPrice = grenade.getPrice();
+    //     // player.subtractGold(itemPrice);
+    // }
+    // else if (toLower(desiredItem) == "great sword")
+    // {
+    //     int itemPrice = greatSword.getPrice();
+    // }
+    // else if (toLower(desiredItem) == "long sword")
+    // {
+    //     int itemPrice = longSword.getPrice();
+    // }
+    // else if (toLower(desiredItem) == "battle axe")
+    // {
+    //     int itemPrice = battleAxe.getPrice();
+    // }
+    // else if (toLower(desiredItem) == "dagger")
+    // {
+    //     int itemPrice = dagger.getPrice();
+    // }
 
     Enemy monster(20, 50, "Goblin", 100);
-    std::cout << "Choose a name for your character:" << std::endl;
-    std::string playerName;
-    std::cin >> playerName;
-    std::cout << "Welcome to our RPG Battle Simulator, " << playerName << "!" << std::endl;
-    PlayableCharacter player(playerName);
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     // narracao inicial

@@ -34,13 +34,12 @@ bool Inventory::operator<(const Item &rhs) const
     return (_name < rhs._name);
 }
 
-std::map<Item, int> Inventory::subtractItem(Item item)
+void Inventory::subtractItem(Item item)
 {
     std::cout << _inventory.at(item) << std::endl;
     if (_inventory[item] > 0)
     {
         _inventory[item]--;
-        return _inventory;
     }
     else
     {
@@ -48,12 +47,11 @@ std::map<Item, int> Inventory::subtractItem(Item item)
     }
 }
 
-std::map<Item, int> Inventory::addItem(Item item)
+void Inventory::addItem(Item item)
 {
 
     _inventory[item]++;
-    std::cout << "You bought one" << item.getName() << std::endl;
-    return _inventory;
+    std::cout << "You bought one " << item.getName() << std::endl;
 }
 
 void Inventory::displayInventory()

@@ -92,11 +92,14 @@ void PlayableCharacter::addGold(uint goldAmount)
     this->_gold += goldAmount;
 }
 
-void PlayableCharacter::subtractGold(uint goldAmount)
+void PlayableCharacter::subtractGold(int goldAmount)
 {
     this->_gold -= goldAmount;
 }
-
+int PlayableCharacter::getGold()
+{
+    return this->_gold;
+}
 // void PlayableCharacter::showWeapons()
 // {
 //     for (auto &i : _inventory)

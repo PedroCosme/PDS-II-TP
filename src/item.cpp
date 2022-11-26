@@ -36,6 +36,11 @@ std::string Item::getName() const
 {
     return _name;
 }
+
+int Item::getPrice()
+{
+    return _price;
+}
 std::map<ITEMS, Item> itemList = std::map<ITEMS, Item>{
     {ITEMS::NULL_ITEM, Item("NULL", 0)},
     {ITEMS::HEALTH_POTION, Item("Health Potion", 50)},
