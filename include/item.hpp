@@ -28,7 +28,7 @@ public:
     ITEMS getByName(std::string name);
     std::string getName();
 
-private:
+public:
     std::string _name;
     int _price;
 };
