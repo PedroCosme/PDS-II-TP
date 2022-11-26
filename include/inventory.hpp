@@ -7,20 +7,25 @@
 #include "equipment.hpp"
 #include "weapon.hpp"
 #include "utilities.hpp"
+#include "item.hpp"
+#include <map>
 
 class Inventory
 {
 public:
-    Inventory(std::map<int, Equipment> equipments);
+    Inventory(std::map<Item, int> _inventory);
     ~Inventory();
-    std::map<int, Equipment> addItem(std::string itemName);
+
+    std::map<Item, int> addItem(std::string itemName);
+
+    std::map<Item, int> createInventory();
 
     void useItem(Item item);
 
-    std::map<int, Equipment> subtractItem(std::map<int, Equipment> equipments);
+    std::map<Item, int> subtractItem(std::map<Item, int> inventory);
 
 public:
-    std::map<int, Equipment> _equipments;
+    std::map<Item, int> _inventory;
 };
 
 #endif
