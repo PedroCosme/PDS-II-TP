@@ -59,6 +59,8 @@ void Inventory::displayInventory()
 
     for (auto const &pair : _inventory)
     {
-        std::cout << "{" << pair.first.getName() << ": " << pair.second << "}\n";
+        std::cout << "{" << pair.first.getName() << ": " << pair.second << "}"
+                  << " || ";
     }
+    std::cout << std::endl;
 }

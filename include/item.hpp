@@ -20,11 +20,12 @@ enum class ITEMS
     DAGGER,
     BATTLE_AXE
 };
+std::string getItemById(int itemId);
 
 class Item
 {
 public:
-    Item(std::string name = "item nulo", int price = 0);
+    Item(std::string name = "item nulo", int price = 0, int id = 0);
     ITEMS getByName(std::string name);
     std::string getName() const;
     int getPrice();
@@ -33,6 +34,7 @@ public:
 public:
     std::string _name;
     int _price;
+    int _id;
 };
 
 extern std::map<ITEMS, Item> itemList;

@@ -8,7 +8,9 @@
 #include "item.hpp"
 #include "playableCharacter.hpp"
 
-int buyItem(std::string itemName);
+int buyItemStr(std::string itemName);
+int buyItem(int itemId);
+
 // private:
 //     Equipment _equipment;
 

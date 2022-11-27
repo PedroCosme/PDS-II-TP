@@ -19,12 +19,12 @@ int main()
     std::cout << "Welcome to our RPG Battle Simulator, " << playerName << "!" << std::endl;
     PlayableCharacter player(playerName);
 
-    Item healthPotion("Health Potion", 50);
-    Item grenade("Grenade", 80);
-    Item greatSword("Great Sword", 180);
-    Item battleAxe("Battle Axe", 220);
-    Item dagger("Dagger", 50);
-    Item longSword("Long sword", 120);
+    Item healthPotion("Health Potion", 50, 1);
+    Item grenade("Grenade", 80, 2);
+    Item dagger("Dagger", 50, 3);
+    Item longSword("Long sword", 120, 4);
+    Item greatSword("Great Sword", 180, 5);
+    Item battleAxe("Battle Axe", 220, 6);
 
     Inventory inventory;
     inventory.createInventory();
@@ -33,37 +33,21 @@ int main()
     // abaixo fica exemplificado como funciona o ato de comprar um item.;
 
     std::cout << "Digite qual item gostaria de comprar" << std::endl;
-    std::string desiredItem;
-    std::getline(std::cin >> std::ws, desiredItem);
+
+    std::string desiredItemStr;
+
+    int desiredItem;
+
+    std::cin >> desiredItem;
+
     int itemPrice = buyItem(desiredItem);
     player.subtractGold(itemPrice);
-    inventory.addItem(desiredItem);
+    desiredItemStr = getItemById(desiredItem);
+
+    inventory.addItem(desiredItemStr);
     inventory.displayInventory();
-    // if (toLower(desiredItem) == "health potion")
-    // {
-    //     int itemPrice = healthPotion.getPrice();
-    // }
-    // else if (toLower(desiredItem) == "grenade")
-    // {
-    //     int itemPrice = grenade.getPrice();
-    //     // player.subtractGold(itemPrice);
-    // }
-    // else if (toLower(desiredItem) == "great sword")
-    // {
-    //     int itemPrice = greatSword.getPrice();
-    // }
-    // else if (toLower(desiredItem) == "long sword")
-    // {
-    //     int itemPrice = longSword.getPrice();
-    // }
-    // else if (toLower(desiredItem) == "battle axe")
-    // {
-    //     int itemPrice = battleAxe.getPrice();
-    // }
-    // else if (toLower(desiredItem) == "dagger")
-    // {
-    //     int itemPrice = dagger.getPrice();
-    // }
+
+    // fim de compra
 
     Enemy monster(20, 50, "Goblin", 100);
     std::cout << "Press (Enter) to continue" << std::endl;

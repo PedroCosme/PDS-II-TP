@@ -1,7 +1,7 @@
 #include "item.hpp"
 
-Item::Item(std::string name, int price)
-    : _name(name), _price(price) {}
+Item::Item(std::string name, int price, int id)
+    : _name(name), _price(price), _id(id) {}
 
 ITEMS getByName(std::string name)
 {
@@ -32,6 +32,40 @@ ITEMS getByName(std::string name)
     }
     return item;
 }
+std::string getItemById(int itemId)
+{
+    std::string itemName;
+    switch (itemId)
+    {
+    case 1:
+        itemName = "Health Potion";
+        return itemName;
+
+    case 2:
+        itemName = "Grenade";
+        return itemName;
+
+    case 3:
+        itemName = "dagger";
+        return itemName;
+
+    case 4:
+        itemName = "Long Sword";
+        return itemName;
+
+    case 5:
+        itemName = "Great Sword";
+        return itemName;
+
+    case 6:
+        itemName = "Battle Axe";
+        return itemName;
+
+    default:
+        break;
+    }
+}
+
 std::string Item::getName() const
 {
     return _name;
@@ -42,7 +76,7 @@ int Item::getPrice()
     return _price;
 }
 std::map<ITEMS, Item> itemList = std::map<ITEMS, Item>{
-    {ITEMS::NULL_ITEM, Item("NULL", 0)},
+    {ITEMS::NULL_ITEM, Item("NULL", 0, 0)},
     {ITEMS::HEALTH_POTION, Item("Health Potion", 50)},
     {ITEMS::GRENADE, Item("Grenade", 80)},
     {ITEMS::GREAT_SWORD, Item("Great Sword", 180)},
