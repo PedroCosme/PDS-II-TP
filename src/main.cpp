@@ -26,18 +26,18 @@ int main()
     Item greatSword("Great Sword", 180, 5);
     Item battleAxe("Battle Axe", 220, 6);
 
+    std::cout << "These are your starting items. You may buy new items in the shop anytime outside of battle by typing S" << std::endl;
     Inventory inventory;
     inventory.createInventory();
     inventory.displayInventory();
 
     // abaixo fica exemplificado como funciona o ato de comprar um item.;
 
-    std::cout << "Digite qual item gostaria de comprar" << std::endl;
-
     std::string desiredItemStr;
 
     int desiredItem;
 
+    std::cout << "What are you buying, stranger?" << std::endl;
     std::cin >> desiredItem;
 
     int itemPrice = buyItem(desiredItem);
