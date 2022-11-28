@@ -12,3 +12,14 @@ TEST_CASE("testando damageRange()")
   CHECK(availableWeapons.at(WEAPONS::BATTLEAXE).damageRange()==10);
 
 }
+
+TEST_CASE("testando getName()")
+{
+  
+  CHECK_EQ(availableWeapons.at(WEAPONS::UNARMED).getName(), "Unarmed");
+  CHECK_EQ(availableWeapons.at(WEAPONS::DAGGER).getName(), "Dagger");
+  CHECK_EQ(availableWeapons.at(WEAPONS::LONGSWORD).getName(), "Longsword");
+  CHECK_EQ(availableWeapons.at(WEAPONS::GREATSWORD).getName(), "Greatsword");
+  CHECK_EQ(availableWeapons.at(WEAPONS::BATTLEAXE).getName(), "Battle Axe");
+
+}
