@@ -23,3 +23,13 @@ TEST_CASE("testando getName()")
   CHECK_EQ(availableWeapons.at(WEAPONS::BATTLEAXE).getName(), "Battle Axe");
 
 }
+TEST_CASE("testando getDamage()")
+{
+  
+  CHECK_FALSE(availableWeapons.at(WEAPONS::UNARMED).getDamage()==3);
+  CHECK_FALSE(availableWeapons.at(WEAPONS::DAGGER).getDamage()==8);
+  CHECK_FALSE(availableWeapons.at(WEAPONS::LONGSWORD).getDamage()==0);
+  CHECK_FALSE(availableWeapons.at(WEAPONS::GREATSWORD).getDamage()==13);
+  CHECK_FALSE(availableWeapons.at(WEAPONS::BATTLEAXE).getDamage()==1);
+  
+}
