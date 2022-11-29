@@ -25,3 +25,21 @@ Monster MONSTER("MONSTER", 50);
   CHECK(MONSTER.isAlive()==0);
 
 }
+TEST_CASE("getCurrentHp(): int")
+{
+Monster MONSTER("MONSTER", 50);
+  MONSTER.mtakeDamage(30);
+  CHECK(MONSTER.getCurrentHp()==20);
+
+}
+TEST_CASE("currentHealth():std::string ")
+{
+Monster MONSTER("MONSTER", 100);
+  CHECK(MONSTER.currentHealth()=="100 / ");
+  MONSTER.mtakeDamage(40);
+  CHECK_FALSE(MONSTER.currentHealth()=="100 / ");
+  MONSTER.mtakeDamage(30);
+  CHECK(MONSTER.currentHealth()=="30 / ");
+  
+  
+}
