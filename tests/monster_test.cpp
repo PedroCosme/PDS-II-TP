@@ -43,3 +43,13 @@ Monster MONSTER("MONSTER", 100);
   
   
 }
+
+TEST_CASE("ToString(): std::string ")
+{
+  Monster MONSTER("Goblin", 100);
+  CHECK(MONSTER.ToString()=="Goblin - Health: 100 / ");
+  MONSTER.mtakeDamage(40);
+  CHECK(MONSTER.ToString()=="Goblin - Health: 60 / ");
+  
+  
+  }
