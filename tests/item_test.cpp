@@ -23,3 +23,12 @@ TEST_CASE("getPrice(): int")
 }
 
 
+TEST_CASE("getName(): std::string")
+{
+  CHECK(itemList.at(ITEMS::HEALTH_POTION).getName()=="Health Potion");
+  CHECK(itemList.at(ITEMS::GRENADE).getName()=="Grenade");
+  CHECK(itemList.at(ITEMS::GREAT_SWORD).getName()=="Great Sword");
+  CHECK(itemList.at(ITEMS::BATTLE_AXE).getName()=="Battle Axe");
+  CHECK(itemList.at(ITEMS::DAGGER).getName()=="Dagger");
+  CHECK(itemList.at(ITEMS::LONG_SWORD).getName()=="Long sword");
+}
