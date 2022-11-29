@@ -53,4 +53,12 @@ TEST_CASE("ToString(): std::string ")
   
   
   }
-
+TEST_CASE("getName() const: std::string ")
+{
+  Monster MONSTER1("Bandit", 100);
+  CHECK(MONSTER1.getName()=="Bandit");
+  Monster MONSTER2("Vampire", 80);
+  CHECK(MONSTER2.getName()=="Vampire");
+  
+  
+  }
