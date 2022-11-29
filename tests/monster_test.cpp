@@ -18,3 +18,10 @@ TEST_CASE("isAlive():bool function, case currentHP!=0")
   CHECK_FALSE(MONSTER3.isAlive()==0);
 
 }
+TEST_CASE("mtakeDamage:void function, case damage>currentHp")
+{
+Monster MONSTER("MONSTER", 50);
+  MONSTER.mtakeDamage(60);
+  CHECK(MONSTER.isAlive()==0);
+
+}
