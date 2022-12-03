@@ -1,3 +1,14 @@
+/**
+ * @file gameEvents.hpp
+ * @author Victória Tejada (victoriatsiqueiram@gmail.com)
+ * @brief Classe principal com a lógica de gameEvents
+ * @version 1.0
+ * @date 2022-12-03
+ * @details Responsável por processar e armazenar toda lógica do jogo.
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef GAME_EVENTS_H
 #define GAME_EVENTS_H
 
