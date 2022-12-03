@@ -1,3 +1,15 @@
+/**
+ * @file weapon.hpp
+ * @author Victória Tejada (victoriatsiqueiram@gmail.com)
+ * @brief Classe principal responsavel pela lógica de weapon
+ * @version 1.0
+ * @date 2022-12-03
+ * @details Responsável por armazenar e processar todas as informações relevantes sobre weapon. Todas as armas do usuário estão armazenadas nessa classe.
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+
 #ifndef _WEAPON_HPP_
 #define _WEAPON_HPP_
 
