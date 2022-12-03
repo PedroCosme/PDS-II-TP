@@ -1,3 +1,14 @@
+/**
+ * @file shop.hpp
+ * @author Victória Tejada (victoriatsiqueiram@gmail.com)
+ * @brief Classe principal com a lógica do shop
+ * @version 1.0
+ * @date 2022-12-03
+ * @details Responsável por armazenar e processar todas as informações relevantes sobre o shop. Consiste em disponibilizar compras do usuário durante a partida.
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef _SHOP_HPP_
 #define _SHOP_HPP_
 
