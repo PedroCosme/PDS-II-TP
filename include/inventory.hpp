@@ -1,3 +1,14 @@
+/**
+ * @file inventory.hpp
+ * @author Victória Tejada (victoriatsiqueiram@gmail.com)
+ * @brief Classe principal com a lógica do inventário
+ * @version 1.0
+ * @date 2022-12-03
+ * @details Responsável por armazenar e processar o inventário do jogador. 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
