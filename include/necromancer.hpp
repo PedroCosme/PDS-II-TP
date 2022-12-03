@@ -1,3 +1,15 @@
+/**
+ * @file necromancer.hpp
+ * @author Victória Tejada (victoriatsiqueiram@gmail.com)
+ * @brief Classe principal com a lógica da necromancer 
+ * @version 1.0
+ * @date 2022-12-03
+ * @details Responsável por armazenar e processar todas as informações relevantes sobre o Necromancer.
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+
 #ifndef NECROMANCER_H
 #define NECROMANCER_H
 
