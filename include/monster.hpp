@@ -1,3 +1,14 @@
+/**
+ * @file monster.hpp
+ * @author Victória Tejada (victoriatsiqueiram@gmail.com)
+ * @brief Classe principal com a lógica de monster
+ * @version 1.0
+ * @date 2022-12-03
+ * @details Responsável por armazenar e processar todas as informações relevantes sobre os monstros do jogo. 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef _MONSTER_HPP_
 #define _MONSTER_HPP_
 
