@@ -1,3 +1,14 @@
+/**
+ * @file item.hpp
+ * @author Victória Tejada (victoriatsiqueiram@gmail.com)
+ * @brief Classe principal com a lógica dos itens
+ * @version 1.0
+ * @date 2022-12-03
+ * @details Responsável por armazenar e processar toda a lógica dos itens do usuário durante o jogo.
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef _ITEMS_HPP_
 #define _ITEMS_HPP_
 
