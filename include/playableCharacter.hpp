@@ -1,3 +1,14 @@
+/**
+ * @file playableCharacter.hpp
+ * @author Victória Tejada (victoriatsiqueiram@gmail.com)
+ * @brief Classe principal com a lógica de playableCharacter
+ * @version 1.0
+ * @date 2022-12-03
+ * @details Responsável por armazenar e processar todas as informações relevantes sobre o usuário jogador. Define atributos do usuário durante o jogo.
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef PLAYABLECHARACTER_H
 #define PLAYABLECHARACTER_H
 
