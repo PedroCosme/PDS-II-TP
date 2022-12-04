@@ -5,7 +5,7 @@ TEST_CASE("Testing max funcion"){
   CHECK(max(9, 8)==9);
   CHECK(max(29, 20)==29);
 }
-TEST_CASE("Testing min funcion"){
+TEST_CASE("Test min funcion"){
     
 SUBCASE("positive"){
   CHECK(min(9, 8)==8);
@@ -25,4 +25,14 @@ TEST_CASE("Negative test of genNum funcion"){
   CHECK_FALSE(genNum(1, 8)==9);
   //getNum when using the greatsword and the battle xe
   CHECK_FALSE(genNum(2, 12)==13);
+}
+TEST_CASE("Test ToLower function"){
+  CHECK_EQ(toLower("LONGSWORD"), "longsword");
+  CHECK_EQ(toLower("greatsword"), "greatsword");
+  CHECK_EQ(toLower("GrEaTsWoRd"), "greatsword");
+}
+TEST_CASE("Test toUpper function"){
+  CHECK_EQ(toUpper("longsword"), "LONGSWORD");
+  CHECK_EQ(toUpper("GREATSWORD"),"GREATSWORD");
+  CHECK_EQ(toUpper("GrEaTsWoRd"), "GREATSWORD");
 }
