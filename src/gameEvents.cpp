@@ -3,14 +3,18 @@
 GameEvents::GameEvents(){};
 GameEvents::~GameEvents(){};
 
-void GameEvents::battle(PlayableCharacter player, Enemy monster)
+void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inventory)
 {
     while (monster.isAlive())
     {
         std::cout
             << player.PlayableCharacter::getName() << " vs " << monster.Monster::getName() << "\n"
             << "HP: " << player.currentHealth() << " HP:" << monster.getCurrentHp() << "\n"
-            << "Choose: (a) attack \n";
+            << "Inventory: ";
+            inventory.displayInventory();
+            std::cout << player.returnWeapon().getName() << std::endl;
+
+            std::cout << "Choose: (a) attack \n";
         char playerChoice = '0';
         while (playerChoice != 'a')
         {

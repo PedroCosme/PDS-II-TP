@@ -27,12 +27,13 @@
 #include <map>
 #include <random>
 #include <cmath>
+#include "inventory.hpp"
 class GameEvents
 {
 public:
   GameEvents();
   ~GameEvents();
-  void battle(PlayableCharacter player, Enemy monster);
+  void battle(PlayableCharacter player, Enemy monster, Inventory inventory);
   unsigned int calcDamage(unsigned int damageRange);
   int hitOrMissMonster();
   int hitOrMissPlayer();
