@@ -25,4 +25,5 @@ std::string toUpper(std::string in);
 
 unsigned int genNum(uint minRange, uint maxRange);
 
+
 #endif

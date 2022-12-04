@@ -37,27 +37,39 @@ int main()
 
     int desiredItem;
 
-    std::cout << "What are you buying, stranger?" << std::endl;
-    std::cin >> desiredItem;
+    // std::cout << "What are you buying, stranger?" << std::endl;
+    // std::cin >> desiredItem;
 
-    int itemPrice = buyItem(desiredItem);
-    player.subtractGold(itemPrice);
-    desiredItemStr = getItemById(desiredItem);
+    // int itemPrice = buyItem(desiredItem);
+    // player.subtractGold(itemPrice);
+    // desiredItemStr = getItemById(desiredItem);
 
-    inventory.addItem(desiredItemStr);
-    inventory.displayInventory();
+    // inventory.addItem(desiredItemStr);
+    // inventory.displayInventory();
 
     // fim de compra
-
+    /*char shop;
+    while (shop != 's')
+    {
+        shop = getchar();
+        std::cout << "caracter: " << std::endl;
+        putchar(shop);
+        std::cout << std::endl;
+    }*/
     Enemy monster(20, 50, "Goblin", 100);
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     // narracao inicial
     std::cout << "For three long days your have adventured in the Dark Woods, as you were summoned by the king of the realm to find and slay the Vampire that is haunting the kingdom. "
               << "Finally, you see a tower in the distance and praise the gods, as your supplies were barely enough for another day in the Dark Woods." << std::endl;
-    sleep(5);
+    std::cout << "Press (Enter) to continue or (s) to go to the store" << std::endl;
+    char s;
+    std::cin >> s;
+    checkBuy(s, player, inventory);
+    system("read");
+    
+       
     std::cout << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl;
-    sleep(6);
     std::cout << "Suddenly, a Goblin rushes towards you and attacks you!" << std::endl;
 
     // batalha com goblin
@@ -67,13 +79,10 @@ int main()
 
     std::cout << "You continue walking through the dense vegetation of the Dark Woods, trying to reach your objetive. "
               << "You can't see much but continue moving." << std::endl;
-    sleep(3);
     std::cout << "When you get close enough to see the tower clearly you almost fall into a river! "
               << "Fortunately, you see a bridge. The only bad part is: it is guarded by a huge troll" << std::endl;
-    sleep(4);
 
     std::cout << "The troll says you cannot pass unless you spare him some coins." << std::endl;
-    sleep(3);
     std::cout << "Would you like to (g) give him the coins or (b) battle the troll?" << std::endl;
     char trollChoice = 'x';
     while (trollChoice != 'g' && trollChoice != 'b')
@@ -106,10 +115,8 @@ int main()
 
     std::cout << "After the two encounters you realize your journey will not be as easy as you thought it would be. "
               << "Nevertheless, you continue your journey as your mission is everything that matters to you." << std::endl;
-    sleep(6);
     std::cout << "You finally get to the gate of the tower and try to open it. Unfortunately it is locked." << std::endl;
     std::cout << "You start to get desperate and when you start to think of giving up a misterious mand approaches you." << std::endl;
-    sleep(6);
     std::cout << "Hello there, traveler! Would you like this? The man shows you a rusty old key." << std::endl;
     std::cout << "Would you like to (t) take the key by force or (b) try buying the key?" << std::endl;
     char banditChoice = 'x';
@@ -139,13 +146,10 @@ int main()
     }
     }
     std::cout << "Finally, you enter the tower. Congratulations!" << std::endl;
-    sleep(5);
 
     std::cout << "You start climbing the stairs and feel a dark atmosphere surronding you. Everything seems to be rotten inside the tower."
               << " You get to a room with a black coffin and decide to open it." << std::endl;
-    sleep(6);
     std::cout << "The vampire is resting inside and it seems it doesn't wake up when you open the coffin." << std::endl;
-    sleep(6);
     std::cout << "As soon as you try to get a wooden stake inside its chest the vampire opens it's eyes and start floating towards you." << std::endl;
     std::cout << "Would you like to (r) run away or (a) attack the vampire?" << std::endl;
     char vampireChoice = 'x';
@@ -159,7 +163,6 @@ int main()
     case 'r':
     {
         std::cout << "Unfortunately, you got so scare you couldn't bring yourself to do it. Everyday people die cause you couldn't do it." << std::endl;
-        sleep(6);
         std::cout << "Over the years you get so depressed thinking about it you decide to abandon everything you lived for and become a gypsy." << std::endl;
         std::cout << "No one ever heard of " << playerName << " again." << std::endl;
         std::cout << "GAME OVER" << std::endl;
