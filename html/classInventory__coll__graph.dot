@@ -1,0 +1,19 @@
+digraph "Inventory"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Inventory\n||+ Inventory()\l+ ~Inventory()\l+ createInventory()\l+ useItem()\l+ subtractItem()\l+ displayInventory()\l+ operator\<()\l+ addItem()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Item\n||+ Item()\l+ getByName()\l+ getName()\l+ getPrice()\l+ operator\<()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classItem.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +_price\n+_id" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{int\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +_name" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{std::string\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{std::basic_string\<\l char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class."];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +_inventory" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{std::map\< Item, int \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node6 [color="grey25",fontsize="10",style="solid",label=" +keys" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 -> Node6 [color="grey25",fontsize="10",style="solid",label=" +elements" ,arrowhead="odiamond",fontname="Helvetica"];
+}

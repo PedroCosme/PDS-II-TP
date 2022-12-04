@@ -1,0 +1,7 @@
+digraph "pcg_detail::engine&lt; xtype, itype, output_mixin, output_previous, stream_mixin, multiplier_mixin &gt;::can_specify_stream_tag"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{pcg_detail::engine\l\< xtype, itype, output\l_mixin, output_previous,\l stream_mixin, multiplier\l_mixin \>::can_specify_stream_tag\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

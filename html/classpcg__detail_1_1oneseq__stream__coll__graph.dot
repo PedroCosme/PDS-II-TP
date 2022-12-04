@@ -1,0 +1,11 @@
+digraph "pcg_detail::oneseq_stream&lt; itype &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{pcg_detail::oneseq\l_stream\< itype \>\n||+ stream()\l+ streams_pow2()\l# set_stream()\l# oneseq_stream()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{pcg_detail::default\l_increment\< itype \>\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpcg__detail_1_1default__increment.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" #is_mcg\n+can_specify_stream" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{bool\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}
