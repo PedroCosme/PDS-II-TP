@@ -16,3 +16,6 @@ SUBCASE("positive"){
   CHECK_FALSE(min(29, 20)==29);
   }
 }
+TEST_CASE("Negative test of genNum funcion"){
+  CHECK_FALSE(genNum(2, 12)==13);
+}
