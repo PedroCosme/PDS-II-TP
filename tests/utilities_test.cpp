@@ -26,3 +26,8 @@ TEST_CASE("Negative test of genNum funcion"){
   //getNum when using the greatsword and the battle xe
   CHECK_FALSE(genNum(2, 12)==13);
 }
+TEST_CASE("Test ToLower function"){
+  CHECK_EQ(toLower("LONGSWORD"), "longsword");
+  CHECK_EQ(toLower("greatsword"), "greatsword");
+  CHECK_EQ(toLower("GrEaTsWoRd"), "greatsword");
+}
