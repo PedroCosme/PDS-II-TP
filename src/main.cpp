@@ -57,7 +57,7 @@ int main()
         putchar(shop);
         std::cout << std::endl;
     }*/
-    Enemy monster(20, 50, "Goblin", 100);
+    Enemy monster(20, 50, "Goblin", 100, 5, 2, 100);
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     // narracao inicial
@@ -163,7 +163,7 @@ int main()
         std::cin >> vampireChoice;
     }
 
-    switch (banditChoice)
+    switch (vampireChoice)
     {
     case 'r':
     {
