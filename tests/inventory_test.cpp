@@ -13,3 +13,14 @@ TEST_CASE("Test createInventory and subtractItem")
   inventory.subtractItem(itemList.at(ITEMS::HEALTH_POTION));
   CHECK(inventory._inventory[itemList.at(ITEMS::HEALTH_POTION)]==0);
 }
+
+TEST_CASE("Test createInventory and addItem")
+{
+  Inventory inventory;
+  inventory.createInventory();
+  inventory.addItem(itemList.at(ITEMS::HEALTH_POTION));
+  CHECK(inventory._inventory[itemList.at(ITEMS::HEALTH_POTION)]==3);
+  inventory.addItem(itemList.at(ITEMS::HEALTH_POTION));
+  inventory.addItem(itemList.at(ITEMS::HEALTH_POTION));
+  CHECK(inventory._inventory[itemList.at(ITEMS::HEALTH_POTION)]==5);
+}
