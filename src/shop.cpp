@@ -75,7 +75,6 @@ int buyItem(int itemId)
 void checkBuy(char c, PlayableCharacter player, Inventory inventory){
 while (c == 's')
     {
-        std::cout << "COMECO DO LOOP" << std::endl;
 
         int desiredItem;
         std::string desiredItemStr;
@@ -87,7 +86,6 @@ while (c == 's')
         desiredItemStr = getItemById(desiredItem);
         inventory.addItem(desiredItemStr);
         inventory.displayInventory();
-        std::cout << "FIM DO LOOP" << std::endl;
         std::cout << "Do you want to buy something else? (y/n)" << std::endl;
         char yn;
         std::cin >> yn;
