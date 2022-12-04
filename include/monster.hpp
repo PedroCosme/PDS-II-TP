@@ -37,7 +37,7 @@ public:
 
         void takeDamage(unsigned int damage);
 
-        unsigned int monsterDamage(unsigned int damageAmount);
+        unsigned int monsterDamage();
 
         uint getMaximumHp() const;
 

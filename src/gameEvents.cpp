@@ -46,7 +46,7 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inven
         {
             int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
 
-            player.takeDamage(monster.monsterDamage(1)); // discutir com o Bruno como vamos calcular o dano do monstro
+            player.takeDamage(monster.monsterDamage()); // discutir com o Bruno como vamos calcular o dano do monstro
             player.PlayableCharacter::isAlive();
         }
         else

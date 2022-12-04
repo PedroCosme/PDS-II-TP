@@ -25,7 +25,7 @@ bool Monster::isAlive() const
     return false;
 }
 
-unsigned int Monster::monsterDamage(unsigned int damageAmount)
+unsigned int Monster::monsterDamage()
 {
   uint damage = genNum(_minDamage, _maxDamage);
 
