@@ -6,7 +6,7 @@
  * @date 2022-12-03
  * @details Responsável por processar e armazenar toda lógica do jogo.
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #ifndef GAME_EVENTS_H
@@ -21,7 +21,6 @@
 #include "weapon.hpp"
 #include "item.hpp"
 #include "utilities.hpp"
-//#include "pcg_random.hpp"
 #include <iostream>
 #include <iomanip>
 #include <string>

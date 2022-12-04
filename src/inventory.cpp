@@ -1,6 +1,5 @@
 #include "inventory.hpp"
 
-// Inventory::Inventory(std::map<Item, int> inventory) : _inventory(inventory){};
 Inventory::Inventory(){};
 
 Inventory::~Inventory(){};
@@ -13,12 +12,6 @@ std::map<Item, int> Inventory::createInventory()
     Item battleAxe("Battle Axe", 220);
     Item dagger("Dagger", 50);
     Item longSword("Long sword", 120);
-
-    // _inventory.insert({healthPotion, 2});
-    // _inventory.insert({grenade, 0});
-    // _inventory.insert({greatSword, 0});
-    // _inventory.insert({dagger, 1});
-    // _inventory.insert({longSword, 0});
 
     _inventory[healthPotion] = 2;
     _inventory[grenade];

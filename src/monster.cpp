@@ -8,9 +8,6 @@ Monster::Monster(std::string name, int currentHp)
 {
 }
 
-/*Monster::Monster(Monster &monster)
-    : _name(monster._name) {}
-*/
 Monster::~Monster(){};
 
 std::string Monster::getName() const

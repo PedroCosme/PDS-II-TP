@@ -100,24 +100,3 @@ int PlayableCharacter::getGold()
 {
     return this->_gold;
 }
-// void PlayableCharacter::showWeapons()
-// {
-//     for (auto &i : _inventory)
-//     {
-//         std::cout << i.getWeaponName() << ' ';
-//     }
-//     std::cout << std::endl;
-// };
-
-// void PlayableCharacter::change_equipment(std::set<Equipment> &equipments)
-// {
-//     Equipment choosen_equip;
-//     this->print_equipments(equipments);
-//     std::cout << "Escolha o equipamento";
-//     this->set_equipment(choosen_equip);
-// };
-
-// void PlayableCharacter::add_equipment(Equipment equipment)
-// {
-//     this->_equipments.insert(equipment);
-// }
