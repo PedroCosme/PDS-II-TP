@@ -11,10 +11,6 @@ TEST_CASE("getItemById(int itemId name): std::string")
   CHECK(getItemById(5)=="Great Sword");
 }
 
-TEST_CASE(" bool operator<(const Item &rhs) const")
-{
-  //implememtar
-}
 TEST_CASE("getPrice(): int")
 {
 
