@@ -9,7 +9,7 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inven
     {
         std::cout
             << player.PlayableCharacter::getName() << " vs " << monster.Monster::getName() << "\n"
-            << "HP: " << player.currentHealth() << " HP:" << monster.getCurrentHp() << "\n"
+            << "HP: " << player.currentHealth() << " HP:" << monster.currentHealth() << "\n"
             << "Inventory: ";
         inventory.displayInventory();
         std::cout << player.returnWeapon().getName() << std::endl;

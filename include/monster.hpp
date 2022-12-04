@@ -20,7 +20,10 @@ class Monster
 {
 
 public:
-        Monster(std::string name, int currentHp, uint maxHp, uint maxDamage,
+        Monster(std::string name,
+                int currentHp,
+                uint maxHp,
+                uint maxDamage,
                 uint minDamage);
         ~Monster();
 
@@ -40,7 +43,7 @@ public:
 
         uint getMaximumHp() const;
 
-        virtual std::string ToString() const;
+        // virtual std::string ToString() const;
 
 protected:
         std::string _name;

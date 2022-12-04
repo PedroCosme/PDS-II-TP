@@ -18,7 +18,13 @@ class Enemy : public Monster
 {
 
 public:
-    Enemy(uint gold, uint xpWorth, std::string name, int currentHp, uint maxHp, uint maxDamage, uint minDamage);
+    Enemy(uint gold,
+          uint xpWorth,
+          std::string name,
+          int currentHp,
+          uint maxHp,
+          uint maxDamage,
+          uint minDamage);
     ~Enemy();
 
     unsigned int goldWorth() const;
@@ -26,8 +32,8 @@ public:
     unsigned int xpWorth();
 
 private:
-    unsigned int _gold;
-    unsigned int _xpWorth;
+    uint _gold;
+    uint _xpWorth;
 };
 
 #endif

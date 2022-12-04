@@ -57,18 +57,17 @@ int main()
         putchar(shop);
         std::cout << std::endl;
     }*/
-    Enemy monster(20, 50, "Goblin", 100, 5, 2, 100);
+    Enemy monster(20, 40, "Golbin", 100, 100, 4, 14);
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     // narracao inicial
     std::cout << "For three long days your have adventured in the Dark Woods, as you were summoned by the king of the realm to find and slay the Vampire that is haunting the kingdom. "
               << "Finally, you see a tower in the distance and praise the gods, as your supplies were barely enough for another day in the Dark Woods." << std::endl;
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
-    
+
     std::cin >> s;
     checkBuy(s, player, inventory);
-    
-       
+
     std::cout << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl;
 
     std::cout << "Press (Enter) to continue" << std::endl;
@@ -77,10 +76,9 @@ int main()
     std::cout << "Suddenly, a Goblin rushes towards you and attacks you!" << std::endl;
 
     // batalha com goblin
-    //player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
+    // player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
     GameEvents game;
     game.battle(player, monster, inventory);
-
 
     std::cout << "You continue walking through the dense vegetation of the Dark Woods, trying to reach your objetive. "
               << "You can't see much but continue moving." << std::endl;
