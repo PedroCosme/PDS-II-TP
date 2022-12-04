@@ -18,8 +18,10 @@
 #include "weapon.hpp"
 #include "item.hpp"
 #include "playableCharacter.hpp"
+#include "inventory.hpp"
 
 int buyItemStr(std::string itemName);
 int buyItem(int itemId);
+void checkBuy(char c, PlayableCharacter player, Inventory inventory);
 
 #endif
