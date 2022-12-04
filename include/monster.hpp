@@ -4,21 +4,24 @@
  * @brief Classe principal com a lógica de monster
  * @version 1.0
  * @date 2022-12-03
- * @details Responsável por armazenar e processar todas as informações relevantes sobre os monstros do jogo. 
+ * @details Responsável por armazenar e processar todas as informações relevantes sobre os monstros do jogo.
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #ifndef _MONSTER_HPP_
 #define _MONSTER_HPP_
 
 #include <string>
+#include <cmath>
+#include "utilities.hpp"
 
 class Monster
 {
 
 public:
-        Monster(std::string name, int currentHp);
+        Monster(std::string name, int currentHp, uint maxDamage,
+                uint minDamage, uint maxHp);
         // Monster(Monster &monster);
         ~Monster();
 
@@ -32,15 +35,20 @@ public:
 
         std::string currentHealth() const;
 
-        void mtakeDamage(unsigned int damage);
+        void takeDamage(unsigned int damage);
 
         unsigned int monsterDamage(unsigned int damageAmount);
+
+        uint getMaximumHp() const;
 
         virtual std::string ToString() const;
 
 protected:
         std::string _name;
         int _currentHp;
+        uint _maxHp;
+        uint _maxDamage;
+        uint _minDamage;
 };
 
 #endif

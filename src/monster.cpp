@@ -1,10 +1,10 @@
 #include "monster.hpp"
-#include <cmath>
-#include <string>
 
-Monster::Monster(std::string name, int currentHp)
+Monster::Monster(std::string name, int currentHp, uint maxDamage, uint minDamage, uint maxHp)
     : _name(name),
-      _currentHp(currentHp)
+      _currentHp(currentHp),
+      _maxDamage(maxDamage),
+      _maxHp(maxHp)
 {
 }
 
@@ -27,23 +27,22 @@ bool Monster::isAlive() const
 
 unsigned int Monster::monsterDamage(unsigned int damageAmount)
 {
-  unsigned int damage = damageAmount;
+  uint damage = genNum(_minDamage, _maxDamage);
 
   return damage;
 }
+
+uint Monster::getMaximumHp() const
+{
+  return this->_maxHp;
+}
+
 std::string Monster::currentHealth() const
 {
-  return std::to_string(_currentHp) + " / ";
-  //+ std::to_string(getMaximumHp());
-  // return _currentHp;
+  return std::to_string(_currentHp) + " / " + std::to_string(getMaximumHp());
 }
 
-std::string Monster::ToString() const
-{
-  return _name + " - Health: " + currentHealth();
-}
-
-void Monster::mtakeDamage(unsigned int damage)
+void Monster::takeDamage(unsigned int damage)
 {
   _currentHp -= damage;
   if (this->getCurrentHp() < 0)

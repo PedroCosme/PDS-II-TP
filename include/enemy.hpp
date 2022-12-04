@@ -4,9 +4,9 @@
  * @brief Classe principal com a lógica de enemy
  * @version 1.0
  * @date 2022-12-03
- * @details Responsável por processar e armazenar toda logica dos inimigos com atributos vindos dos monstros. 
+ * @details Responsável por processar e armazenar toda logica dos inimigos com atributos vindos dos monstros.
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #ifndef _ENEMY_HPP_
@@ -18,7 +18,7 @@ class Enemy : public Monster
 {
 
 public:
-    Enemy(uint gold, uint xpWorth, std::string name, uint hitPoints);
+    Enemy(uint gold, uint xpWorth, std::string name, uint hitPoints, uint maxDamage, uint minDamage, uint maxHp);
     ~Enemy();
 
     unsigned int goldWorth() const;
