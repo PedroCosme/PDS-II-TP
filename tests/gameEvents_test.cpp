@@ -2,7 +2,8 @@
 #include "doctest.h"
 
 TEST_CASE("Test hitorMissPlayer() function:")
-{
+
+  //In this case, the function calls genNum(100, 200)
   GameEvents game;
   CHECK_FALSE(game.hitOrMissPlayer()==201);
   CHECK_FALSE(game.hitOrMissPlayer()==50);
@@ -10,6 +11,7 @@ TEST_CASE("Test hitorMissPlayer() function:")
 
 TEST_CASE("Test hitorMissMonster() function:")
 {
+  //In this case, the function calls genNum(1, 100)
   GameEvents game;
   CHECK_FALSE(game.hitOrMissPlayer()==101);
   CHECK_FALSE(game.hitOrMissPlayer()==0);
