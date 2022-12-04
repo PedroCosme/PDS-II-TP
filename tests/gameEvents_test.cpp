@@ -1,7 +1,9 @@
-#include "doctest.h"
 #include "gameEvents.hpp"
-#include "inventory.hpp"
-#include <iostream>
-#include <sstream>
+#include "doctest.h"
+
+TEST_CASE("Test hitorMissPlayer() function"){
+  GameEvents game;
+  CHECK_FALSE(game.hitOrMissPlayer()==201);
+}
 
 
