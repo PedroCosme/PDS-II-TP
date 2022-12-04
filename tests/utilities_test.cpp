@@ -1,7 +1,6 @@
 
 #include "utilities.hpp"
-
-TEST_CASE("Testing max e "doctest.h"
-#function"){
+#include "doctest.h"
+TEST_CASE("Testing max funcion"){
   CHECK(max(9, 8)==9);
 }
