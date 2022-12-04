@@ -2,9 +2,13 @@
 #include "item.hpp"
 #include <iostream>
 
-TEST_CASE("getByName(std::string name): ITEMS")
+TEST_CASE("getItemById(int itemId name): std::string")
 {
-  //implememtar
+   CHECK(getItemById(1)=="Health Potion");
+  CHECK(getItemById(2)=="Grenade");
+  CHECK(getItemById(3)=="dagger");
+  CHECK(getItemById(4)=="Long Sword");
+  CHECK(getItemById(5)=="Great Sword");
 }
 
 TEST_CASE(" bool operator<(const Item &rhs) const")
