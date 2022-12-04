@@ -57,7 +57,7 @@ int main()
         putchar(shop);
         std::cout << std::endl;
     }*/
-    Enemy monster(20, 40, "Golbin", 100, 100, 4, 14);
+    Enemy monster(20, 40, "Golbin", 40, 40, 6, 2);
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     // narracao inicial

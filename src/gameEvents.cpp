@@ -7,46 +7,56 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inven
 {
     while (monster.isAlive())
     {
-        std::cout
-            << player.PlayableCharacter::getName() << " vs " << monster.Monster::getName() << "\n"
-            << "HP: " << player.currentHealth() << " HP:" << monster.currentHealth() << "\n"
-            << "Inventory:  ";
-        inventory.displayInventory();
-        std::cout << player.returnWeapon().getName() << std::endl;
+        if (player.isAlive())
+        {
+            std::cout
+                << player.PlayableCharacter::getName() << " vs " << monster.Monster::getName() << "\n"
+                << "HP: " << player.currentHealth() << " HP:" << monster.currentHealth() << "\n"
+                << "Inventory:  ";
+            inventory.displayInventory();
+            std::cout << player.returnWeapon().getName() << std::endl;
 
-        std::cout << "Choose: (a) attack \n";
-        char playerChoice = '0';
-        while (playerChoice != 'a')
-        {
-            playerChoice = getchar();
-        }
-        int hitOrMiss = GameEvents::hitOrMissPlayer(); // // hit or miss do monstro, implementar o miss
-        if (hitOrMiss > 124 && hitOrMiss < 190)
-        {
-            uint damageDealt = player.returnWeapon().getDamage();
-            monster.Monster::takeDamage(damageDealt);
-            std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
-            monster.Monster::isAlive();
-        }
-        else if (hitOrMiss >= 90)
-        {
-            uint damageDealt = player.returnWeapon().getDamage() * 2;
-            monster.Monster::takeDamage(damageDealt);
-            std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
-            monster.Monster::isAlive();
-        }
+            std::cout << "Choose: (a) attack \n";
+            char playerChoice = '0';
+            while (playerChoice != 'a')
+            {
+                playerChoice = getchar();
+            }
+            int hitOrMiss = GameEvents::hitOrMissPlayer(); // // hit or miss do monstro, implementar o miss
+            if (hitOrMiss > 124 && hitOrMiss < 190)
+            {
+                uint damageDealt = player.returnWeapon().getDamage();
+                monster.Monster::takeDamage(damageDealt);
+                std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
+                monster.Monster::isAlive();
+            }
+            else if (hitOrMiss >= 90)
+            {
+                uint damageDealt = player.returnWeapon().getDamage() * 2;
+                monster.Monster::takeDamage(damageDealt);
+                std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
+                monster.Monster::isAlive();
+            }
 
-        else if (hitOrMiss < 124)
+            else if (hitOrMiss < 124)
+            {
+                monster.Monster::takeDamage(0);
+            }
+        }
+        else if (!player.isAlive())
         {
-            monster.Monster::takeDamage(0);
+            std::cout << "You have been defeated by the " << monster.getName() << std::endl;
+            std::cout << "Better luck next time!" << std::endl;
+            abort();
         }
 
         if (monster.isAlive())
 
         {
             int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
-
-            player.takeDamage(monster.monsterDamage()); // discutir com o Bruno como vamos calcular o dano do monstro
+            int mDamage = monster.monsterDamage();
+            player.takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
+            std::cout << "The monster has dealt " << mDamage << " damage!" << std::endl;
             player.PlayableCharacter::isAlive();
         }
         else

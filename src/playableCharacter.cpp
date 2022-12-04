@@ -1,9 +1,9 @@
 #include <playableCharacter.hpp>
 
-PlayableCharacter::PlayableCharacter(std::string name, unsigned int lvl, unsigned int xp, unsigned int maxHp, unsigned int currentHp,
+PlayableCharacter::PlayableCharacter(std::string name, unsigned int lvl, unsigned int xp, unsigned int maxHp, int currentHp,
                                      unsigned int maxMp, unsigned int gold)
     : _name(name), _lvl(lvl), _xp(xp), _maxHp(maxHp), _currentHp(currentHp),
-      _maxMp(maxMp), _gold(gold), _weapon(availableWeapons.at(WEAPONS::UNARMED)){};
+      _maxMp(maxMp), _gold(gold), _weapon(availableWeapons.at(WEAPONS::DAGGER)){};
 PlayableCharacter::~PlayableCharacter(){};
 
 std::string PlayableCharacter::getName()

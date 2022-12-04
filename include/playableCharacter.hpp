@@ -6,7 +6,7 @@
  * @date 2022-12-03
  * @details Responsável por armazenar e processar todas as informações relevantes sobre o usuário jogador. Define atributos do usuário durante o jogo.
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #ifndef PLAYABLECHARACTER_H
@@ -26,7 +26,7 @@
 class PlayableCharacter
 {
 public:
-    PlayableCharacter(std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, unsigned int currentHp = 100,
+    PlayableCharacter(std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, int currentHp = 100,
                       unsigned int maxMp = 50, unsigned int gold = 1000);
     ~PlayableCharacter();
 
@@ -80,7 +80,7 @@ private:
     unsigned int _xp;
     std::string _name;
     unsigned int _gold;
-    unsigned int _currentHp;
+    int _currentHp;
     unsigned int _maxHp;
     unsigned int _maxMp;
     float _hp;
