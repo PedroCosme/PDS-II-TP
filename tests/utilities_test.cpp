@@ -17,5 +17,12 @@ SUBCASE("positive"){
   }
 }
 TEST_CASE("Negative test of genNum funcion"){
+//getNum when unnarmed
+  CHECK_FALSE(genNum(1, 2)==4);
+  //getNum when using the dagger
+  CHECK_FALSE(genNum(1, 4)==25);
+  //getNum when using the longsword
+  CHECK_FALSE(genNum(1, 8)==9);
+  //getNum when using the greatsword and the battle xe
   CHECK_FALSE(genNum(2, 12)==13);
 }
