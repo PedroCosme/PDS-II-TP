@@ -1,10 +1,11 @@
 #include "monster.hpp"
 
-Monster::Monster(std::string name, int currentHp, uint maxDamage, uint minDamage, uint maxHp)
+Monster::Monster(std::string name, int currentHp, uint maxHp, uint maxDamage, uint minDamage)
     : _name(name),
       _currentHp(currentHp),
+      _maxHp(maxHp),
       _maxDamage(maxDamage),
-      _maxHp(maxHp)
+      _minDamage(minDamage)
 {
 }
 

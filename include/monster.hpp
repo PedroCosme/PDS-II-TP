@@ -20,9 +20,8 @@ class Monster
 {
 
 public:
-        Monster(std::string name, int currentHp, uint maxDamage,
-                uint minDamage, uint maxHp);
-        // Monster(Monster &monster);
+        Monster(std::string name, int currentHp, uint maxHp, uint maxDamage,
+                uint minDamage);
         ~Monster();
 
         std::string getName() const;
