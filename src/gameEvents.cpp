@@ -16,12 +16,14 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inven
             inventory.displayInventory();
             std::cout << player.returnWeapon().getName() << std::endl;
 
-            std::cout << "Choose: (a) attack \n";
+            std::cout << "Choose: \n (a) attack \n (h) heal \n (t) throw grenade\n";
             char playerChoice = '0';
-            while (playerChoice != 'a')
+           
+            while (playerChoice != 'a' || playerChoice != 't' || playerChoice!= 'h')
             {
-                playerChoice = getchar();
+             playerChoice = getchar();
             }
+                if(playerChoice == 'a'){
             int hitOrMiss = GameEvents::hitOrMissPlayer(); // // hit or miss do monstro, implementar o miss
             if (hitOrMiss > 124 && hitOrMiss < 190)
             {
@@ -61,12 +63,19 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inven
         }
         else
         {
-            std::cout << "You defeated the " << monster.getName() << " and found " << monster.goldWorth() << " in it's corpse !\n"; // retorna quanto de ouro o monstro vale
+            std::cout << "You defeated the " << monster.getName() << " and found " << monster.goldWorth() << " gold coins in it's corpse !\n"; // retorna quanto de ouro o monstro vale
             player.addGold(monster.goldWorth());
             std::cout << monster.xpWorth() << " xp gained" << std::endl;
             player.setXp(monster.xpWorth());
             std::cout << player.getXp() << std::endl;
             monster.~Enemy();
+        }
+        }
+        else if (playerChoice == 'h'){
+            i
+        }
+        else if (playerChoice == 't'){
+            
         }
     }
 }

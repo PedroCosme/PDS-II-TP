@@ -27,7 +27,7 @@ int main()
     Item greatSword("Great Sword", 180, 5);
     Item battleAxe("Battle Axe", 220, 6);
 
-    std::cout << "These are your starting items. You may buy new items in the shop anytime outside of battle by typing S" << std::endl;
+    std::cout << "These are your starting items. You may buy new items in the shop anytime outside of battle by typing s" << std::endl;
     Inventory inventory;
     inventory.createInventory();
     inventory.displayInventory();
