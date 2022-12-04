@@ -31,3 +31,8 @@ TEST_CASE("Test ToLower function"){
   CHECK_EQ(toLower("greatsword"), "greatsword");
   CHECK_EQ(toLower("GrEaTsWoRd"), "greatsword");
 }
+TEST_CASE("Test toUpper function"){
+  CHECK_EQ(toUpper("longsword"), "LONGSWORD");
+  CHECK_EQ(toUpper("GREATSWORD"),"GREATSWORD");
+  CHECK_EQ(toUpper("GrEaTsWoRd"), "GREATSWORD");
+}
