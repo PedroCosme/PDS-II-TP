@@ -3,6 +3,10 @@
 GameEvents::GameEvents(){};
 GameEvents::~GameEvents(){};
 
+Item h("Health Potion", 50, 1);
+Item g("Grenade", 80, 2);
+
+
 void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inventory)
 {
     while (monster.isAlive())
@@ -19,10 +23,11 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inven
             std::cout << "Choose: \n (a) attack \n (h) heal \n (t) throw grenade\n";
             char playerChoice = '0';
 
-            while (playerChoice != 'a' || playerChoice != 't' || playerChoice != 'h')
-            {
-                playerChoice = getchar();
-            }
+            //while (playerChoice != 'a' || playerChoice != 't' || playerChoice != 'h')
+            //{
+             //   playerChoice = getchar();
+            //}
+            std::cin >> playerChoice;
             if (playerChoice == 'a')
             {
                 int hitOrMiss = GameEvents::hitOrMissPlayer(); // // hit or miss do monstro, implementar o miss
@@ -75,10 +80,21 @@ void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inven
 
             else if (playerChoice == 'h')
             {
-                int i;
+                
+                inventory.subtractItem(h);
+                inventory.displayInventory();
+                if(inventory.checkValue(h) > 0)
+                    player.heal(22);  
+                 
             }
             else if (playerChoice == 't')
             {
+                
+                inventory.subtractItem(g);
+                inventory.displayInventory();
+                if(inventory.checkValue(g) > 0)
+                   monster.takeDamage(monster.getMaximumHp()*0.3);  
+                 
             }
         }
     }

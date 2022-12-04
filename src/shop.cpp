@@ -101,7 +101,6 @@ void checkBuy(char c, PlayableCharacter player, Inventory inventory)
         else
         {
 
-            std::cout << "Press (Enter) to continue" << std::endl;
             break;
         }
     }

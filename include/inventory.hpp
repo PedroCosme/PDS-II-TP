@@ -40,6 +40,8 @@ public:
 
     void addItem(Item item);
 
+    int checkValue(Item item);
+
 public:
     std::map<Item, int> _inventory;
 };

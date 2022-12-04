@@ -34,7 +34,7 @@ void Inventory::subtractItem(Item item)
     {
         _inventory[item]--;
     }
-    else
+    else if(_inventory[item] <= 0)
     {
         std::cout << "You don't have enough of that item." << std::endl;
     }
@@ -56,4 +56,8 @@ void Inventory::displayInventory()
                   << " || ";
     }
     std::cout << std::endl;
+}
+
+int Inventory::checkValue(Item item){
+    return _inventory.at(item);
 }
