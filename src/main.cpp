@@ -183,7 +183,7 @@ int main()
         std::cout << "GAME OVER" << std::endl;
         abort();
     }
-    case 't':
+    case 'a':
     {
         std::cout << "You are so scared with the atmosphere and the situation you can barely getter enough strengh together to grab your weapon." << std::endl;
         std::cout << "Press (Enter) to continue" << std::endl;

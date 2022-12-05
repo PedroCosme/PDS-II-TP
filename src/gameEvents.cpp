@@ -138,8 +138,6 @@ void GameEvents::finalBattle(PlayableCharacter *player, Vampire *monster, Invent
                 << "HP: " << player->currentHealth() << " HP:" << monster->currentHealth() << "\n"
                 << "Inventory:  ";
             inventory->displayInventory();
-            std::cout << player->returnWeapon().getName() << std::endl;
-
             std::cout << "Choose: \n (a) attack \n (h) heal \n (t) throw grenade\n";
             char playerChoice = '0';
 
