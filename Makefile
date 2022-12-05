@@ -33,12 +33,12 @@ item:
 inventory:
 	$(CC) $(CFLAGS) -c src/inventory.cpp -o build/inventory.o
 
-# vampire:
-# 	$(CC) $(CFLAGS) -c src/vampire.cpp -o build/vampire.o
+vampire:
+	$(CC) $(CFLAGS) -c src/vampire.cpp -o build/vampire.o
 
 
-main: weapon playableCharacter monster gameEvents enemy utilities shop item inventory 
-	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/item.o build/gameEvents.o build/enemy.o build/inventory.o build/shop.o build/utilities.o src/main.cpp -o $(TARGET)
+main: weapon playableCharacter monster gameEvents enemy utilities shop item inventory vampire
+	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/item.o build/gameEvents.o build/enemy.o build/inventory.o build/shop.o build/vampire.o build/utilities.o src/main.cpp -o $(TARGET)
 
 clean:
 	$(RM) -r $(BUILDDIR)/* $(TARGET)

@@ -13,29 +13,26 @@
 #define GAME_EVENTS_H
 
 #include <iostream>
-#include <string>
-#include <time.h>
-#include "playableCharacter.hpp"
-#include "monster.hpp"
-#include "enemy.hpp"
-#include "weapon.hpp"
-#include "item.hpp"
-#include "utilities.hpp"
-#include <iostream>
 #include <iomanip>
 #include <string>
 #include <map>
 #include <random>
 #include <cmath>
-#include "inventory.hpp"
+#include <string>
+#include <time.h>
+#include "playableCharacter.hpp"
+#include "monster.hpp"
+#include "enemy.hpp"
 #include "vampire.hpp"
+#include "weapon.hpp"
+#include "item.hpp"
+#include "utilities.hpp"
+#include "inventory.hpp"
 class GameEvents
 {
 public:
-  GameEvents();
-  ~GameEvents();
   void battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory);
-  void finalBattle(PlayableCharacter *player, Vampire *monster, Inventory *inventory);
+  // void finalBattle(PlayableCharacter *player, Vampire *monster, Inventory *inventory);
   unsigned int calcDamage(unsigned int damageRange);
   int hitOrMissMonster();
   int hitOrMissPlayer();

@@ -14,6 +14,7 @@
 
 int main()
 {
+    GameEvents game;
     char s;
     std::cout << "Choose a name for your character:" << std::endl;
     std::string playerName;
@@ -35,35 +36,10 @@ int main()
     inventory.createInventory();
     inventory.displayInventory();
 
-    // abaixo fica exemplificado como funciona o ato de comprar um item.;
-
-    std::string desiredItemStr;
-
-    int desiredItem;
-
-    // std::cout << "What are you buying, stranger?" << std::endl;
-    // std::cin >> desiredItem;
-
-    // int itemPrice = buyItem(desiredItem);
-    // player.subtractGold(itemPrice);
-    // desiredItemStr = getItemById(desiredItem);
-
-    // inventory.addItem(desiredItemStr);
-    // inventory.displayInventory();
-
-    // fim de compra
-    /*char shop;
-    while (shop != 's')
-    {
-        shop = getchar();
-        std::cout << "caracter: " << std::endl;
-        putchar(shop);
-        std::cout << std::endl;
-    }*/
     Enemy goblin(20, 40, "Goblin", 40, 40, 6, 2);
     Enemy troll(30, 70, "Troll", 70, 70, 18, 4);
     Enemy bandit(50, 25, "Bandit", 50, 50, 15, 6);
-    Vampire vampire(100, 100, "Vampire", 150, 150, 30);
+    Vampire vampire("Vampire", 150, 150, 30);
     Enemy *goblinPtr = &goblin;
     Enemy *trollPtr = &troll;
     Enemy *banditPtr = &bandit;
@@ -86,7 +62,6 @@ int main()
 
     // batalha com goblin
     // player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
-    GameEvents game;
     game.battle(playerPtr, goblinPtr, inventoryPtr);
 
     std::cout << "You continue walking through the dense vegetation of the Dark Woods, trying to reach your objetive. "
@@ -212,7 +187,7 @@ int main()
         std::cout << "Press (Enter) to continue" << std::endl;
         system("read");
         std::cout << "Your rememeber your people and proudly engages in battle with the monster." << std::endl;
-        game.finalBattle(playerPtr, vampirePtr, inventoryPtr);
+        // game.finalBattle(playerPtr, vampirePtr, inventoryPtr);
     }
     default:
     {

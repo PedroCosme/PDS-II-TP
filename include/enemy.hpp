@@ -13,7 +13,10 @@
 #define _ENEMY_HPP_
 
 #include "monster.hpp"
-
+#include "playableCharacter.hpp"
+#include "inventory.hpp"
+// #include "gameEvents.hpp"
+// #include "vampire.hpp"
 class Enemy : public Monster
 {
 
@@ -30,6 +33,10 @@ public:
     unsigned int goldWorth() const;
 
     unsigned int xpWorth();
+
+    // void attack(PlayableCharacter *player, Enemy *monster, Inventory *inventory);
+
+    int hitOrMiss();
 
 private:
     uint _gold;

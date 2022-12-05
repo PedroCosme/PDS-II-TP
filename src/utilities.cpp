@@ -1,23 +1,5 @@
 #include "utilities.hpp"
 
-int max(int a, int b)
-{
-    if (a > b)
-    {
-        return a;
-    }
-    return b;
-}
-
-int min(int a, int b)
-{
-    if (a < b)
-    {
-        return a;
-    }
-    return b;
-}
-
 std::string toLower(std::string in)
 {
     std::string result = "";
