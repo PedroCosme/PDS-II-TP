@@ -52,7 +52,8 @@ int main()
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
 
     std::cin >> s;
-    checkBuy(s, player, inventoryPtr);
+    checkBuy(s, playerPtr, inventoryPtr);
+    std::cout << player.returnWeapon().getName();
     std::cout << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl;
 
     std::cout << "Press (Enter) to continue" << std::endl;
@@ -73,7 +74,7 @@ int main()
               << "Fortunately, you see a bridge. The only bad part is: it is guarded by a huge troll" << std::endl;
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
     std::cin >> s;
-    checkBuy(s, player, inventoryPtr);
+    checkBuy(s, playerPtr, inventoryPtr);
     std::cout << "The troll says you cannot pass unless you spare him 20 coins." << std::endl;
     std::cout << "Would you like to (g) give him the coins or (b) battle the troll?" << std::endl;
     char trollChoice = 'x';
@@ -187,7 +188,7 @@ int main()
         std::cout << "Press (Enter) to continue" << std::endl;
         system("read");
         std::cout << "Your rememeber your people and proudly engages in battle with the monster." << std::endl;
-        // game.finalBattle(playerPtr, vampirePtr, inventoryPtr);
+        game.finalBattle(playerPtr, vampirePtr, inventoryPtr);
     }
     default:
     {

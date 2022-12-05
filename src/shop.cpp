@@ -72,7 +72,7 @@ int buyItem(int itemId)
         break;
     }
 }
-void checkBuy(char c, PlayableCharacter player, Inventory* inventory)
+void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
 {
 
     while (c == 's')
@@ -81,17 +81,32 @@ void checkBuy(char c, PlayableCharacter player, Inventory* inventory)
         int desiredItem;
         std::string desiredItemStr;
         std::cout << "What are you buying, stranger?" << std::endl
-                  << "Available gold: " << player.getGold() << std::endl
+                  << "Available gold: " << player->getGold() << std::endl
                   << "SHOP" << std::endl
                   << "|| Health Potion - 1 || Grenade - 2 || Dagger - 3 || Long Sword - 4 || Great Sword - 5 || Battle Axe - 6 || " << std::endl;
         std::cin >> desiredItem;
 
         int itemPrice = buyItem(desiredItem);
-        player.subtractGold(itemPrice);
+        player->subtractGold(itemPrice);
         desiredItemStr = getItemById(desiredItem);
         inventory->addItem(desiredItemStr);
+        std::cout << desiredItemStr[0] << std::endl;
         std::cout << "Current inventory:" << std::endl;
         inventory->displayInventory();
+        switch (desiredItem)
+        {
+        case 4:
+            player->changeWeapon(availableWeapons.at(WEAPONS::LONGSWORD));
+            break;
+        case 5:
+            player->changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
+            break;
+        case 6:
+            player->changeWeapon(availableWeapons.at(WEAPONS::BATTLEAXE));
+            break;
+        default:
+            break;
+        }
         std::cout << "Do you want to buy something else? (y/n)" << std::endl;
         char yn;
         std::cin >> yn;

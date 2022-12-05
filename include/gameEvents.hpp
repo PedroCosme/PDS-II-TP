@@ -32,7 +32,7 @@ class GameEvents
 {
 public:
   void battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory);
-  // void finalBattle(PlayableCharacter *player, Vampire *monster, Inventory *inventory);
+  void finalBattle(PlayableCharacter *player, Vampire *monster, Inventory *inventory);
   unsigned int calcDamage(unsigned int damageRange);
   int hitOrMissMonster();
   int hitOrMissPlayer();
