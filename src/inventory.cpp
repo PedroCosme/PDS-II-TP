@@ -80,12 +80,12 @@ void Inventory::displayInventory()
     inventoryT[0].format().padding_top(1).padding_bottom(1).font_align(FontAlign::center).font_style({FontStyle::underline}).font_background_color(Color::red);
     std::cout << inventoryT << std::endl;
 
-    for (auto const &pair : _inventory)
-    {
-        std::cout << "{" << pair.first.getName() << ": " << pair.second << "}"
-                  << " || ";
-    }
-    std::cout << std::endl;
+    // for (auto const &pair : _inventory)
+    // {
+    //     std::cout << "{" << pair.first.getName() << ": " << pair.second << "}"
+    //               << " || ";
+    // }
+    // std::cout << std::endl;
 }
 
 int Inventory::checkValue(Item item)

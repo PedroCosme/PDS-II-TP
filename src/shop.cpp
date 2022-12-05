@@ -46,13 +46,31 @@ void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
 
     while (c == 's')
     {
+        Table shopT;
 
         int desiredItem;
         std::string desiredItemStr;
-        std::cout << "What are you buying, stranger?" << std::endl
-                  << "Available gold: " << player->getGold() << std::endl
-                  << "SHOP" << std::endl
-                  << "|| Health Potion - 1 || Grenade - 2 || Dagger - 3 || Long Sword - 4 || Great Sword - 5 || Battle Axe - 6 || " << std::endl;
+        std::cout << "What are you buying, stranger?" << std::endl;
+        //   << "Available gold: " << player->getGold() << std::endl
+        //   << "SHOP" << std::endl
+        //   << "|| Health Potion - 1 || Grenade - 2 || Dagger - 3 || Long Sword - 4 || Great Sword - 5 || Battle Axe - 6 || " << std::endl;
+        shopT.add_row({"Item", "Price"});
+        shopT.add_row({"Available Gold", std::to_string(player->getGold())});
+        shopT.add_row({"Health Potion", "50"});
+        shopT.add_row({"Grenade", "80"});
+        shopT.add_row({"Dagger", "50"});
+        shopT.add_row({"Long Sword", "120"});
+        shopT.add_row({"Great Sword", "180"});
+        shopT.add_row({"Battle Axe", "220"});
+        shopT.format()
+            .font_style({FontStyle::bold})
+            .border_top("-")
+            .border_bottom("-")
+            .border_left("-")
+            .border_right("-")
+            .corner("+");
+        shopT[0].format().padding_top(1).padding_bottom(1).font_align(FontAlign::center).font_style({FontStyle::underline}).font_background_color(Color::yellow);
+        std::cout << shopT << std::endl;
         std::cin >> desiredItem;
 
         int itemPrice = buyItem(desiredItem);

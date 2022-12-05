@@ -19,6 +19,7 @@
 #include "item.hpp"
 #include "playableCharacter.hpp"
 #include "inventory.hpp"
+#include <tabulate/table.hpp>
 
 int buyItem(int itemId);
 void checkBuy(char c, PlayableCharacter *player, Inventory *inventory);
