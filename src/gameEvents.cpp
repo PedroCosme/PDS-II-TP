@@ -133,6 +133,7 @@ void GameEvents::finalBattle(PlayableCharacter *player, Vampire *monster, Invent
     {
         if (player->isAlive())
         {
+            std::cout << player->returnWeapon().getName() << "\n";
             std::cout
                 << player->PlayableCharacter::getName() << " vs " << monster->Monster::getName() << "\n"
                 << "HP: " << player->currentHealth() << " HP:" << monster->currentHealth() << "\n"
