@@ -39,10 +39,10 @@ int main()
     inventory.createInventory();
     inventory.displayInventory();
 
-    Enemy goblin(40, 40, "Goblin", 1, 1, 6, 2);
-    Enemy troll(235, 70, "Troll", 1, 1, 12, 4);
-    Enemy bandit(250, 90, "Bandit", 1, 1, 15, 6);
-    Vampire vampire("Vampire", 150, 150, 25, 6);
+    Enemy goblin(40, 40, "Goblin", 1, 1, 6, 2);   // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
+    Enemy troll(235, 70, "Troll", 1, 1, 12, 4);   // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
+    Enemy bandit(250, 90, "Bandit", 1, 1, 15, 6); // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
+    Vampire vampire("Vampire", 150, 25, 8, 150);  // name, currentHp, maxDamage, minDamage, maxHp
     Enemy *goblinPtr = &goblin;
     Enemy *trollPtr = &troll;
     Enemy *banditPtr = &bandit;
