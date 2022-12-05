@@ -36,7 +36,7 @@ void Inventory::subtractItem(Item item)
     }
     else if(_inventory[item] <= 0)
     {
-        std::cout << "You don't have enough of that item." << std::endl;
+        throw "You don't have enough of that item.";
     }
 }
 
