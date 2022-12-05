@@ -51,9 +51,6 @@ void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
         int desiredItem;
         std::string desiredItemStr;
         std::cout << "What are you buying, stranger?" << std::endl;
-        //   << "Available gold: " << player->getGold() << std::endl
-        //   << "SHOP" << std::endl
-        //   << "|| Health Potion - 1 || Grenade - 2 || Dagger - 3 || Long Sword - 4 || Great Sword - 5 || Battle Axe - 6 || " << std::endl;
         shopT.add_row({"Item", "Price"});
         shopT.add_row({"Available Gold", std::to_string(player->getGold())});
         shopT.add_row({"Health Potion", "50"});
@@ -78,7 +75,6 @@ void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
         desiredItemStr = getItemById(desiredItem);
         inventory->addItem(desiredItemStr);
         std::cout << "Current inventory:" << std::endl;
-        inventory->displayInventory();
         switch (desiredItem)
         {
         case 4:
@@ -93,6 +89,7 @@ void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
         default:
             break;
         }
+        inventory->displayInventory();
         std::cout << "Do you want to buy something else? (y/n)" << std::endl;
         char yn;
         std::cin >> yn;
