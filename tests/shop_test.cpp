@@ -9,7 +9,7 @@
 //Item greatSword("Great Sword", 180, 5);
 //Item battleAxe("Battle Axe", 220, 6);
 
-TEST_CASE("Test buyItem( id):int function)
+TEST_CASE("Test buyItem( id):int function")
 {
          
   SUBCASE("Health Potion")
