@@ -10,6 +10,7 @@
 #include "item.hpp"
 #include "weapon.hpp"
 #include "inventory.hpp"
+#include "vampire.hpp"
 
 int main()
 {
@@ -59,10 +60,14 @@ int main()
         putchar(shop);
         std::cout << std::endl;
     }*/
-    Enemy goblin(20, 40, "Goblin", 100040, 100040, 6, 2);
+    Enemy goblin(20, 40, "Goblin", 40, 40, 6, 2);
     Enemy troll(30, 70, "Troll", 70, 70, 18, 4);
+    Enemy bandit(50, 25, "Bandit", 50, 50, 15, 6);
+    Vampire vampire(100, 100, "Vampire", 150, 150, 30);
     Enemy* goblinPtr = &goblin;
     Enemy* trollPtr = &troll;
+    Enemy* banditPtr = &bandit;
+    Vampire* vampirePtr = &vampire;
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     // narracao inicial
@@ -131,9 +136,14 @@ int main()
     // continua narracao
 
     std::cout << "After the two encounters you realize your journey will not be as easy as you thought it would be. "
+
               << "Nevertheless, you continue your journey as your mission is everything that matters to you." << std::endl;
+    std::cout << "Press (Enter) to continue" << std::endl;
+    system("read");
     std::cout << "You finally get to the gate of the tower and try to open it. Unfortunately it is locked." << std::endl;
     std::cout << "You start to get desperate and when you start to think of giving up a misterious mand approaches you." << std::endl;
+    std::cout << "Press (Enter) to continue" << std::endl;
+    system("read");
     std::cout << "Hello there, traveler! Would you like this? The man shows you a rusty old key." << std::endl;
     std::cout << "Would you like to (t) take the key by force or (b) try buying the key?" << std::endl;
     char banditChoice = 'x';
@@ -147,7 +157,9 @@ int main()
     case 'b':
     {
         std::cout << "You offer the bandit some of your coins in exchange for the key." << std::endl;
-        std::cout << "The misterious man says that is not enough for the key and persuades you into giving him two more coins." << std::endl;
+        player.subtractGold(45);
+        std::cout << "The misterious man says that is not enough for the key and persuades you into giving him five more coins." << std::endl;
+        player.subtractGold(5);
         std::cout << "Humiliated, you get the key and enter the tower" << std::endl;
         // IMPLEMENTAR LOGICA DE DAR MOEDAS
         break;
@@ -155,7 +167,7 @@ int main()
     case 't':
     {
         std::cout << "You get very angry and decide to battle the man." << std::endl;
-        // IMPLEMENTAR LOGICA DE BATALHA
+        game.battle(playerPtr, banditPtr, inventoryPtr);
     }
     default:
     {
@@ -163,11 +175,17 @@ int main()
     }
     }
     std::cout << "Finally, you enter the tower. Congratulations!" << std::endl;
-
+    std::cout << "Press (Enter) to continue" << std::endl;
+    system("read");
     std::cout << "You start climbing the stairs and feel a dark atmosphere surronding you. Everything seems to be rotten inside the tower."
               << " You get to a room with a black coffin and decide to open it." << std::endl;
+    std::cout << "Press (Enter) to continue" << std::endl;
+    system("read");
     std::cout << "The vampire is resting inside and it seems it doesn't wake up when you open the coffin." << std::endl;
     std::cout << "As soon as you try to get a wooden stake inside its chest the vampire opens it's eyes and start floating towards you." << std::endl;
+    std::cout << "Press (Enter) to continue" << std::endl;
+    system("read");
+ 
     std::cout << "Would you like to (r) run away or (a) attack the vampire?" << std::endl;
     char vampireChoice = 'x';
     while (vampireChoice != 'r' && vampireChoice != 'a')
@@ -180,16 +198,23 @@ int main()
     case 'r':
     {
         std::cout << "Unfortunately, you got so scare you couldn't bring yourself to do it. Everyday people die cause you couldn't do it." << std::endl;
+        std::cout << "Press (Enter) to continue" << std::endl;
+        system("read");
+ 
         std::cout << "Over the years you get so depressed thinking about it you decide to abandon everything you lived for and become a gypsy." << std::endl;
+        std::cout << "Press (Enter) to continue" << std::endl;
+        system("read");
         std::cout << "No one ever heard of " << playerName << " again." << std::endl;
         std::cout << "GAME OVER" << std::endl;
-        break;
+        abort();
     }
     case 't':
     {
-        std::cout << "You are so scared with the atmosphere and the situation you can barely getter enough strengh together to grab your weapon."
-                  << "Your rememeber your people and proudly engages in battle with the monster." << std::endl;
-        // IMPLEMENTAR LOGICA DE BATALHA
+        std::cout << "You are so scared with the atmosphere and the situation you can barely getter enough strengh together to grab your weapon." << std::endl;
+        std::cout << "Press (Enter) to continue" << std::endl;
+        system("read");
+        std::cout << "Your rememeber your people and proudly engages in battle with the monster." << std::endl;
+        game.battle(playerPtr, vampirePtr, inventoryPtr);
     }
     default:
     {
