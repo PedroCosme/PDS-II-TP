@@ -33,7 +33,7 @@ class GameEvents
 public:
   GameEvents();
   ~GameEvents();
-  void battle(PlayableCharacter player, Enemy monster, Inventory inventory);
+  void battle(PlayableCharacter* player, Enemy* monster, Inventory* inventory);
   unsigned int calcDamage(unsigned int damageRange);
   int hitOrMissMonster();
   int hitOrMissPlayer();

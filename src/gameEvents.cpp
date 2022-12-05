@@ -7,96 +7,146 @@ Item h("Health Potion", 50, 1);
 Item g("Grenade", 80, 2);
 
 
-void GameEvents::battle(PlayableCharacter player, Enemy monster, Inventory inventory)
+void GameEvents::battle(PlayableCharacter* player, Enemy* monster, Inventory* inventory)
 {
-    while (monster.isAlive())
+    while (monster->isAlive())
     {
-        if (player.isAlive())
+        if (player->isAlive())
         {
             std::cout
-                << player.PlayableCharacter::getName() << " vs " << monster.Monster::getName() << "\n"
-                << "HP: " << player.currentHealth() << " HP:" << monster.currentHealth() << "\n"
+                << player->PlayableCharacter::getName() << " vs " << monster->Monster::getName() << "\n"
+                << "HP: " << player->currentHealth() << " HP:" << monster->currentHealth() << "\n"
                 << "Inventory:  ";
-            inventory.displayInventory();
-            std::cout << player.returnWeapon().getName() << std::endl;
+            inventory->displayInventory();
+            std::cout << player->returnWeapon().getName() << std::endl;
 
             std::cout << "Choose: \n (a) attack \n (h) heal \n (t) throw grenade\n";
             char playerChoice = '0';
 
-            //while (playerChoice != 'a' || playerChoice != 't' || playerChoice != 'h')
-            //{
-             //   playerChoice = getchar();
-            //}
+            
             std::cin >> playerChoice;
             if (playerChoice == 'a')
             {
                 int hitOrMiss = GameEvents::hitOrMissPlayer(); // // hit or miss do monstro, implementar o miss
                 if (hitOrMiss > 124 && hitOrMiss < 190)
                 {
-                    uint damageDealt = player.returnWeapon().getDamage();
-                    monster.Monster::takeDamage(damageDealt);
+                    uint damageDealt = player->returnWeapon().getDamage();
+                    monster->Monster::takeDamage(damageDealt);
                     std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
-                    monster.Monster::isAlive();
+                    monster->Monster::isAlive();
                 }
                 else if (hitOrMiss >= 90)
                 {
-                    uint damageDealt = player.returnWeapon().getDamage() * 2;
-                    monster.Monster::takeDamage(damageDealt);
+                    uint damageDealt = player->returnWeapon().getDamage() * 2;
+                    monster->Monster::takeDamage(damageDealt);
                     std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
-                    monster.Monster::isAlive();
+                    monster->Monster::isAlive();
                 }
 
                 else if (hitOrMiss < 124)
                 {
-                    monster.Monster::takeDamage(0);
+                    monster->Monster::takeDamage(0);
                 }
 
-                else if (!player.isAlive())
+                else if (!player->isAlive())
                 {
-                    std::cout << "You have been defeated by the " << monster.getName() << std::endl;
+                    std::cout << "You have been defeated by the " << monster->getName() << std::endl;
                     std::cout << "Better luck next time!" << std::endl;
                     abort();
                 }
 
-                if (monster.isAlive())
+                if (monster->isAlive())
 
                 {
                     int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
-                    int mDamage = monster.monsterDamage();
-                    player.takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
+                    int mDamage = monster->monsterDamage();
+                    player->takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
                     std::cout << "The monster has dealt " << mDamage << " damage!" << std::endl;
-                    player.PlayableCharacter::isAlive();
+                    player->PlayableCharacter::isAlive();
                 }
                 else
                 {
-                    std::cout << "You defeated the " << monster.getName() << " and found " << monster.goldWorth() << " gold coins in it's corpse !\n"; // retorna quanto de ouro o monstro vale
-                    player.addGold(monster.goldWorth());
-                    std::cout << monster.xpWorth() << " xp gained" << std::endl;
-                    player.setXp(monster.xpWorth());
-                    std::cout << player.getXp() << std::endl;
-                    monster.~Enemy();
+                    std::cout << "You defeated the " << monster->getName() << " and found " << monster->goldWorth() << " gold coins in it's corpse !\n"; // retorna quanto de ouro o monstro vale
+                    player->addGold(monster->goldWorth());
+                    std::cout << monster->xpWorth() << " xp gained" << std::endl;
+                    player->setXp(monster->xpWorth());
+                    monster->~Enemy();
                 }
             }
 
             else if (playerChoice == 'h')
             {
                 
-                inventory.subtractItem(h);
-                inventory.displayInventory();
-                if(inventory.checkValue(h) > 0)
-                    player.heal(22);  
+                inventory->subtractItem(h);
+                inventory->displayInventory();
+                if(inventory->checkValue(h) > 0){
+                    player->heal(22);  
+                }
+                if (!player->isAlive())
+                {
+                    std::cout << "You have been defeated by the " << monster->getName() << std::endl;
+                    std::cout << "Better luck next time!" << std::endl;
+                    abort();
+                }
                  
+                if (monster->isAlive())
+
+                {
+                    int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
+                    int mDamage = monster->monsterDamage();
+                    player->takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
+                    std::cout << "The monster has dealt " << mDamage << " damage!" << std::endl;
+                    player->PlayableCharacter::isAlive();
+                }
+                else
+                {
+                    std::cout << "You defeated the " << monster->getName() << " and found " << monster->goldWorth() << " gold coins in it's corpse !\n"; // retorna quanto de ouro o monstro vale
+                    player->addGold(monster->goldWorth());
+                    std::cout << monster->xpWorth() << " xp gained" << std::endl;
+                    player->setXp(monster->xpWorth());
+                    monster->~Enemy();
+                }
             }
+            
             else if (playerChoice == 't')
             {
                 
-                inventory.subtractItem(g);
-                inventory.displayInventory();
-                if(inventory.checkValue(g) > 0)
-                   monster.takeDamage(monster.getMaximumHp()*0.3);  
-                 
+                inventory->subtractItem(g);
+                inventory->displayInventory();
+                if(inventory->checkValue(g) > 0){
+                   monster->takeDamage(monster->getMaximumHp()*0.3);  
+                }
+                if(!player->isAlive()){
+                std::cout << "You have been defeated by the " << monster->getName() << std::endl;
+                std::cout << "Better luck next time!" << std::endl;
+                abort();
+                }
+                if (monster->isAlive())
+
+                {
+                    int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
+                    int mDamage = monster->monsterDamage();
+                    player->takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
+                    std::cout << "The monster has dealt " << mDamage << " damage!" << std::endl;
+                    player->PlayableCharacter::isAlive();
+                }
+                else
+                {
+                    std::cout << "You defeated the " << monster->getName() << " and found " << monster->goldWorth() << " gold coins in it's corpse !\n"; // retorna quanto de ouro o monstro vale
+                    player->addGold(monster->goldWorth());
+                    std::cout << monster->xpWorth() << " xp gained" << std::endl;
+                    player->setXp(monster->xpWorth());
+                    monster->~Enemy();
+                }
+
+            
+               
             }
+        
+            
         }
+
+
     }
 }
 

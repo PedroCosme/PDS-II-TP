@@ -19,6 +19,7 @@ int main()
     std::cin >> playerName;
     std::cout << "Welcome to our RPG Battle Simulator, " << playerName << "!" << std::endl;
     PlayableCharacter player(playerName);
+    PlayableCharacter* playerPtr = &player;
 
     Item healthPotion("Health Potion", 50, 1);
     Item grenade("Grenade", 80, 2);
@@ -29,6 +30,7 @@ int main()
 
     std::cout << "These are your starting items. You may buy new items in the shop anytime outside of battle by typing s" << std::endl;
     Inventory inventory;
+    Inventory* inventoryPtr = &inventory;
     inventory.createInventory();
     inventory.displayInventory();
 
@@ -57,7 +59,10 @@ int main()
         putchar(shop);
         std::cout << std::endl;
     }*/
-    Enemy monster(20, 40, "Golbin", 40, 40, 6, 2);
+    Enemy goblin(20, 40, "Goblin", 100040, 100040, 6, 2);
+    Enemy troll(30, 70, "Troll", 70, 70, 18, 4);
+    Enemy* goblinPtr = &goblin;
+    Enemy* trollPtr = &troll;
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     // narracao inicial
@@ -66,8 +71,7 @@ int main()
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
 
     std::cin >> s;
-    checkBuy(s, player, inventory);
-
+    checkBuy(s, player, inventoryPtr);
     std::cout << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl;
 
     std::cout << "Press (Enter) to continue" << std::endl;
@@ -78,14 +82,20 @@ int main()
     // batalha com goblin
     // player.changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
     GameEvents game;
-    game.battle(player, monster, inventory);
+    game.battle(playerPtr, goblinPtr, inventoryPtr);
 
     std::cout << "You continue walking through the dense vegetation of the Dark Woods, trying to reach your objetive. "
               << "You can't see much but continue moving." << std::endl;
+    std::cout << "Press (Enter) to continue" << std::endl;
+    system("read");
+
+
     std::cout << "When you get close enough to see the tower clearly you almost fall into a river! "
               << "Fortunately, you see a bridge. The only bad part is: it is guarded by a huge troll" << std::endl;
-
-    std::cout << "The troll says you cannot pass unless you spare him some coins." << std::endl;
+    std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
+    std::cin >> s;
+    checkBuy(s, player, inventoryPtr);
+    std::cout << "The troll says you cannot pass unless you spare him 20 coins." << std::endl;
     std::cout << "Would you like to (g) give him the coins or (b) battle the troll?" << std::endl;
     char trollChoice = 'x';
     while (trollChoice != 'g' && trollChoice != 'b')
@@ -98,15 +108,19 @@ int main()
     case 'g':
     {
         std::cout << "You reluctantly give the troll some of your coins" << std::endl;
-        std::cout << "Thank you, stupid traveller. You may now proceed but be warned: you cannot defeat the Necromancer. You are weak" << std::endl;
+        std::cout << "Thank you, stupid traveller. You may now proceed but be warned: you cannot defeat the Vampire. You are weak" << std::endl;
+        player.subtractGold(20);
+        std::cout << "Press (Enter) to continue" << std::endl;
+        system("read");
         std::cout << "You ignore the troll and keep moving" << std::endl;
-        // IMPLEMENTAR LOGICA DE DAR MOEDAS
+        std::cout << "Press (Enter) to continue" << std::endl;
+        system("read");
         break;
     }
     case 'b':
     {
         std::cout << "You decide your coins are too precious to give away and proceed to battle the Troll." << std::endl;
-        // IMPLEMENTAR LOGICA DE BATALHA
+        game.battle(playerPtr, trollPtr, inventoryPtr);
     }
     default:
     {

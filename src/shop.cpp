@@ -72,8 +72,9 @@ int buyItem(int itemId)
         break;
     }
 }
-void checkBuy(char c, PlayableCharacter player, Inventory inventory)
+void checkBuy(char c, PlayableCharacter player, Inventory* inventory)
 {
+
     while (c == 's')
     {
 
@@ -88,9 +89,9 @@ void checkBuy(char c, PlayableCharacter player, Inventory inventory)
         int itemPrice = buyItem(desiredItem);
         player.subtractGold(itemPrice);
         desiredItemStr = getItemById(desiredItem);
-        inventory.addItem(desiredItemStr);
+        inventory->addItem(desiredItemStr);
         std::cout << "Current inventory:" << std::endl;
-        inventory.displayInventory();
+        inventory->displayInventory();
         std::cout << "Do you want to buy something else? (y/n)" << std::endl;
         char yn;
         std::cin >> yn;
