@@ -34,6 +34,7 @@ void PlayableCharacter::setXp(int xp)
     this->_xp += xp;
     if (this->_xp == 100)
     {
+        std::cout << "You went up one level!" << std::endl;
         lvlUp();
         this->_xp = 0;
     }
