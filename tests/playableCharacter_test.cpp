@@ -25,3 +25,13 @@ TEST_CASE("Test getName():std::string function:")
   CHECK(player.getLvl()==2);
   
   }
+TEST_CASE("Test getXp():int function:")
+{
+  
+  PlayableCharacter player("Tyler", 1, 0, 100, 100, 50, 1000);
+  Enemy monster(30, 100, "Goblin", 0, 100, 32, 8);
+  GameEvents game;
+  player.setXp(monster.xpWorth());
+  CHECK(player.getXp()==100);
+}
+  
