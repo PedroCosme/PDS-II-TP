@@ -47,3 +47,12 @@ TEST_CASE("Test getXp():int function:")
   player.takeDamage(100);
   CHECK(player.isAlive()==false);
 }
+TEST_CASE("Test getGold():int function"){
+PlayableCharacter player("Mike", 1, 0, 100, 100, 50, 1000);
+Enemy bandit(50, 25, "Bandit", 50, 50, 15, 6);
+player.subtractGold(300);
+CHECK(player.getGold()==700);
+player.addGold(bandit.goldWorth());
+CHECK(player.getGold()==750);
+  
+}
