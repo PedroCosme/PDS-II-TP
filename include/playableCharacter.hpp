@@ -27,7 +27,7 @@ class PlayableCharacter
 {
 public:
     PlayableCharacter(std::string name = "", unsigned int lvl = 1, unsigned int xp = 0, unsigned int maxHp = 100, int currentHp = 100,
-                      unsigned int maxMp = 50, unsigned int gold = 1000);
+                      unsigned int maxMp = 50, unsigned int gold = 100);
     ~PlayableCharacter();
 
     std::string getName();

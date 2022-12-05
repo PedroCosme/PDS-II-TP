@@ -6,11 +6,10 @@
 class Vampire : public Monster
 {
 public:
-    Vampire(std::string name = "Vampire", uint hitPoints = 300, uint maxDamage = 2, uint minDamage = 18, uint maxHp = 300);
+    Vampire(std::string name = "Vampire", uint hitPoints = 150, uint maxDamage = 2, uint minDamage = 18, uint maxHp = 150);
     ~Vampire();
 
     uint drainBlood();
-    uint deathRay();
 
 private:
 };

@@ -11,10 +11,11 @@
 #include "weapon.hpp"
 #include "inventory.hpp"
 #include "vampire.hpp"
+#include <stdlib.h>
 
 int main()
 {
-    system ("canberra-gtk-play -f ./music/musica_jogo.wav");
+    // system("canberra-gtk-play -f ./music/musica_jogo.wav");
     GameEvents game;
     char s;
     std::cout << "Choose a name for your character:" << std::endl;
@@ -38,10 +39,10 @@ int main()
     inventory.createInventory();
     inventory.displayInventory();
 
-    Enemy goblin(20, 40, "Goblin", 40, 40, 6, 2);
-    Enemy troll(30, 70, "Troll", 70, 70, 18, 4);
-    Enemy bandit(50, 25, "Bandit", 50, 50, 15, 6);
-    Vampire vampire("Vampire", 150, 150, 30);
+    Enemy goblin(40, 40, "Goblin", 40, 40, 6, 2);
+    Enemy troll(235, 70, "Troll", 60, 60, 18, 4);
+    Enemy bandit(250, 25, "Bandit", 50, 50, 15, 6);
+    Vampire vampire("Vampire", 150, 25, 6, 150);
     Enemy *goblinPtr = &goblin;
     Enemy *trollPtr = &troll;
     Enemy *banditPtr = &bandit;
