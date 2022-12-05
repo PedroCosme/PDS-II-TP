@@ -6,8 +6,7 @@ GameEvents::~GameEvents(){};
 Item h("Health Potion", 50, 1);
 Item g("Grenade", 80, 2);
 
-
-void GameEvents::battle(PlayableCharacter* player, Enemy* monster, Inventory* inventory)
+void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory)
 {
     while (monster->isAlive())
     {
@@ -23,7 +22,6 @@ void GameEvents::battle(PlayableCharacter* player, Enemy* monster, Inventory* in
             std::cout << "Choose: \n (a) attack \n (h) heal \n (t) throw grenade\n";
             char playerChoice = '0';
 
-            
             std::cin >> playerChoice;
             if (playerChoice == 'a')
             {
@@ -48,13 +46,6 @@ void GameEvents::battle(PlayableCharacter* player, Enemy* monster, Inventory* in
                     monster->Monster::takeDamage(0);
                 }
 
-                else if (!player->isAlive())
-                {
-                    std::cout << "You have been defeated by the " << monster->getName() << std::endl;
-                    std::cout << "Better luck next time!" << std::endl;
-                    abort();
-                }
-
                 if (monster->isAlive())
 
                 {
@@ -76,19 +67,13 @@ void GameEvents::battle(PlayableCharacter* player, Enemy* monster, Inventory* in
 
             else if (playerChoice == 'h')
             {
-                
+
                 inventory->subtractItem(h);
                 inventory->displayInventory();
-                if(inventory->checkValue(h) > 0){
-                    player->heal(22);  
-                }
-                if (!player->isAlive())
+                if (inventory->checkValue(h) > 0)
                 {
-                    std::cout << "You have been defeated by the " << monster->getName() << std::endl;
-                    std::cout << "Better luck next time!" << std::endl;
-                    abort();
+                    player->heal(22);
                 }
-                 
                 if (monster->isAlive())
 
                 {
@@ -107,19 +92,15 @@ void GameEvents::battle(PlayableCharacter* player, Enemy* monster, Inventory* in
                     monster->~Enemy();
                 }
             }
-            
+
             else if (playerChoice == 't')
             {
-                
+
                 inventory->subtractItem(g);
                 inventory->displayInventory();
-                if(inventory->checkValue(g) > 0){
-                   monster->takeDamage(monster->getMaximumHp()*0.3);  
-                }
-                if(!player->isAlive()){
-                std::cout << "You have been defeated by the " << monster->getName() << std::endl;
-                std::cout << "Better luck next time!" << std::endl;
-                abort();
+                if (inventory->checkValue(g) > 0)
+                {
+                    monster->takeDamage(monster->getMaximumHp() * 0.3);
                 }
                 if (monster->isAlive())
 
@@ -138,15 +119,14 @@ void GameEvents::battle(PlayableCharacter* player, Enemy* monster, Inventory* in
                     player->setXp(monster->xpWorth());
                     monster->~Enemy();
                 }
-
-            
-               
             }
-        
-            
         }
-
-
+        else
+        {
+            std::cout << "You have been defeated by the " << monster->getName() << std::endl;
+            std::cout << "Better luck next time!" << std::endl;
+            abort();
+        }
     }
 }
 
