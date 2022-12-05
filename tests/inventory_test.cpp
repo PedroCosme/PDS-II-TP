@@ -21,6 +21,7 @@ TEST_CASE("Test createInventory and subtractItem")
 
 TEST_CASE("Test createInventory and addItem")
 {
+  //consider that initially the inventory contains 2 Health Potions
   Inventory inventory;
   inventory.createInventory();
   inventory.addItem(itemList.at(ITEMS::HEALTH_POTION));
