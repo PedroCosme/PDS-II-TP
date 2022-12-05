@@ -27,11 +27,12 @@ unsigned int PlayableCharacter::getXp()
 void PlayableCharacter::lvlUp()
 {
     this->_lvl += 1;
+    this->_maxHp += 50;
 };
 void PlayableCharacter::setXp(int xp)
 {
     this->_xp += xp;
-    if (this->_xp == 500)
+    if (this->_xp == 100)
     {
         lvlUp();
         this->_xp = 0;
