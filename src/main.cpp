@@ -20,7 +20,7 @@ int main()
     std::cin >> playerName;
     std::cout << "Welcome to our RPG Battle Simulator, " << playerName << "!" << std::endl;
     PlayableCharacter player(playerName);
-    PlayableCharacter* playerPtr = &player;
+    PlayableCharacter *playerPtr = &player;
 
     Item healthPotion("Health Potion", 50, 1);
     Item grenade("Grenade", 80, 2);
@@ -31,7 +31,7 @@ int main()
 
     std::cout << "These are your starting items. You may buy new items in the shop anytime outside of battle by typing s" << std::endl;
     Inventory inventory;
-    Inventory* inventoryPtr = &inventory;
+    Inventory *inventoryPtr = &inventory;
     inventory.createInventory();
     inventory.displayInventory();
 
@@ -64,10 +64,10 @@ int main()
     Enemy troll(30, 70, "Troll", 70, 70, 18, 4);
     Enemy bandit(50, 25, "Bandit", 50, 50, 15, 6);
     Vampire vampire(100, 100, "Vampire", 150, 150, 30);
-    Enemy* goblinPtr = &goblin;
-    Enemy* trollPtr = &troll;
-    Enemy* banditPtr = &bandit;
-    Vampire* vampirePtr = &vampire;
+    Enemy *goblinPtr = &goblin;
+    Enemy *trollPtr = &troll;
+    Enemy *banditPtr = &bandit;
+    Vampire *vampirePtr = &vampire;
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     // narracao inicial
@@ -93,7 +93,6 @@ int main()
               << "You can't see much but continue moving." << std::endl;
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
-
 
     std::cout << "When you get close enough to see the tower clearly you almost fall into a river! "
               << "Fortunately, you see a bridge. The only bad part is: it is guarded by a huge troll" << std::endl;
@@ -161,7 +160,6 @@ int main()
         std::cout << "The misterious man says that is not enough for the key and persuades you into giving him five more coins." << std::endl;
         player.subtractGold(5);
         std::cout << "Humiliated, you get the key and enter the tower" << std::endl;
-        // IMPLEMENTAR LOGICA DE DAR MOEDAS
         break;
     }
     case 't':
@@ -185,7 +183,7 @@ int main()
     std::cout << "As soon as you try to get a wooden stake inside its chest the vampire opens it's eyes and start floating towards you." << std::endl;
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
- 
+
     std::cout << "Would you like to (r) run away or (a) attack the vampire?" << std::endl;
     char vampireChoice = 'x';
     while (vampireChoice != 'r' && vampireChoice != 'a')
@@ -200,7 +198,7 @@ int main()
         std::cout << "Unfortunately, you got so scare you couldn't bring yourself to do it. Everyday people die cause you couldn't do it." << std::endl;
         std::cout << "Press (Enter) to continue" << std::endl;
         system("read");
- 
+
         std::cout << "Over the years you get so depressed thinking about it you decide to abandon everything you lived for and become a gypsy." << std::endl;
         std::cout << "Press (Enter) to continue" << std::endl;
         system("read");
@@ -214,7 +212,7 @@ int main()
         std::cout << "Press (Enter) to continue" << std::endl;
         system("read");
         std::cout << "Your rememeber your people and proudly engages in battle with the monster." << std::endl;
-        game.battle(playerPtr, vampirePtr, inventoryPtr);
+        game.finalBattle(playerPtr, vampirePtr, inventoryPtr);
     }
     default:
     {
