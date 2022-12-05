@@ -33,6 +33,7 @@ int main()
     std::cout << "These are your starting items. You may buy new items in the shop anytime outside of battle by typing s" << std::endl;
     Inventory inventory;
     Inventory *inventoryPtr = &inventory;
+    inventory.getItemN(healthPotion);
     inventory.createInventory();
     inventory.displayInventory();
 
