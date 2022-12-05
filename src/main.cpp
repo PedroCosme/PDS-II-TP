@@ -54,7 +54,6 @@ int main()
 
     std::cin >> s;
     checkBuy(s, playerPtr, inventoryPtr);
-    std::cout << player.returnWeapon().getName();
     std::cout << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl;
 
     std::cout << "Press (Enter) to continue" << std::endl;
