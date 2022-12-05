@@ -14,6 +14,7 @@
 
 int main()
 {
+    system ("canberra-gtk-play -f ./music/musica_jogo.wav");
     GameEvents game;
     char s;
     std::cout << "Choose a name for your character:" << std::endl;
