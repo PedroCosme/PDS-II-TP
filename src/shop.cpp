@@ -7,37 +7,6 @@ Item longSword("Long sword", 120, 4);
 Item greatSword("Great Sword", 180, 5);
 Item battleAxe("Battle Axe", 220, 6);
 
-int buyItemStr(std::string itemName)
-{
-
-    int itemPrice;
-    if (toLower(itemName) == "health potion")
-    {
-        int itemPrice = healthPotion.getPrice();
-    }
-    else if (toLower(itemName) == "grenade")
-    {
-        int itemPrice = grenade.getPrice();
-    }
-    else if (toLower(itemName) == "great sword")
-    {
-        int itemPrice = greatSword.getPrice();
-    }
-    else if (toLower(itemName) == "long sword")
-    {
-        int itemPrice = longSword.getPrice();
-    }
-    else if (toLower(itemName) == "battle axe")
-    {
-        int itemPrice = battleAxe.getPrice();
-    }
-    else if (toLower(itemName) == "dagger")
-    {
-        int itemPrice = dagger.getPrice();
-    }
-    return itemPrice;
-}
-
 int buyItem(int itemId)
 {
 
@@ -90,7 +59,6 @@ void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
         player->subtractGold(itemPrice);
         desiredItemStr = getItemById(desiredItem);
         inventory->addItem(desiredItemStr);
-        std::cout << desiredItemStr[0] << std::endl;
         std::cout << "Current inventory:" << std::endl;
         inventory->displayInventory();
         switch (desiredItem)
