@@ -34,4 +34,11 @@ TEST_CASE("Test getXp():int function:")
   player.setXp(monster.xpWorth());
   CHECK(player.getXp()==100);
 }
-  
+   TEST_CASE("Test isALive():bool function:")
+  {
+  PlayableCharacter player("Tyler", 1, 0, 100, 100, 50, 1000);
+   player.isAlive();
+  CHECK(player.isAlive()==true);
+  player.takeDamage(100);
+  CHECK(player.isAlive()==false);
+}
