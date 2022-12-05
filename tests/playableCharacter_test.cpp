@@ -17,3 +17,11 @@ TEST_CASE("Test getName():std::string function:")
   CHECK(player.getCurrentHp()==50);
   
 }
+  TEST_CASE("Test getLvl():std::string function:")
+{
+ PlayableCharacter player("Mike", 1, 0, 100, 100, 50, 1000);
+  CHECK(player.getLvl()==1);
+  player.lvlUp();
+  CHECK(player.getLvl()==2);
+  
+  }
