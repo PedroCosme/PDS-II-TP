@@ -31,14 +31,14 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
                 {
                     uint damageDealt = player->returnWeapon().getDamage();
                     monster->Monster::takeDamage(damageDealt);
-                    std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
+                    std::cout << "The player has dealt " << damageDealt << " damage!" << std::endl;
                     monster->Monster::isAlive();
                 }
                 else if (hitOrMiss >= 190)
                 {
                     uint damageDealt = player->returnWeapon().getDamage() * 2;
                     monster->Monster::takeDamage(damageDealt);
-                    std::cout << "The monster has taken " << damageDealt * 2 << " damage!" << std::endl;
+                    std::cout << "The player has dealt " << damageDealt * 2 << " damage!" << std::endl;
                     monster->Monster::isAlive();
                 }
 
@@ -191,14 +191,14 @@ void GameEvents::finalBattle(PlayableCharacter *player, Vampire *monster, Invent
                 {
                     uint damageDealt = player->returnWeapon().getDamage();
                     monster->Monster::takeDamage(damageDealt);
-                    std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
+                    std::cout << "The player has dealt " << damageDealt << " damage!" << std::endl;
                     monster->Monster::isAlive();
                 }
                 else if (hitOrMiss >= 190)
                 {
                     uint damageDealt = player->returnWeapon().getDamage() * 2;
                     monster->Monster::takeDamage(damageDealt);
-                    std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
+                    std::cout << "The player has dealt " << damageDealt << " damage!" << std::endl;
                     monster->Monster::isAlive();
                 }
 
