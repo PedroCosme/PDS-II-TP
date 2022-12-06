@@ -45,16 +45,6 @@ bool PlayableCharacter::isAlive()
     return _currentHp > 0;
 }
 
-bool PlayableCharacter::dealDamage(unsigned int damageAmount)
-{
-    if (_currentHp > damageAmount)
-    {
-        _currentHp -= damageAmount;
-        return true;
-    }
-    _currentHp = 0;
-    return false;
-}
 void PlayableCharacter::takeDamage(unsigned int damage)
 {
     _currentHp -= damage;

@@ -25,6 +25,7 @@ int main()
     std::cout << "Welcome to our RPG Battle Simulator, " << playerName << "!" << std::endl;
     PlayableCharacter player(playerName);
     PlayableCharacter *playerPtr = &player;
+    // playerPtr->changeWeapon(availableWeapons.at(WEAPONS::DAGGER));
 
     Item healthPotion("Health Potion", 50, 1);
     Item grenade("Grenade", 80, 2);
@@ -55,17 +56,21 @@ int main()
               << "Finally, you see a tower in the distance and praise the gods, as your supplies were barely enough for another day in the Dark Woods." << std::endl;
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
 
-    while(1){
-        try{
-        std::cin >> s;
-            if(s != 's' || s != 'c')
-            throw EntradaInvalidaException();
+    while (1)
+    {
+        try
+        {
+            std::cin >> s;
+            if (s != 's' || s != 'c')
+                throw EntradaInvalidaException();
         }
-        catch(EntradaInvalidaException& e){
-            if(s == 's' || s == 'c'){
+        catch (EntradaInvalidaException &e)
+        {
+            if (s == 's' || s == 'c')
+            {
                 break;
             }
-        std::cout << e.what() << std::endl;
+            std::cout << e.what() << std::endl;
         }
     }
     checkBuy(s, playerPtr, inventoryPtr);

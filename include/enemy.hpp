@@ -17,7 +17,7 @@
 /**
  * @brief Armazena todas informações referentes ao ataque e valor do monstro em ouro e experiência.
  *
- * @details Contém todas as informações sobre o possibilidade do monstro em acertar o golpe, errar ou obter acerto crítico, valor de cada monstro em experiência e valor em ouro após abate. Que futuramente servirá para a compra de itens dentro da loja do jogo.
+ * @details Contém todas as informações sobre o possibilidade do monstro em acertar o golpe, errar ou obter acerto crítico, valor de cada monstro em experiência e valor em ouro após abate. Que futuramente serve para a compra de itens dentro da loja do jogo.
  */
 class Enemy : public Monster
 {
@@ -37,7 +37,6 @@ public:
      * @param minDamage Valor mínimo de dano
      *
      */
-
     Enemy(uint gold,
           uint xpWorth,
           std::string name,
@@ -55,20 +54,16 @@ public:
     /**
      * @brief Valor de ouro
      *
-     * @return retorna goldWorth
+     * @return retorna o quanto de ouro o monstro dropa ao morrer
      */
     unsigned int goldWorth() const;
 
     /**
      * @brief Valor da xp
      *
-     * @return retorna xpWorth
+     * @return retorna o quanto de XP o monstro vale
      */
     unsigned int xpWorth();
-
-    // void attack(PlayableCharacter *player, Enemy *monster, Inventory *inventory);
-
-    int hitOrMiss();
 
 private:
     uint _gold;

@@ -66,7 +66,7 @@ std::string getItemById(int itemId)
     }
 }
 
-std::string Item::getName() const
+std::string Item::getName()
 {
     return _name;
 }

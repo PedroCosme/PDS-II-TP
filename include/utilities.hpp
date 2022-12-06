@@ -14,11 +14,31 @@
 
 #include <string>
 #include <iostream>
-#include <cstdlib>
 
+/**
+ * @brief Troca letras maiúsculas para minúsculas
+ * @details Troca letras maiúsculas para minúsculas
+ *
+ * @param in Palavra digitada
+ * @return std::string
+ */
 std::string toLower(std::string in);
+
+/**
+ * @brief Troca letras minúsculas para maiúsculas
+ *
+ * @param in Palavra digitada
+ * @return std::string
+ */
 std::string toUpper(std::string in);
 
+/**
+ * @brief gera um número aleatório baseado em um máximo e um minímo
+ *
+ * @param minRange
+ * @param maxRange
+ * @return unsigned int
+ */
 unsigned int genNum(uint minRange, uint maxRange);
 
 #endif

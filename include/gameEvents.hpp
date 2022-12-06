@@ -30,12 +30,6 @@
 #include "inventory.hpp"
 #include <tabulate/table.hpp>
 
-/**
- * @brief Especifica o hitOrMiss, calculo de dano e as batalhas.
- *
- * @details Detalha o hitOrMiss, o calculo de dano e batalhas. Responsável por armazenar toda lógica presente no jogo.
- */
-
 class GameEvents
 {
 public:
@@ -55,37 +49,36 @@ public:
   /**
    * @brief Batalha que acontece durante o jogo
    *
-   * @details Lida com a batalha que acontece durante o jogo, utilizando o jogador, monstros e inventário
+   * @details Lida com a batalha que acontece durante o jogo, utilizando um ponteiro para jogador, um para o monstro monstros e outro para o inventário do jogador
    *
-   * @param player Jogador
-   * @param monster Monstro
-   * @param inventory Inventário
+   * @param player Ponteiro para jogador
+   * @param monster Ponteiro para Monstro
+   * @param inventory Ponteiro para Inventário
    */
-
   void battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory);
 
+  /**
+   * @brief Batalha contra o boss final
+   *
+   * @details Lida com a batalha que acontece durante o jogo, utilizando um ponteiro para jogador, um para o monstro monstros e outro para o inventário do jogador
+   *
+   * @param player Ponteiro para jogador
+   * @param monster Ponteiro para vampire
+   * @param inventory Ponteiro para Inventário
+   */
   void finalBattle(PlayableCharacter *player, Vampire *monster, Inventory *inventory);
 
   /**
-   * @brief Calcula o dano causado
+   * @brief Função que verifica se o ataque do monstro acertou, errou, ou deu acerto critíco
    *
-   *
-   * @param damageRange Alcance de dano
-   * @return retorna calcDamage
-   */
-  unsigned int calcDamage(unsigned int damageRange);
-
-  /**
-   * @brief Função que verifica se o ataque do monstro acertou
-   *
-   * @return hitOrMissPlayer
+   * @return int de 1 a 100
    */
   int hitOrMissMonster();
 
   /**
-   * @brief Função que verifica se o ataque do Jogador acertou
+   * @brief Função que verifica se o ataque do jogador acertou, errou, ou deu acerto critíco
    *
-   * @return hitOrMissPlayer
+   * @return int de 100 a 200
    */
   int hitOrMissPlayer();
 };

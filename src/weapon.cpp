@@ -1,7 +1,11 @@
 #include "weapon.hpp"
 
-Weapon::Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage)
-    : _name(name), _minimumDamage(minDamage), _maximumDamage(maxDamage)
+// Weapon::Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage, int price, int id)
+//     : _name(name), _minimumDamage(minDamage), _maximumDamage(maxDamage), Item(price, id)
+// {
+// }
+Weapon::Weapon(std::string name, unsigned int minDamage, unsigned int maxDamage, int price, int id)
+    : Item(name, price, id), _name(name), _minimumDamage(minDamage), _maximumDamage(maxDamage)
 {
 }
 
@@ -32,7 +36,7 @@ WEAPONS getFromName(std::string weaponName)
 
 std::string Weapon::getName()
 {
-    return _name;
+    return this->_name;
 }
 
 unsigned int Weapon::damageRange()
@@ -47,10 +51,10 @@ unsigned int Weapon::getDamage()
 }
 
 std::map<WEAPONS, Weapon> availableWeapons = std::map<WEAPONS, Weapon>{
-    {WEAPONS::UNARMED, Weapon("Unarmed", 1, 2)},
-    {WEAPONS::DAGGER, Weapon("Dagger", 2, 8)},
-    {WEAPONS::LONGSWORD, Weapon("Longsword", 4, 12)},
-    {WEAPONS::GREATSWORD, Weapon("Greatsword", 6, 16)},
-    {WEAPONS::BATTLEAXE, Weapon("Battle Axe", 8, 20)}
+    {WEAPONS::UNARMED, Weapon("Unarmed", 1, 2, 2, 25)},
+    {WEAPONS::DAGGER, Weapon("Dagger", 2, 8, 50, 3)},
+    {WEAPONS::LONGSWORD, Weapon("Longsword", 4, 12, 120, 4)},
+    {WEAPONS::GREATSWORD, Weapon("Greatsword", 6, 16, 180, 5)},
+    {WEAPONS::BATTLEAXE, Weapon("Battle Axe", 8, 20, 220, 6)}
 
 };
