@@ -88,7 +88,20 @@ int main()
     std::cout << "When you get close enough to see the tower clearly you almost fall into a river! "
               << "Fortunately, you see a bridge. The only bad part is: it is guarded by a huge troll" << std::endl;
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
-    std::cin >> s;
+
+    while(1){
+        try{
+        std::cin >> s;
+            if(s != 's' || s != 'c')
+            throw EntradaInvalidaException();
+        }
+        catch(EntradaInvalidaException& e){
+            if(s == 's' || s == 'c'){
+                break;
+            }
+        std::cout << e.what() << std::endl;
+        }
+    }
     checkBuy(s, playerPtr, inventoryPtr);
     std::cout << "The troll says you cannot pass unless you spare him 20 coins." << std::endl;
     std::cout << "Would you like to (g) give him the coins or (b) battle the troll?" << std::endl;
@@ -128,6 +141,22 @@ int main()
     std::cout << "After the two encounters you realize your journey will not be as easy as you thought it would be. "
 
               << "Nevertheless, you continue your journey as your mission is everything that matters to you." << std::endl;
+    std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
+
+    while(1){
+        try{
+        std::cin >> s;
+            if(s != 's' || s != 'c')
+            throw EntradaInvalidaException();
+        }
+        catch(EntradaInvalidaException& e){
+            if(s == 's' || s == 'c'){
+                break;
+            }
+        std::cout << e.what() << std::endl;
+        }
+    }
+    checkBuy(s, playerPtr, inventoryPtr);
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     std::cout << "You finally get to the gate of the tower and try to open it. Unfortunately it is locked." << std::endl;
@@ -164,6 +193,21 @@ int main()
     }
     }
     std::cout << "Finally, you enter the tower. Congratulations!" << std::endl;
+    std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
+    while(1){
+        try{
+        std::cin >> s;
+            if(s != 's' || s != 'c')
+            throw EntradaInvalidaException();
+        }
+        catch(EntradaInvalidaException& e){
+            if(s == 's' || s == 'c'){
+                break;
+            }
+        std::cout << e.what() << std::endl;
+        }
+    }
+    checkBuy(s, playerPtr, inventoryPtr);
     std::cout << "Press (Enter) to continue" << std::endl;
     system("read");
     std::cout << "You start climbing the stairs and feel a dark atmosphere surronding you. Everything seems to be rotten inside the tower."
