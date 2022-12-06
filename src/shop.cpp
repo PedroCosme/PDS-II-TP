@@ -47,19 +47,25 @@ void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
 
     while (c == 's')
     {
+        if (player->getGold() < healthPotion.getPrice())
+        {
+            std::cout << "You don't have enough gold coins to buy anything right now"
+                      << "\n";
+            break;
+        }
         Table shopT;
 
         int desiredItem;
         std::string desiredItemStr;
-        std::cout << "What are you buying, stranger?" << std::endl;
+        std::cout << "What are you buying, stranger? Just tell me by the item number and I'll fetch it for you" << std::endl;
         shopT.add_row({"Item", "Price"});
         shopT.add_row({"Available Gold", std::to_string(player->getGold())});
-        shopT.add_row({"Health Potion - heals for 45 HP.", std::to_string(healthPotion.getPrice())});
-        shopT.add_row({"Grenade - deals 30%% of monster health damage", std::to_string(grenade.getPrice())});
-        shopT.add_row({"Dagger - damage: 2 - 8", std::to_string(dagger.getPrice())});
-        shopT.add_row({"Long Sword - damage: 4 - 12", std::to_string(longSword.getPrice())});
-        shopT.add_row({"Great Sword - damage: 6 - 16", std::to_string(greatSword.getPrice())});
-        shopT.add_row({"Battle Axe - damage: 8 - 20", std::to_string(battleAxe.getPrice())});
+        shopT.add_row({"1- Health Potion - heals for 45 HP.", std::to_string(healthPotion.getPrice())});
+        shopT.add_row({"2- Grenade - deals 30%% of monster health damage", std::to_string(grenade.getPrice())});
+        shopT.add_row({"3- Dagger - damage: 2 - 8", std::to_string(dagger.getPrice())});
+        shopT.add_row({"4- Long Sword - damage: 4 - 12", std::to_string(longSword.getPrice())});
+        shopT.add_row({"5- Great Sword - damage: 6 - 16", std::to_string(greatSword.getPrice())});
+        shopT.add_row({"6- Battle Axe - damage: 8 - 20", std::to_string(battleAxe.getPrice())});
         shopT.format()
             .font_style({FontStyle::bold})
             .border_top("-")
@@ -73,9 +79,9 @@ void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
 
         int itemPrice = buyItem(desiredItem);
         player->subtractGold(itemPrice);
-    
+
         desiredItemStr = getItemById(desiredItem);
-    
+
         inventory->addItem(desiredItemStr);
         std::cout << "Current inventory:" << std::endl;
         switch (desiredItem)

@@ -123,6 +123,10 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
 
             else if (playerChoice == 't')
             {
+                if (inventory->checkValue(g) > 0)
+                {
+                    monster->takeDamage(monster->getMaximumHp() * 0.3);
+                }
                 try
                 {
                     inventory->subtractItem(g);
@@ -132,10 +136,6 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
                     std::cout << e.what() << std::endl;
                 }
                 inventory->displayInventory(player);
-                if (inventory->checkValue(g) > 0)
-                {
-                    monster->takeDamage(monster->getMaximumHp() * 0.3);
-                }
                 if (monster->isAlive())
 
                 {

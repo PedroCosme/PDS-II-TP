@@ -39,7 +39,7 @@ std::string getItemById(int itemId)
 
     switch (itemId)
     {
-    
+
     case 1:
         itemName = "Health Potion";
         return itemName;
