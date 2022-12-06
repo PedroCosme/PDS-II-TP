@@ -41,8 +41,8 @@ vampire:
 main: weapon playableCharacter monster gameEvents enemy utilities shop item inventory vampire
 	$(CC) $(CFLAGS) build/playableCharacter.o build/monster.o build/weapon.o build/item.o build/gameEvents.o build/enemy.o build/inventory.o build/shop.o build/vampire.o build/utilities.o src/main.cpp -o $(TARGET)
 
-test: weapon playableCharacter monster gameEvents enemy utilities shop item inventory
-	$(CC) $(CFLAGS) $(TESTDIR)/enemy_test.cpp $(TESTDIR)/weapon_test.cpp $(TESTDIR)/playableCharacter_test.cpp $(TESTDIR)/monster_test.cpp $(TESTDIR)/gameEvents_test.cpp $(TESTDIR)/utilities_test.cpp $(TESTDIR)/shop_test.cpp $(TESTDIR)/item_test.cpp $(TESTDIR)/inventory_test.cpp $(BUILDDIR)/inventory.o $(BUILDDIR)/shop.o $(BUILDDIR)/item.o $(BUILDDIR)/enemy.o $(BUILDDIR)/monster.o $(BUILDDIR)/utilities.o $(BUILDDIR)/gameEvents.o $(BUILDDIR)/playableCharacter.o $(BUILDDIR)/weapon.o -o $(BUILDDIR)/test.out
+test: weapon playableCharacter monster gameEvents enemy utilities shop item inventory vampire
+	$(CC) $(CFLAGS) $(TESTDIR)/enemy_test.cpp $(TESTDIR)/weapon_test.cpp $(TESTDIR)/playableCharacter_test.cpp $(TESTDIR)/monster_test.cpp $(TESTDIR)/gameEvents_test.cpp $(TESTDIR)/utilities_test.cpp $(TESTDIR)/shop_test.cpp $(TESTDIR)/item_test.cpp $(TESTDIR)/inventory_test.cpp $(BUILDDIR)/inventory.o $(BUILDDIR)/shop.o $(BUILDDIR)/item.o $(BUILDDIR)/enemy.o $(BUILDDIR)/monster.o $(BUILDDIR)/utilities.o $(BUILDDIR)/gameEvents.o $(BUILDDIR)/playableCharacter.o $(BUILDDIR)/weapon.o $(BUILDDIR)/vampire.o -o $(BUILDDIR)/test.out
 
 clean:
 	$(RM) -r $(BUILDDIR)/* $(TARGET)
