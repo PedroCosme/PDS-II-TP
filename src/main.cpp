@@ -124,7 +124,7 @@ int main()
     std::cout << "Hello there, traveler! Would you like this? The man shows you a rusty old key." << std::endl;
     std::cout << "Would you like to (t) take the key by force or (b) try buying the key?" << std::endl;
     char banditChoice = 'x';
-    while (banditChoice != 'g' && banditChoice != 'b')
+    while (banditChoice != 'b' && banditChoice != 't')
     {
         std::cin >> banditChoice;
     }

@@ -5,16 +5,23 @@ Item g("Grenade", 80, 2);
 
 void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory)
 {
+    Table battleFeed;
+    battleFeed.add_row({player->getName(), monster->getName()});
+    battleFeed.add_row({player->currentHealth(), monster->currentHealth()});
+    battleFeed.add_row({player->returnWeapon().getName()});
+
     while (monster->isAlive())
     {
         if (player->isAlive())
         {
-            std::cout
-                << player->PlayableCharacter::getName() << " vs " << monster->Monster::getName() << "\n"
-                << "HP: " << player->currentHealth() << " HP:" << monster->currentHealth() << "\n"
-                << "Inventory:  ";
+            std::cout << battleFeed << "\n";
+            // std::cout
+            //     << player->PlayableCharacter::getName() << " vs " << monster->Monster::getName() << "\n"
+            //     << "HP: " << player->currentHealth() << " HP:" << monster->currentHealth() << "\n"
+            std::cout << "Inventory:  "
+                      << "\n";
             inventory->displayInventory();
-            std::cout << player->returnWeapon().getName() << std::endl;
+            // std::cout << player->returnWeapon().getName() << std::endl;
 
             std::cout << "Choose: \n (a) attack \n (h) heal \n (t) throw grenade\n";
             char playerChoice = '0';

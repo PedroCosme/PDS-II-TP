@@ -28,6 +28,8 @@
 #include "item.hpp"
 #include "utilities.hpp"
 #include "inventory.hpp"
+#include <tabulate/table.hpp>
+
 class GameEvents
 {
 public:
