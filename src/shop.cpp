@@ -1,4 +1,5 @@
 #include "shop.hpp"
+#include "excecao.hpp"
 
 Item healthPotion("Health Potion", 50, 1);
 Item grenade("Grenade", 80, 2);
@@ -72,7 +73,9 @@ void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
 
         int itemPrice = buyItem(desiredItem);
         player->subtractGold(itemPrice);
+    
         desiredItemStr = getItemById(desiredItem);
+    
         inventory->addItem(desiredItemStr);
         std::cout << "Current inventory:" << std::endl;
         switch (desiredItem)

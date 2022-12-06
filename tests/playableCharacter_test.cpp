@@ -41,10 +41,14 @@ TEST_CASE("Test getXp():int function:")
 {
   
   PlayableCharacter player("Tyler", 1, 0, 100, 100, 50, 1000);
-  Enemy monster(30, 100, "Goblin", 0, 100, 32, 8);
+  Enemy monster1(30, 80, "Goblin", 0, 80, 32, 8);
   GameEvents game;
-  player.setXp(monster.xpWorth());
-  CHECK(player.getXp()==100);
+   player.setXp(monster1.xpWorth());
+  CHECK(player.getXp()==80);
+  //When xp>=0, the player level up and his new xp is now zero
+  Enemy monster2(30, 100, "Vampire", 0, 20, 32, 8);
+  player.setXp(monster2.xpWorth());
+  CHECK(player.getXp()==0);
 }
    TEST_CASE("Test isALive():bool function:")
   {

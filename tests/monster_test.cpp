@@ -44,9 +44,9 @@ Monster MONSTER("MONSTER", 60, 70, 15, 6);
 TEST_CASE("currentHealth():std::string ")
 {
 Monster MONSTER("MONSTER", 90, 100, 15, 6);
-  CHECK(MONSTER.currentHealth()=="90 / 100 ");
+  CHECK(MONSTER.currentHealth()=="90 / 100");
   MONSTER.takeDamage(40);
-  CHECK_FALSE(MONSTER.currentHealth()=="50 / 100");
+  CHECK(MONSTER.currentHealth()=="50 / 100");
   MONSTER.takeDamage(30);
   CHECK(MONSTER.currentHealth()=="20 / 100");
   

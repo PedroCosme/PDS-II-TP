@@ -11,12 +11,20 @@
 #include <iostream>
 
 TEST_CASE("testando damageRange()")
+
+/**
+    {WEAPONS::UNARMED, Weapon("Unarmed", 1, 2)},
+    {WEAPONS::DAGGER, Weapon("Dagger", 2, 8)},
+    {WEAPONS::LONGSWORD, Weapon("Longsword", 4, 12)},
+    {WEAPONS::GREATSWORD, Weapon("Greatsword", 6, 16)},
+    {WEAPONS::BATTLEAXE, Weapon("Battle Axe", 8, 20)}
+*/
 {
   CHECK(availableWeapons.at(WEAPONS::UNARMED).damageRange()==1);
-  CHECK(availableWeapons.at(WEAPONS::DAGGER).damageRange()==3);
-  CHECK(availableWeapons.at(WEAPONS::LONGSWORD).damageRange()==7);
+  CHECK(availableWeapons.at(WEAPONS::DAGGER).damageRange()==6);
+  CHECK(availableWeapons.at(WEAPONS::LONGSWORD).damageRange()==8);
   CHECK(availableWeapons.at(WEAPONS::GREATSWORD).damageRange()==10);
-  CHECK(availableWeapons.at(WEAPONS::BATTLEAXE).damageRange()==10);
+  CHECK(availableWeapons.at(WEAPONS::BATTLEAXE).damageRange()==12);
 
 }
 
