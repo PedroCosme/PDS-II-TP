@@ -52,7 +52,7 @@ std::string Inventory::getItemN(Item item)
     return std::to_string(_inventory[item]);
 }
 
-void Inventory::displayInventory()
+void Inventory::displayInventory(PlayableCharacter *player)
 {
     Item healthPotion("Health Potion", 50);
     Item grenade("Grenade", 80);
@@ -64,12 +64,9 @@ void Inventory::displayInventory()
     Table inventoryT;
 
     inventoryT.add_row({"Item", "Amount"});
-    inventoryT.add_row({"Battle Axe", getItemN(battleAxe)});
-    inventoryT.add_row({"Dagger", getItemN(dagger)});
-    inventoryT.add_row({"Great Sword", getItemN(greatSword)});
-    inventoryT.add_row({"Grenade", getItemN(grenade)});
-    inventoryT.add_row({"Health Potion", getItemN(healthPotion)});
-    inventoryT.add_row({"Long Sword", getItemN(longSword)});
+    inventoryT.add_row({"Grenades", getItemN(grenade)});
+    inventoryT.add_row({"Health Potions", getItemN(healthPotion)});
+    inventoryT.add_row({player->returnWeapon().getName(), "1"});
     inventoryT.format()
         .font_style({FontStyle::bold})
         .border_top(" ")

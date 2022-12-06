@@ -8,23 +8,39 @@ GameEvents::~GameEvents(){};
 
 void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory)
 {
-    Table battleFeed;
-    battleFeed.add_row({player->getName(), monster->getName()});
-    battleFeed.add_row({player->currentHealth(), monster->currentHealth()});
-    battleFeed.add_row({player->returnWeapon().getName()});
+    Table playerFeed;
+    playerFeed.format()
+        .font_style({FontStyle::bold})
+        .border_top(" ")
+        .border_bottom(" ")
+        .border_left(" ")
+        .border_right(" ")
+        .corner(" ");
 
     while (monster->isAlive())
     {
+        // playerFeed.add_row({"Battle ", player->getName(), "VS", monster->getName()});
+        // playerFeed.add_row({"HP ", player->currentHealth(), " ", monster->currentHealth()});
+        // playerFeed.add_row({"Current Weapon ", player->returnWeapon().getName()});
+        // playerFeed.add_row({"Health Potions: ", inventory->getItemN(h)});
+        // playerFeed.add_row({"Grenades: ", inventory->getItemN(g)});
+        // playerFeed.add_row({"Lvl: ", std::to_string(player->getLvl())});
+        // std::cout << "-------------------------------------------------------------------------------------------" << std::endl;
+        // std::cout << playerFeed << "\n";
         if (player->isAlive())
         {
-            std::cout << battleFeed << "\n";
-            // std::cout
-            //     << player->PlayableCharacter::getName() << " vs " << monster->Monster::getName() << "\n"
-            //     << "HP: " << player->currentHealth() << " HP:" << monster->currentHealth() << "\n"
+            std::cout << player->PlayableCharacter::getName() << " vs " << monster->Monster::getName() << "\n"
+                      << "HP: " << player->currentHealth() << " HP:" << monster->currentHealth() << "\n";
             std::cout << "Inventory:  "
                       << "\n";
-            inventory->displayInventory();
-            // std::cout << player->returnWeapon().getName() << std::endl;
+            inventory->displayInventory(player);
+            std::cout << player->returnWeapon().getName() << std::endl;
+            // playerFeed.add_row({"Battle ", player->getName(), "VS", monster->getName()});
+            // playerFeed.add_row({"HP ", player->currentHealth(), " ", monster->currentHealth()});
+            // playerFeed.add_row({"Current Weapon ", player->returnWeapon().getName()});
+            // playerFeed.add_row({"Health Potions: ", inventory->getItemN(h)});
+            // playerFeed.add_row({"Grenades: ", inventory->getItemN(g)});
+            // playerFeed.add_row({"Lvl: ", std::to_string(player->getLvl())});
 
             std::cout << "Choose: \n (a) attack \n (h) heal \n (t) throw grenade\n";
             char playerChoice = '0';
@@ -44,7 +60,7 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
                 {
                     uint damageDealt = player->returnWeapon().getDamage() * 2;
                     monster->Monster::takeDamage(damageDealt);
-                    std::cout << "The monster has taken " << damageDealt << " damage!" << std::endl;
+                    std::cout << "The monster has taken " << damageDealt * 2 << " damage!" << std::endl;
                     monster->Monster::isAlive();
                 }
 
@@ -57,10 +73,22 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
 
                 {
                     int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
-                    int mDamage = monster->monsterDamage();
-                    player->takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
-                    std::cout << "The monster has dealt " << mDamage << " damage!" << std::endl;
-                    player->PlayableCharacter::isAlive();
+                    if (hitOrMissM > 24 && hitOrMissM < 90)
+                    {
+                        int mDamage = monster->monsterDamage();
+
+                        player->takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
+                        std::cout << "The monster has dealt " << mDamage << " damage!" << std::endl;
+                        player->PlayableCharacter::isAlive();
+                    }
+                    else if (hitOrMissM >= 90)
+                    {
+                        int mDamage = monster->monsterDamage();
+
+                        player->takeDamage(mDamage * 2);
+                        std::cout << "The monster has dealt " << mDamage * 2 << " damage!" << std::endl;
+                        player->PlayableCharacter::isAlive();
+                    }
                 }
                 else
                 {
@@ -76,19 +104,31 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
             {
 
                 inventory->subtractItem(h);
-                inventory->displayInventory();
+                inventory->displayInventory(player);
                 if (inventory->checkValue(h) > 0)
                 {
-                    player->heal(22);
+                    player->heal(45);
                 }
                 if (monster->isAlive())
 
                 {
                     int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
-                    int mDamage = monster->monsterDamage();
-                    player->takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
-                    std::cout << "The monster has dealt " << mDamage << " damage!" << std::endl;
-                    player->PlayableCharacter::isAlive();
+                    if (hitOrMissM > 24 && hitOrMissM < 90)
+                    {
+                        int mDamage = monster->monsterDamage();
+
+                        player->takeDamage(mDamage); // discutir com o Bruno como vamos calcular o dano do monstro
+                        std::cout << "The monster has dealt " << mDamage << " damage!" << std::endl;
+                        player->PlayableCharacter::isAlive();
+                    }
+                    else if (hitOrMissM >= 90)
+                    {
+                        int mDamage = monster->monsterDamage();
+
+                        player->takeDamage(mDamage * 2);
+                        std::cout << "The monster has dealt " << mDamage * 2 << " damage!" << std::endl;
+                        player->PlayableCharacter::isAlive();
+                    }
                 }
                 else
                 {
@@ -104,7 +144,7 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
             {
 
                 inventory->subtractItem(g);
-                inventory->displayInventory();
+                inventory->displayInventory(player);
                 if (inventory->checkValue(g) > 0)
                 {
                     monster->takeDamage(monster->getMaximumHp() * 0.3);
@@ -148,7 +188,7 @@ void GameEvents::finalBattle(PlayableCharacter *player, Vampire *monster, Invent
                 << player->PlayableCharacter::getName() << " vs " << monster->Monster::getName() << "\n"
                 << "HP: " << player->currentHealth() << " HP:" << monster->currentHealth() << "\n"
                 << "Inventory:  ";
-            inventory->displayInventory();
+            inventory->displayInventory(player);
             std::cout << "Choose: \n (a) attack \n (h) heal \n (t) throw grenade\n";
             char playerChoice = '0';
 
@@ -209,7 +249,7 @@ void GameEvents::finalBattle(PlayableCharacter *player, Vampire *monster, Invent
             {
 
                 inventory->subtractItem(h);
-                inventory->displayInventory();
+                inventory->displayInventory(player);
                 if (inventory->checkValue(h) > 0)
                 {
                     player->heal(22);
@@ -233,7 +273,7 @@ void GameEvents::finalBattle(PlayableCharacter *player, Vampire *monster, Invent
             {
 
                 inventory->subtractItem(g);
-                inventory->displayInventory();
+                inventory->displayInventory(player);
                 if (inventory->checkValue(g) > 0)
                 {
                     monster->takeDamage(monster->getMaximumHp() * 0.3);

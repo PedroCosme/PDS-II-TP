@@ -37,9 +37,9 @@ int main()
     Inventory *inventoryPtr = &inventory;
     inventory.getItemN(healthPotion);
     inventory.createInventory();
-    inventory.displayInventory();
+    inventory.displayInventory(playerPtr);
 
-    Enemy goblin(40, 40, "Goblin", 1, 1, 6, 2);   // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
+    Enemy goblin(40, 40, "Goblin", 20, 20, 6, 2); // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
     Enemy troll(235, 70, "Troll", 1, 1, 12, 4);   // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
     Enemy bandit(250, 90, "Bandit", 1, 1, 15, 6); // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
     Vampire vampire("Vampire", 150, 25, 8, 150);  // name, currentHp, maxDamage, minDamage, maxHp

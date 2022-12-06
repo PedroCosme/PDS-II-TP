@@ -36,7 +36,7 @@ public:
 
     void subtractItem(Item item);
 
-    void displayInventory();
+    void displayInventory(PlayableCharacter *player);
 
     bool operator<(const Item &rhs) const;
 
