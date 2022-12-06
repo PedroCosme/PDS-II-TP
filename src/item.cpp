@@ -1,5 +1,6 @@
 #include "item.hpp"
-
+#include "excecao.hpp"
+#include <exception>
 Item::Item(std::string name, int price, int id)
     : _name(name), _price(price), _id(id) {}
 
@@ -35,8 +36,10 @@ ITEMS getByName(std::string name)
 std::string getItemById(int itemId)
 {
     std::string itemName;
+
     switch (itemId)
     {
+    
     case 1:
         itemName = "Health Potion";
         return itemName;
@@ -62,6 +65,7 @@ std::string getItemById(int itemId)
         return itemName;
 
     default:
+
         break;
     }
 }
