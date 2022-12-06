@@ -1,5 +1,5 @@
 #include "enemy.hpp"
-
+#include "monster.hpp"
 Enemy::Enemy(uint gold,
              uint xpWorth,
              std::string name,

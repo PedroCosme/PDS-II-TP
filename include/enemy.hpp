@@ -15,8 +15,7 @@
 #include "monster.hpp"
 #include "playableCharacter.hpp"
 #include "inventory.hpp"
-// #include "gameEvents.hpp"
-// #include "vampire.hpp"
+#include "vampire.hpp"
 class Enemy : public Monster
 {
 
