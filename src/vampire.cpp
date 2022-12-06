@@ -5,7 +5,7 @@ Vampire::~Vampire() {}
 
 uint Vampire::drainBlood()
 {
-    std::cout << "The vampire jumps at you bearing his fangs, you feel an excruciating pain as him bites your neck and draws your blood." << std::endl;
+    std::cout << "The vampire jumps at you bearing his fangs, you feel an excruciating pain as him bites your neck and draws your blood. He heals himself using your blood" << std::endl;
     int damage = genNum(_minDamage, _maxDamage);
     this->_currentHp += damage;
     return damage;

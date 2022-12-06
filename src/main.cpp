@@ -41,10 +41,10 @@ int main()
     inventory.createInventory();
     inventory.displayInventory(playerPtr);
 
-    Enemy goblin(40, 40, "Goblin", 20, 20, 6, 2); // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
-    Enemy troll(235, 70, "Troll", 1, 1, 12, 4);   // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
-    Enemy bandit(250, 90, "Bandit", 1, 1, 15, 6); // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
-    Vampire vampire("Vampire", 150, 25, 8, 150);  // name, currentHp, maxDamage, minDamage, maxHp
+    Enemy goblin(40, 40, "Goblin", 30, 30, 6, 2);   // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
+    Enemy troll(235, 70, "Troll", 65, 65, 12, 4);   // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
+    Enemy bandit(250, 90, "Bandit", 45, 45, 15, 6); // gold, xpWorth, name, currentHP, maxHp, maxDamage, minDamage
+    Vampire vampire("Vampire", 100, 25, 8, 100);    // name, currentHp, maxDamage, minDamage, maxHp
     Enemy *goblinPtr = &goblin;
     Enemy *trollPtr = &troll;
     Enemy *banditPtr = &bandit;
@@ -94,17 +94,21 @@ int main()
               << "Fortunately, you see a bridge. The only bad part is: it is guarded by a huge troll" << std::endl;
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
 
-    while(1){
-        try{
-        std::cin >> s;
-            if(s != 's' || s != 'c')
-            throw EntradaInvalidaException();
+    while (1)
+    {
+        try
+        {
+            std::cin >> s;
+            if (s != 's' || s != 'c')
+                throw EntradaInvalidaException();
         }
-        catch(EntradaInvalidaException& e){
-            if(s == 's' || s == 'c'){
+        catch (EntradaInvalidaException &e)
+        {
+            if (s == 's' || s == 'c')
+            {
                 break;
             }
-        std::cout << e.what() << std::endl;
+            std::cout << e.what() << std::endl;
         }
     }
     checkBuy(s, playerPtr, inventoryPtr);
@@ -148,17 +152,21 @@ int main()
               << "Nevertheless, you continue your journey as your mission is everything that matters to you." << std::endl;
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
 
-    while(1){
-        try{
-        std::cin >> s;
-            if(s != 's' || s != 'c')
-            throw EntradaInvalidaException();
+    while (1)
+    {
+        try
+        {
+            std::cin >> s;
+            if (s != 's' || s != 'c')
+                throw EntradaInvalidaException();
         }
-        catch(EntradaInvalidaException& e){
-            if(s == 's' || s == 'c'){
+        catch (EntradaInvalidaException &e)
+        {
+            if (s == 's' || s == 'c')
+            {
                 break;
             }
-        std::cout << e.what() << std::endl;
+            std::cout << e.what() << std::endl;
         }
     }
     checkBuy(s, playerPtr, inventoryPtr);
@@ -199,17 +207,21 @@ int main()
     }
     std::cout << "Finally, you enter the tower. Congratulations!" << std::endl;
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
-    while(1){
-        try{
-        std::cin >> s;
-            if(s != 's' || s != 'c')
-            throw EntradaInvalidaException();
+    while (1)
+    {
+        try
+        {
+            std::cin >> s;
+            if (s != 's' || s != 'c')
+                throw EntradaInvalidaException();
         }
-        catch(EntradaInvalidaException& e){
-            if(s == 's' || s == 'c'){
+        catch (EntradaInvalidaException &e)
+        {
+            if (s == 's' || s == 'c')
+            {
                 break;
             }
-        std::cout << e.what() << std::endl;
+            std::cout << e.what() << std::endl;
         }
     }
     checkBuy(s, playerPtr, inventoryPtr);

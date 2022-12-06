@@ -218,9 +218,10 @@ void GameEvents::finalBattle(PlayableCharacter *player, Vampire *monster, Invent
                         std::cout << "The monster has dealt " << damage << " damage!" << std::endl;
                         player->PlayableCharacter::isAlive();
                     }
-                    else if (hitOrMissM >= 90)
+                    else if (hitOrMissM >= 80)
                     {
-                        int damage = monster->monsterDamage();
+                        int blood = monster->drainBlood();
+                        int damage = monster->monsterDamage() + blood;
                         player->takeDamage(damage * 2);
                         std::cout << "The monster has dealt " << damage << " damage!" << std::endl;
                         player->PlayableCharacter::isAlive();
