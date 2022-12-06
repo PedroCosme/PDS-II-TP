@@ -13,19 +13,12 @@
 #define _ENEMY_HPP_
 
 #include "monster.hpp"
-<<<<<<< HEAD
 
 /**
  * @brief Armazena todas informações referentes ao ataque e valor do monstro em ouro e experiência.
  * 
  * @details Contém todas as informações sobre o possibilidade do monstro em acertar o golpe, errar ou obter acerto crítico, valor de cada monstro em experiência e valor em ouro após abate. Que futuramente servirá para a compra de itens dentro da loja do jogo.
  */
-=======
-#include "playableCharacter.hpp"
-#include "inventory.hpp"
-// #include "gameEvents.hpp"
-// #include "vampire.hpp"
->>>>>>> c58f1a41c65c162ddf3622a40f3cc79aaad5cf62
 class Enemy : public Monster
 {
 

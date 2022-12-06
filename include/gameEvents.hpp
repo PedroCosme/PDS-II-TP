@@ -38,7 +38,6 @@
 class GameEvents
 {
 public:
-<<<<<<< HEAD
 
 /**
  * @brief Construtor do objeto GameEvents
@@ -66,19 +65,26 @@ public:
   void battle(PlayableCharacter player, Enemy monster, Inventory inventory);
 
 /**
- * @brief 
+ * @brief Calcula o dano causado
  * 
- * @param damageRange 
- * @return unsigned int 
+ *  
+ * @param damageRange Alcance de dano
+ * @return retorna calcDamage 
  */
-=======
-  void battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory);
-  void finalBattle(PlayableCharacter *player, Vampire *monster, Inventory *inventory);
->>>>>>> c58f1a41c65c162ddf3622a40f3cc79aaad5cf62
   unsigned int calcDamage(unsigned int damageRange);
 
-
+/**
+ * @brief Função que verifica se o ataque do monstro acertou
+ * 
+ * @return hitOrMissPlayer 
+ */
   int hitOrMissMonster();
+
+  /**
+   * @brief Função que verifica se o ataque do Jogador acertou
+   * 
+   * @return hitOrMissPlayer
+   */
   int hitOrMissPlayer();
 };
 
