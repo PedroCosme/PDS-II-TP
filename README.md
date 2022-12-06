@@ -7,7 +7,7 @@ O projeto consta em uma batalha RPG baseada em POO com possibilidade de seguir a
 
 DIAGRAMA DE CLASSES E USER STORIES
 
-https://lucid.app/lucidchart/3a977b2a-5126-49ed-bf82-ec3918b3fe45/edit?invitationId=inv_aa41df0d-e88f-42e7-be39-ed8220433bc3&page=HWEp-vi-RSFO#
+https://lucid.app/lucidspark/f58549b3-7548-493a-ac48-84ace7f348c9/edit?invitationId=inv_8def49cf-db99-44ee-9a74-8d493e16c47e#
 
 COMO COMPILAR, EXECUTAR E TESTAR O CÓDIGO
 
