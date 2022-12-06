@@ -75,7 +75,11 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
             else if (playerChoice == 'h')
             {
 
+                try{
                 inventory->subtractItem(h);
+                }catch(SubtractItemException& e){
+                    std::cout << e.what() << std::endl;
+                }
                 inventory->displayInventory();
                 if (inventory->checkValue(h) > 0)
                 {

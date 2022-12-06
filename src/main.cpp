@@ -12,6 +12,7 @@
 #include "inventory.hpp"
 #include "vampire.hpp"
 #include <stdlib.h>
+#include "excecao.hpp"
 
 int main()
 {
@@ -54,7 +55,19 @@ int main()
               << "Finally, you see a tower in the distance and praise the gods, as your supplies were barely enough for another day in the Dark Woods." << std::endl;
     std::cout << "Press (c) to continue or (s) to go to the store" << std::endl;
 
-    std::cin >> s;
+    while(1){
+        try{
+        std::cin >> s;
+            if(s != 's' || s != 'c')
+            throw EntradaInvalidaException();
+        }
+        catch(EntradaInvalidaException& e){
+            if(s == 's' || s == 'c'){
+                break;
+            }
+        std::cout << e.what() << std::endl;
+        }
+    }
     checkBuy(s, playerPtr, inventoryPtr);
     std::cout << "When you approach the tower you listen to a weird giggle that makes you shiver and fear for the worst!" << std::endl;
 

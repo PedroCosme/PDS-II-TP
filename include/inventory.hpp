@@ -19,6 +19,7 @@
 #include "utilities.hpp"
 #include "item.hpp"
 #include <map>
+#include "excecao.hpp"
 #include "playableCharacter.hpp"
 #include <tabulate/table.hpp>
 using namespace tabulate;
