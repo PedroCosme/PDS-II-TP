@@ -3,7 +3,7 @@ SRCDIR:=src
 TESTDIR:=tests
 BUILDDIR:=build
 TARGET:=main.out
-CFLAGS:=-g -Wall -O3 -std=c++17 -I third_party -I include/ --coverage
+CFLAGS:=-g -Wall -O3 -std=c++17 -I third_party -I include/
 
 all: main
 

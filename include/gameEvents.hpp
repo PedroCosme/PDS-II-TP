@@ -1,6 +1,5 @@
 /**
  * @file gameEvents.hpp
- * @author Victória Tejada (victoriatsiqueiram@gmail.com)
  * @brief Classe principal com a lógica de gameEvents
  * @version 1.0
  * @date 2022-12-03
@@ -30,6 +29,11 @@
 #include "inventory.hpp"
 #include <tabulate/table.hpp>
 
+/**
+ * @brief Lida com os eventos de batalha do jogo.
+ *
+ * @details Contém todas as informações necessárias para se iniciar uma batalha durante o jogo.
+ */
 class GameEvents
 {
 public:

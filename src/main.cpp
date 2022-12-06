@@ -117,6 +117,11 @@ int main()
     {
     case 'g':
     {
+        if (player.getGold() < 20)
+        {
+            std::cout << "You don't have enough gold to give to the troll" << std::endl;
+            game.battle(playerPtr, trollPtr, inventoryPtr);
+        }
         std::cout << "You reluctantly give the troll some of your coins" << std::endl;
         std::cout << "Thank you, stupid traveller. You may now proceed but be warned: you cannot defeat the Vampire. You are weak" << std::endl;
         player.subtractGold(20);
@@ -175,10 +180,13 @@ int main()
     {
     case 'b':
     {
+        if (player.getGold() < 45)
+        {
+            std::cout << "The man asks you for more coins then what you currently have on you." << std::endl;
+            game.battle(playerPtr, banditPtr, inventoryPtr);
+        }
         std::cout << "You offer the bandit some of your coins in exchange for the key." << std::endl;
         player.subtractGold(45);
-        std::cout << "The misterious man says that is not enough for the key and persuades you into giving him five more coins." << std::endl;
-        player.subtractGold(5);
         std::cout << "Humiliated, you get the key and enter the tower" << std::endl;
         break;
     }
@@ -235,7 +243,7 @@ int main()
         std::cout << "Over the years you get so depressed thinking about it you decide to abandon everything you lived for and become a gypsy." << std::endl;
         std::cout << "No one ever heard of " << playerName << " again." << std::endl;
         std::cout << "GAME OVER" << std::endl;
-        abort();
+        return 0;
     }
     case 'a':
     {

@@ -1,6 +1,5 @@
 /**
  * @file shop.hpp
- * @author Victória Tejada (victoriatsiqueiram@gmail.com)
  * @brief Classe principal com a lógica do shop
  * @version 1.0
  * @date 2022-12-03

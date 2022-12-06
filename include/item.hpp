@@ -1,6 +1,5 @@
 /**
  * @file item.hpp
- * @author Victória Tejada (victoriatsiqueiram@gmail.com)
  * @brief Classe principal com a lógica dos itens
  * @version 1.0
  * @date 2022-12-03

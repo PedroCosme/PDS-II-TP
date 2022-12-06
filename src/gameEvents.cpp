@@ -169,7 +169,7 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
         {
             std::cout << "You have been defeated by the " << monster->getName() << std::endl;
             std::cout << "Better luck next time!" << std::endl;
-            abort();
+            std::exit(0);
         }
     }
 }
@@ -295,7 +295,7 @@ void GameEvents::finalBattle(PlayableCharacter *player, Vampire *monster, Invent
         {
             std::cout << "You have been defeated by the " << monster->getName() << std::endl;
             std::cout << "Better luck next time!" << std::endl;
-            abort();
+            std::exit(0);
         }
     }
 }

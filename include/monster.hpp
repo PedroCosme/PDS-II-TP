@@ -1,6 +1,5 @@
 /**
  * @file monster.hpp
- * @author Victória Tejada (victoriatsiqueiram@gmail.com)
  * @brief Classe principal com a lógica de monster
  * @version 1.0
  * @date 2022-12-03

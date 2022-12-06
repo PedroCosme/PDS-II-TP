@@ -1,6 +1,5 @@
 /**
  * @file weapon.hpp
- * @author Victória Tejada (victoriatsiqueiram@gmail.com)
  * @brief Classe principal responsavel pela lógica de weapon
  * @version 1.0
  * @date 2022-12-03
