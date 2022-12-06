@@ -48,9 +48,9 @@ unsigned int Weapon::getDamage()
 
 std::map<WEAPONS, Weapon> availableWeapons = std::map<WEAPONS, Weapon>{
     {WEAPONS::UNARMED, Weapon("Unarmed", 1, 2)},
-    {WEAPONS::DAGGER, Weapon("Dagger", 1, 4)},
-    {WEAPONS::LONGSWORD, Weapon("Longsword", 1, 8)},
-    {WEAPONS::GREATSWORD, Weapon("Greatsword", 2, 12)},
-    {WEAPONS::BATTLEAXE, Weapon("Battle Axe", 2, 12)}
+    {WEAPONS::DAGGER, Weapon("Dagger", 2, 8)},
+    {WEAPONS::LONGSWORD, Weapon("Longsword", 4, 12)},
+    {WEAPONS::GREATSWORD, Weapon("Greatsword", 6, 16)},
+    {WEAPONS::BATTLEAXE, Weapon("Battle Axe", 8, 20)}
 
 };

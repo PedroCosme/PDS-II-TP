@@ -13,20 +13,20 @@
 #define GAME_EVENTS_H
 
 #include <iostream>
-#include <string>
-#include <time.h>
-#include "playableCharacter.hpp"
-#include "monster.hpp"
-#include "enemy.hpp"
-#include "weapon.hpp"
-#include "item.hpp"
-#include "utilities.hpp"
-#include <iostream>
 #include <iomanip>
 #include <string>
 #include <map>
 #include <random>
 #include <cmath>
+#include <string>
+#include <time.h>
+#include "playableCharacter.hpp"
+#include "monster.hpp"
+#include "enemy.hpp"
+#include "vampire.hpp"
+#include "weapon.hpp"
+#include "item.hpp"
+#include "utilities.hpp"
 #include "inventory.hpp"
 
 /**
@@ -38,6 +38,7 @@
 class GameEvents
 {
 public:
+<<<<<<< HEAD
 
 /**
  * @brief Construtor do objeto GameEvents
@@ -70,6 +71,10 @@ public:
  * @param damageRange 
  * @return unsigned int 
  */
+=======
+  void battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory);
+  void finalBattle(PlayableCharacter *player, Vampire *monster, Inventory *inventory);
+>>>>>>> c58f1a41c65c162ddf3622a40f3cc79aaad5cf62
   unsigned int calcDamage(unsigned int damageRange);
 
 

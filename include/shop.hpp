@@ -19,9 +19,9 @@
 #include "item.hpp"
 #include "playableCharacter.hpp"
 #include "inventory.hpp"
+#include <tabulate/table.hpp>
 
-int buyItemStr(std::string itemName);
 int buyItem(int itemId);
-void checkBuy(char c, PlayableCharacter player, Inventory inventory);
+void checkBuy(char c, PlayableCharacter *player, Inventory *inventory);
 
 #endif

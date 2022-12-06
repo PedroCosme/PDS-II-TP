@@ -7,37 +7,6 @@ Item longSword("Long sword", 120, 4);
 Item greatSword("Great Sword", 180, 5);
 Item battleAxe("Battle Axe", 220, 6);
 
-int buyItemStr(std::string itemName)
-{
-
-    int itemPrice;
-    if (toLower(itemName) == "health potion")
-    {
-        int itemPrice = healthPotion.getPrice();
-    }
-    else if (toLower(itemName) == "grenade")
-    {
-        int itemPrice = grenade.getPrice();
-    }
-    else if (toLower(itemName) == "great sword")
-    {
-        int itemPrice = greatSword.getPrice();
-    }
-    else if (toLower(itemName) == "long sword")
-    {
-        int itemPrice = longSword.getPrice();
-    }
-    else if (toLower(itemName) == "battle axe")
-    {
-        int itemPrice = battleAxe.getPrice();
-    }
-    else if (toLower(itemName) == "dagger")
-    {
-        int itemPrice = dagger.getPrice();
-    }
-    return itemPrice;
-}
-
 int buyItem(int itemId)
 {
 
@@ -72,25 +41,55 @@ int buyItem(int itemId)
         break;
     }
 }
-void checkBuy(char c, PlayableCharacter player, Inventory inventory)
+void checkBuy(char c, PlayableCharacter *player, Inventory *inventory)
 {
+
     while (c == 's')
     {
+        Table shopT;
 
         int desiredItem;
         std::string desiredItemStr;
-        std::cout << "What are you buying, stranger?" << std::endl
-                  << "Available gold: " << player.getGold() << std::endl
-                  << "SHOP" << std::endl
-                  << "|| Health Potion - 1 || Grenade - 2 || Dagger - 3 || Long Sword - 4 || Great Sword - 5 || Battle Axe - 6 || " << std::endl;
+        std::cout << "What are you buying, stranger?" << std::endl;
+        shopT.add_row({"Item", "Price"});
+        shopT.add_row({"Available Gold", std::to_string(player->getGold())});
+        shopT.add_row({"Health Potion", "50"});
+        shopT.add_row({"Grenade", "80"});
+        shopT.add_row({"Dagger", "50"});
+        shopT.add_row({"Long Sword", "120"});
+        shopT.add_row({"Great Sword", "180"});
+        shopT.add_row({"Battle Axe", "220"});
+        shopT.format()
+            .font_style({FontStyle::bold})
+            .border_top("-")
+            .border_bottom("-")
+            .border_left("-")
+            .border_right("-")
+            .corner("+");
+        shopT[0].format().padding_top(1).padding_bottom(1).font_align(FontAlign::center).font_style({FontStyle::underline}).font_background_color(Color::yellow);
+        std::cout << shopT << std::endl;
         std::cin >> desiredItem;
 
         int itemPrice = buyItem(desiredItem);
-        player.subtractGold(itemPrice);
+        player->subtractGold(itemPrice);
         desiredItemStr = getItemById(desiredItem);
-        inventory.addItem(desiredItemStr);
+        inventory->addItem(desiredItemStr);
         std::cout << "Current inventory:" << std::endl;
-        inventory.displayInventory();
+        switch (desiredItem)
+        {
+        case 4:
+            player->changeWeapon(availableWeapons.at(WEAPONS::LONGSWORD));
+            break;
+        case 5:
+            player->changeWeapon(availableWeapons.at(WEAPONS::GREATSWORD));
+            break;
+        case 6:
+            player->changeWeapon(availableWeapons.at(WEAPONS::BATTLEAXE));
+            break;
+        default:
+            break;
+        }
+        inventory->displayInventory();
         std::cout << "Do you want to buy something else? (y/n)" << std::endl;
         char yn;
         std::cin >> yn;
@@ -101,7 +100,6 @@ void checkBuy(char c, PlayableCharacter player, Inventory inventory)
         else
         {
 
-            std::cout << "Press (Enter) to continue" << std::endl;
             break;
         }
     }
