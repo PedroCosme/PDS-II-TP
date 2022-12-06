@@ -14,11 +14,11 @@ COMO COMPILAR, EXECUTAR E TESTAR O CÓDIGO
 Primeiramente é necessário clonar o repositório git no seu computador:
 git clone https://github.com/PedroCosme/PDS-II-TP.git
 
-Para compilar e executar o jogo coloque os seguintes comandos no seu terminal: \n
-make \n
-./main.out
+Para compilar e executar o jogo coloque os seguintes comandos no seu terminal:
+  make
+  ./main.out
 
 Para compilar e executar os testes do código coloque os seguintes comandos no seu terminal:
 
-make test \n
-./build/test.out
+  make test
+  ./build/test.out
