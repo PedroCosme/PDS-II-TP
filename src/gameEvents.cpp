@@ -51,7 +51,7 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
 
                 {
                     int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
-                    if (hitOrMissM < 24 && hitOrMissM < 90)
+                    if (hitOrMissM > 24 && hitOrMissM < 90)
                     {
                         int mDamage = monster->monsterDamage();
                         player->takeDamage(mDamage);
@@ -96,7 +96,7 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
 
                 {
                     int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
-                    if (hitOrMissM < 24 && hitOrMissM < 90)
+                    if (hitOrMissM > 24 && hitOrMissM < 90)
                     {
                         int mDamage = monster->monsterDamage();
                         player->takeDamage(mDamage);
@@ -134,7 +134,7 @@ void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *in
 
                 {
                     int hitOrMissM = GameEvents::hitOrMissMonster(); // hit or miss do monstro, implementar o miss
-                    if (hitOrMissM < 24 && hitOrMissM < 90)
+                    if (hitOrMissM > 24 && hitOrMissM < 90)
                     {
                         int mDamage = monster->monsterDamage();
                         player->takeDamage(mDamage);
