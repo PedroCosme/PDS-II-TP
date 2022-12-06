@@ -3,6 +3,9 @@
 Item h("Health Potion", 50, 1);
 Item g("Grenade", 80, 2);
 
+GameEvents::GameEvents(){};
+GameEvents::~GameEvents(){};
+
 void GameEvents::battle(PlayableCharacter *player, Enemy *monster, Inventory *inventory)
 {
     Table battleFeed;

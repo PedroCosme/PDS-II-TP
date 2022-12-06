@@ -16,28 +16,27 @@
 
 /**
  * @brief Armazena todas informações referentes ao ataque e valor do monstro em ouro e experiência.
- * 
+ *
  * @details Contém todas as informações sobre o possibilidade do monstro em acertar o golpe, errar ou obter acerto crítico, valor de cada monstro em experiência e valor em ouro após abate. Que futuramente servirá para a compra de itens dentro da loja do jogo.
  */
 class Enemy : public Monster
 {
 
 public:
-/**
- * @brief Constrói o objeto inimigo
- * 
- * @details Inicializa os atributos dos monstros com seus respectivos valores numéricos.
- * 
- * @param gold Valor do ouro
- * @param xpWorth Valor da XP 
- * @param name Nome do personagem ou monstro
- * @param currentHp Valor do HP atual
- * @param maxHp Valor máximo de HP
- * @param maxDamage Valor máximo de dano
- * @param minDamage Valor mínimo de dano
- * 
- */
-
+    /**
+     * @brief Constrói o objeto inimigo
+     *
+     * @details Inicializa os atributos dos monstros com seus respectivos valores numéricos.
+     *
+     * @param gold Valor do ouro
+     * @param xpWorth Valor da XP
+     * @param name Nome do personagem ou monstro
+     * @param currentHp Valor do HP atual
+     * @param maxHp Valor máximo de HP
+     * @param maxDamage Valor máximo de dano
+     * @param minDamage Valor mínimo de dano
+     *
+     */
 
     Enemy(uint gold,
           uint xpWorth,
@@ -48,23 +47,23 @@ public:
           uint minDamage);
 
     /**
-     * @brief Destroi o objeto inimigo 
-     * 
+     * @brief Destroi o objeto inimigo
+     *
      */
     ~Enemy();
 
-/**
- * @brief Valor de ouro
- * 
- * @return retorna goldWorth
- */
+    /**
+     * @brief Valor de ouro
+     *
+     * @return retorna goldWorth
+     */
     unsigned int goldWorth() const;
 
-/**
- * @brief Valor da xp
- * 
- * @return retorna xpWorth
- */
+    /**
+     * @brief Valor da xp
+     *
+     * @return retorna xpWorth
+     */
     unsigned int xpWorth();
 
     // void attack(PlayableCharacter *player, Enemy *monster, Inventory *inventory);
