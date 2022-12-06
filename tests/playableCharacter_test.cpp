@@ -1,6 +1,13 @@
-#include "playableCharacter.hpp"
-#include "doctest.h"
-
+#include "../third_party/doctest.h"
+#include "../include/enemy.hpp"
+#include "../include/monster.hpp"
+#include "../include/utilities.hpp"
+#include "../include/gameEvents.hpp"
+#include "../include/inventory.hpp"
+#include "../include/item.hpp"
+#include "../include/playableCharacter.hpp"
+#include "../include/shop.hpp"
+#include "../include/weapon.hpp"
 TEST_CASE("Test getName():std::string function:")
 {
  PlayableCharacter player("Mike", 1, 0, 100, 100, 50, 1000);
