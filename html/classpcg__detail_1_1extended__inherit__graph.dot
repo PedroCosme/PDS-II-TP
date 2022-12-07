@@ -1,9 +1,0 @@
-digraph "pcg_detail::extended&lt; table_pow2, advance_pow2, baseclass, extvalclass, kdd &gt;"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{pcg_detail::extended\l\< table_pow2, advance\l_pow2, baseclass, extvalclass,\l kdd \>\n||+ __attribute__()\l+ operator()()\l+ set()\l+ advance()\l+ backstep()\l+ extended()\l+ extended()\l+ extended()\l+ extended()\l+ extended()\l+ extended()\l+ extended()\l+ seed()\l+ period_pow2()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
-  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
-  Node2 [label="{baseclass\n||}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbaseclass.html",tooltip=" "];
-}

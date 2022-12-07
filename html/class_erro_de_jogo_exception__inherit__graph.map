@@ -1,0 +1,6 @@
+<map id="ErroDeJogoException" name="ErroDeJogoException">
+<area shape="rect" id="node1" title="Exceção que lida com erros genéricos." alt="" coords="110,93,261,148"/>
+<area shape="rect" id="node3" href="$class_entrada_invalida_exception.html" title="Exceção que lida com erros de comando inválido." alt="" coords="5,196,176,251"/>
+<area shape="rect" id="node4" href="$class_subtract_item_exception.html" title="Exceção que lida com erros relacionados a falta de itens no inventário." alt="" coords="201,196,359,251"/>
+<area shape="rect" id="node2" title=" " alt="" coords="131,5,239,45"/>
+</map>

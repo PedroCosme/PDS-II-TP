@@ -1,8 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="pcg_detail::engine\l\< xtype, itype, output\l_mixin, output_previous,\l stream_mixin, multiplier\l_mixin \>::no_specifiable_stream_tag",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structpcg__detail_1_1engine_1_1no__specifiable__stream__tag.html",tooltip=" "];
-}

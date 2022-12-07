@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_5f_5fattribute_5f_5f_1408',['__attribute__',['../classpcg__detail_1_1extended.html#ac6ce75937526e0003b0d46ec9e90251e',1,'pcg_detail::extended']]]
+  ['addgold_0',['addGold',['../class_playable_character.html#af78f7164967ac6d3527cf4ba05cb3ac1',1,'PlayableCharacter']]],
+  ['additem_1',['addItem',['../class_inventory.html#aa39f7c9e183d0617c999f840873daacb',1,'Inventory']]]
 ];

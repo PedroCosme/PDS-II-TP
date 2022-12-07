@@ -1,0 +1,10 @@
+<map id="include/weapon.hpp" name="include/weapon.hpp">
+<area shape="rect" id="node1" title="Classe principal responsavel pela lógica de weapon." alt="" coords="99,5,235,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="173,225,227,251"/>
+<area shape="rect" id="node3" title=" " alt="" coords="29,152,75,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="376,225,448,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="99,152,162,177"/>
+<area shape="rect" id="node6" href="$utilities_8hpp.html" title="Classe principal com a lógica de utilities." alt="" coords="368,152,456,177"/>
+<area shape="rect" id="node7" href="$item_8hpp.html" title="Classe principal com a lógica dos itens." alt="" coords="168,79,240,104"/>
+<area shape="rect" id="node8" title=" " alt="" coords="237,152,293,177"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Inventory" name="Inventory">
+<area shape="rect" id="node1" title="Armazena e processa o inventário." alt="" coords="68,505,203,692"/>
+<area shape="rect" id="node2" href="$class_item.html" title="Processa todos os atributos armazenados e funções dos itens do jogo." alt="" coords="136,227,247,340"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,403,153,443"/>
+<area shape="rect" id="node3" title=" " alt="" coords="149,109,233,149"/>
+<area shape="rect" id="node4" title=" " alt="" coords="126,5,257,60"/>
+<area shape="rect" id="node5" title=" " alt="" coords="55,109,95,149"/>
+</map>

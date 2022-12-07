@@ -1,0 +1,5 @@
+<map id="Item" name="Item">
+<area shape="rect" id="node1" title="Processa todos os atributos armazenados e funções dos itens do jogo." alt="" coords="95,5,205,163"/>
+<area shape="rect" id="node2" href="$class_inventory.html" title="Armazena e processa o inventário." alt="" coords="5,211,140,412"/>
+<area shape="rect" id="node3" href="$class_weapon.html" title="Contém todos os atributos armazenados e funções dos objetos do tipo arma do jogo." alt="" coords="165,255,290,368"/>
+</map>

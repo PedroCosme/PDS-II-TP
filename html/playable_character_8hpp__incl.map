@@ -1,0 +1,12 @@
+<map id="include/playableCharacter.hpp" name="include/playableCharacter.hpp">
+<area shape="rect" id="node1" title="Classe principal com a lógica de playableCharacter." alt="" coords="227,5,423,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,299,77,324"/>
+<area shape="rect" id="node3" title=" " alt="" coords="370,299,425,324"/>
+<area shape="rect" id="node4" title=" " alt="" coords="591,79,630,104"/>
+<area shape="rect" id="node5" href="$weapon_8hpp.html" title="Classe principal responsavel pela lógica de weapon." alt="" coords="280,79,371,104"/>
+<area shape="rect" id="node8" href="$utilities_8hpp.html" title="Classe principal com a lógica de utilities." alt="" coords="37,225,125,251"/>
+<area shape="rect" id="node6" title=" " alt="" coords="418,225,465,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="331,225,394,251"/>
+<area shape="rect" id="node9" href="$item_8hpp.html" title="Classe principal com a lógica dos itens." alt="" coords="253,152,325,177"/>
+<area shape="rect" id="node10" title=" " alt="" coords="200,225,256,251"/>
+</map>

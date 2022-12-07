@@ -1,0 +1,4 @@
+<map id="Enemy" name="Enemy">
+<area shape="rect" id="node1" title="Armazena todas informações referentes ao ataque e valor do monstro em ouro e experiência." alt="" coords="23,299,125,397"/>
+<area shape="rect" id="node2" href="$class_monster.html" title="Armazena e processa ações e atributos dos monstros dentro durante o jogo." alt="" coords="5,5,143,251"/>
+</map>

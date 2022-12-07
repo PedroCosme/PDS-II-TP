@@ -1,27 +1,7 @@
 var searchData=
 [
-  ['gameevents_1481',['GameEvents',['../classGameEvents.html#a054af9d4bd43ff037e447494cee48bd2',1,'GameEvents']]],
-  ['generate_1482',['generate',['../classpcg__extras_1_1seed__seq__from.html#acd4556759cf92f49bf958e0cacb72e07',1,'pcg_extras::seed_seq_from']]],
-  ['generate_5fone_1483',['generate_one',['../namespacepcg__extras.html#aa725ad9f9f0b511be8646ffff716665d',1,'pcg_extras']]],
-  ['generate_5fto_1484',['generate_to',['../namespacepcg__extras.html#a41e1950d9f7429f7e9775c3924a861db',1,'pcg_extras']]],
-  ['generate_5fto_5fimpl_1485',['generate_to_impl',['../namespacepcg__extras.html#a908d65518153efed3219c2bd26d54789',1,'pcg_extras::generate_to_impl(SeedSeq &amp;&amp;generator, DestIter dest, std::true_type)'],['../namespacepcg__extras.html#a61f43320af045b4a81fd1d47ddb0d9af',1,'pcg_extras::generate_to_impl(SeedSeq &amp;&amp;generator, DestIter dest, std::false_type)']]],
-  ['gennum_1486',['genNum',['../utilities_8hpp.html#a7894441e62903d9a4d0bbbdd0a6218d7',1,'genNum(uint minRange, uint maxRange):&#160;utilities.cpp'],['../utilities_8cpp.html#a7894441e62903d9a4d0bbbdd0a6218d7',1,'genNum(uint minRange, uint maxRange):&#160;utilities.cpp']]],
-  ['get_5factive_5fcontexts_1487',['get_active_contexts',['../structdoctest_1_1IReporter.html#a67a2da62d754d3b517d6d50ef210a988',1,'doctest::IReporter']]],
-  ['get_5fnum_5factive_5fcontexts_1488',['get_num_active_contexts',['../structdoctest_1_1IReporter.html#a7d520de46d9104c0eeb02375fabad32d',1,'doctest::IReporter']]],
-  ['get_5fnum_5fstringified_5fcontexts_1489',['get_num_stringified_contexts',['../structdoctest_1_1IReporter.html#ac8b96fef046edc609a3374a61b84797d',1,'doctest::IReporter']]],
-  ['get_5fstringified_5fcontexts_1490',['get_stringified_contexts',['../structdoctest_1_1IReporter.html#acc1a86891876a957c6fc382af7894f99',1,'doctest::IReporter']]],
-  ['getbyname_1491',['getByName',['../classItem.html#a7bc2adadec56626d503b843c62fafc2b',1,'Item::getByName()'],['../item_8cpp.html#ad57a5ad77998de7e8ec4ec313459b602',1,'getByName():&#160;item.cpp']]],
-  ['getcontextoptions_1492',['getContextOptions',['../namespacedoctest.html#a89486c086bfcffb4955985cf50520717',1,'doctest']]],
-  ['getcurrenthp_1493',['getCurrentHp',['../classMonster.html#ac1e73310f68f8db2833a1d26b06979e2',1,'Monster::getCurrentHp()'],['../classPlayableCharacter.html#a22c8c8702b691960f2cc602e5d2cb41f',1,'PlayableCharacter::getCurrentHp()']]],
-  ['getcurrenttestsuite_1494',['getCurrentTestSuite',['../namespacedoctest__detail__test__suite__ns.html#a3a236c82d51cd3622d14b00aa145df94',1,'doctest_detail_test_suite_ns']]],
-  ['getdamage_1495',['getDamage',['../classWeapon.html#a67a3f1a0b1fa11147768faeb16bfd173',1,'Weapon']]],
-  ['getfromname_1496',['getFromName',['../classWeapon.html#a4a74a67b44088879db0daaaed707d2b1',1,'Weapon::getFromName()'],['../weapon_8cpp.html#a68377c5b02adea0410d8cfd83626b3e9',1,'getFromName():&#160;weapon.cpp']]],
-  ['getgold_1497',['getGold',['../classPlayableCharacter.html#a42b0ec5075b36414e6dfa6e8e5742dbf',1,'PlayableCharacter']]],
-  ['gethp_1498',['getHp',['../classPlayableCharacter.html#afbfa7160fb7489c0111886728e7fb32e',1,'PlayableCharacter']]],
-  ['getitembyid_1499',['getItemById',['../item_8hpp.html#a9acc3a68ab08f5cfea3b4b943fe1b2d7',1,'getItemById(int itemId):&#160;item.cpp'],['../item_8cpp.html#a9acc3a68ab08f5cfea3b4b943fe1b2d7',1,'getItemById(int itemId):&#160;item.cpp']]],
-  ['getlvl_1500',['getLvl',['../classPlayableCharacter.html#a75c88e8cd8a57203585b1d87593dc38e',1,'PlayableCharacter']]],
-  ['getname_1501',['getName',['../classItem.html#a5e4095868ead0c681bc2e18b8507f735',1,'Item::getName()'],['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster::getName()'],['../classPlayableCharacter.html#a658d3103cb25f496a682c86fedd4a715',1,'PlayableCharacter::getName()'],['../classWeapon.html#a0cc1adfac060d480dbb6d10b96de0a0d',1,'Weapon::getName()']]],
-  ['getprice_1502',['getPrice',['../classItem.html#a17c9bded823cd65a9549d8644b927712',1,'Item']]],
-  ['getxp_1503',['getXp',['../classPlayableCharacter.html#a2a2dbfb4ce22bdc91b3cbef8710de19c',1,'PlayableCharacter']]],
-  ['goldworth_1504',['goldWorth',['../classEnemy.html#a185c8f44fedca857f2b078819826e2e7',1,'Enemy']]]
+  ['heal_0',['heal',['../class_playable_character.html#a463a34aef3c88644610e3abb196e31a3',1,'PlayableCharacter']]],
+  ['hitormissmonster_1',['hitOrMissMonster',['../class_game_events.html#aaf4a174f3565ef934317b29b468805ff',1,'GameEvents']]],
+  ['hitormissplayer_2',['hitOrMissPlayer',['../class_game_events.html#a1e292d3347137aea74e9e37a9bfa211e',1,'GameEvents']]],
+  ['hppercentage_3',['hPPercentage',['../class_playable_character.html#a7e6b6694d8d08f7c6026c5c56a8d0f81',1,'PlayableCharacter']]]
 ];

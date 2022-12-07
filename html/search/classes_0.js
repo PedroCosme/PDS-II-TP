@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['approx_1210',['Approx',['../structdoctest_1_1Approx.html',1,'doctest']]],
-  ['assertdata_1211',['AssertData',['../structdoctest_1_1AssertData.html',1,'doctest']]]
+  ['enemy_0',['Enemy',['../class_enemy.html',1,'']]],
+  ['entradainvalidaexception_1',['EntradaInvalidaException',['../class_entrada_invalida_exception.html',1,'']]],
+  ['errodejogoexception_2',['ErroDeJogoException',['../class_erro_de_jogo_exception.html',1,'']]]
 ];

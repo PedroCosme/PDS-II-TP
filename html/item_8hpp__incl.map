@@ -1,0 +1,9 @@
+<map id="include/item.hpp" name="include/item.hpp">
+<area shape="rect" id="node1" title="Classe principal com a lógica dos itens." alt="" coords="167,5,284,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,61,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="103,152,175,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="295,152,350,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="249,79,295,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="319,79,382,104"/>
+<area shape="rect" id="node7" href="$utilities_8hpp.html" title="Classe principal com a lógica de utilities." alt="" coords="136,79,224,104"/>
+</map>

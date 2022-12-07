@@ -1,0 +1,7 @@
+<map id="include/monster.hpp" name="include/monster.hpp">
+<area shape="rect" id="node1" title="Classe principal com a lógica de monster." alt="" coords="5,5,144,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="19,152,74,177"/>
+<area shape="rect" id="node3" title=" " alt="" coords="45,79,104,104"/>
+<area shape="rect" id="node4" href="$utilities_8hpp.html" title="Classe principal com a lógica de utilities." alt="" coords="128,79,216,104"/>
+<area shape="rect" id="node5" title=" " alt="" coords="136,152,208,177"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="include/shop.hpp" name="include/shop.hpp">
+<area shape="rect" id="node1" title="Classe principal com a lógica do shop." alt="" coords="607,5,727,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="686,372,733,397"/>
+<area shape="rect" id="node3" title=" " alt="" coords="137,445,209,471"/>
+<area shape="rect" id="node4" title=" " alt="" coords="999,79,1059,104"/>
+<area shape="rect" id="node5" href="$weapon_8hpp.html" title="Classe principal responsavel pela lógica de weapon." alt="" coords="580,225,671,251"/>
+<area shape="rect" id="node9" href="$item_8hpp.html" title="Classe principal com a lógica dos itens." alt="" coords="415,299,487,324"/>
+<area shape="rect" id="node11" href="$playable_character_8hpp.html" title="Classe principal com a lógica de playableCharacter." alt="" coords="149,152,299,177"/>
+<area shape="rect" id="node13" href="$inventory_8hpp.html" title="Classe principal com a lógica do inventário." alt="" coords="475,79,573,104"/>
+<area shape="rect" id="node16" title=" " alt="" coords="748,152,873,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="423,445,478,471"/>
+<area shape="rect" id="node7" title=" " alt="" coords="489,372,551,397"/>
+<area shape="rect" id="node8" href="$utilities_8hpp.html" title="Classe principal com a lógica de utilities." alt="" coords="195,372,283,397"/>
+<area shape="rect" id="node10" title=" " alt="" coords="357,372,413,397"/>
+<area shape="rect" id="node12" title=" " alt="" coords="301,225,339,251"/>
+<area shape="rect" id="node14" href="$excecao_8hpp.html" title=" " alt="" coords="476,152,572,177"/>
+<area shape="rect" id="node15" title=" " alt="" coords="477,225,555,251"/>
+</map>

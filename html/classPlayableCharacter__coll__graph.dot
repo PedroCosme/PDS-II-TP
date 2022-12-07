@@ -1,7 +1,0 @@
-digraph "PlayableCharacter"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{PlayableCharacter\n||+ PlayableCharacter()\l+ ~PlayableCharacter()\l+ getName()\l+ getLvl()\l+ getCurrentHp()\l+ getXp()\l+ lvlUp()\l+ setXp()\l+ isAlive()\l+ dealDamage()\l+ takeDamage()\l+ hPPercentage()\l+ heal()\l+ currentHealth()\l+ toString()\l+ hpMultiplier()\l+ getHp()\l+ showWeapons()\l+ returnWeapon()\l+ changeWeapon()\l+ addGold()\l+ subtractGold()\l+ buyItem()\l+ getGold()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe responsavel pelo personagem do jogador."];
-}

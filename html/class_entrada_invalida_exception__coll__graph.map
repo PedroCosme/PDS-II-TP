@@ -1,0 +1,5 @@
+<map id="EntradaInvalidaException" name="EntradaInvalidaException">
+<area shape="rect" id="node1" title="Exceção que lida com erros de comando inválido." alt="" coords="5,196,176,251"/>
+<area shape="rect" id="node2" href="$class_erro_de_jogo_exception.html" title="Exceção que lida com erros genéricos." alt="" coords="15,93,166,148"/>
+<area shape="rect" id="node3" title=" " alt="" coords="37,5,145,45"/>
+</map>
